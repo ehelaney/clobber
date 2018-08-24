@@ -11,6 +11,21 @@ public enum GameStates
 	[StateScene("Main")]
 	Main,
 
+	[StateScene("Eric")]
+	Eric,
+
+	[StateScene("Jfc")]
+	Jfc,
+
+	[StateScene("Nate")]
+	Nate,
+
+	[StateScene("Phil")]
+	Phil,
+
+	[StateScene("Ryan")]
+	Ryan,
+
 	[StateScene("Credits")]
 	Credits
 }
