@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class DualStickMovement
 {
+
 	// Use this for initialization
-	void Start ()
+	void Start()
 	{
 		
 	}
@@ -14,6 +14,6 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		
+		//Input.Get
 	}
 }
