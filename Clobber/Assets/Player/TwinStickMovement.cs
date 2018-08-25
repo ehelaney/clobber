@@ -6,7 +6,7 @@ public class TwinStickMovement : MonoBehaviour
 {
 	private Rigidbody2D rb;
 
-	public float moveSpeed = 2.0f;
+	public float moveSpeed = 5.0f;
 
 	// Use this for initialization
 	public void Start()

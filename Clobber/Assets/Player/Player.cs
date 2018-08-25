@@ -6,6 +6,23 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Player : MonoBehaviour
 {
+	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
+
+	private void Awake()
+	{
+		switch (playerMovement)
+		{
+			case PlayerMovement.KeyboardAndMouse:
+				gameObject.AddComponent<KeyboardAndMouseMovement>();
+				break;
+			case PlayerMovement.TwinStick:
+				gameObject.AddComponent<TwinStickMovement>();
+				break;
+			case PlayerMovement.SingleStickMoveAndFace:
+				gameObject.AddComponent<SingleStickMoveAndFace>();
+				break;
+		}
+	}
 
 	// Use this for initialization
 	void Start ()
@@ -18,4 +35,11 @@ public class Player : MonoBehaviour
 	{
 
 	}
+}
+
+public enum PlayerMovement
+{
+	TwinStick,
+	KeyboardAndMouse,
+	SingleStickMoveAndFace
 }
