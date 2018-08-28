@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
 
@@ -17,6 +18,14 @@ public class Enemy : MonoBehaviour
 	void Update ()
 	{
 		
+	}
+
+	public void Initialize(EnemyTypeDefinition typeDef, Vector2 pos)
+	{
+		TypeDefinition = typeDef;
+		transform.position = pos;
+
+		GetComponent<SpriteRenderer>().sprite = typeDef.Sprite;
 	}
 
 	public void Kill()

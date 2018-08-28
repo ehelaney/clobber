@@ -8,24 +8,17 @@ public class EnemyTestCanvas : MonoBehaviour
 
 	private List<Enemy> aliveEnemies = new List<Enemy>();
 
+	private EnemyFactory enemyFactory;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Start ()
+	{
+		enemyFactory = FindObjectOfType<EnemyFactory>();	
 	}
 
 	public void OnSpawnRandomEnemy()
 	{
-		var nextEnemy = Instantiate(enemyPrefab, new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)), Quaternion.identity, transform).GetComponent<Enemy>();
-		nextEnemy.TypeDefinition = new EnemyTypeDefinition()
-		{
-			PointsForKilling = Random.Range(1, 1000)
-		};
+		var nextEnemy = enemyFactory.SpawnNewEnemy(Random.Range(1, 4), new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)));
 		aliveEnemies.Add(nextEnemy);
 	}
 
