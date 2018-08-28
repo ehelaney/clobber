@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
+	public GameObject rightHand;
+	public GameObject rightEquip;
 	private void Awake()
 	{
 		switch (playerMovement)
@@ -35,6 +37,8 @@ public class Player : MonoBehaviour
 	{
 
 	}
+
+	
 }
 
 public enum PlayerMovement
