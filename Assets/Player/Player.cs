@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
 	public GameObject rightHand;
 	public GameObject rightEquip;
+	public ProjectileWeapon projectileWeapon; //added this to test projectiles, we probably won't keep it here, but I didnt want to wait until I integrated it with the other weapon code
+
 	private void Awake()
 	{
 		switch (playerMovement)
