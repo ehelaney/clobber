@@ -43,11 +43,11 @@ public class ProjectileFactory : MonoBehaviour
 		}
 	}
 
-	public void SpawnNewProjectile(ProjectileType projectileType, Vector2 pos, Vector2 direction)
+	public void SpawnNewProjectile(ProjectileType projectileType, Vector2 pos, Vector2 direction, Quaternion rotation)
 	{
 		var newProjectile = projectilePool.InitNewObject();
 		var typeDef = projectileTypeDefMap[projectileType];
-		newProjectile.GetComponent<Projectile>().Initialize(typeDef, pos, direction);
+		newProjectile.GetComponent<Projectile>().Initialize(typeDef, pos, direction, rotation);
 		//newProjectile.layer = (int)typeDef.Layer;
 	}
 
