@@ -6,7 +6,6 @@ public class RightHand : MonoBehaviour
 {
 	public GameObject weapon;
 	private Animator animator;
-	private Vector3 localPos;
 
 	private IWeapon weaponInterface 
 	{
@@ -30,17 +29,12 @@ public class RightHand : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		localPos = transform.localPosition;
 		animator = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		// Stick to player
-		transform.position = transform.parent.position;
-		transform.localPosition = localPos;
-
 		// Attack on mouse click
 		if(Input.GetMouseButtonDown(0))
 		{

@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 822849408}
   - component: {fileID: 822849409}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: RightHand
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,7 +595,7 @@ Prefab:
         type: 2}
       propertyPath: rightEquip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1222839639}
     - target: {fileID: 4258827351792134, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
@@ -837,13 +837,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 50375913362506498, guid: 121dbbc625af44740ae16647e1b65ef4,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 50375913362506498, guid: 121dbbc625af44740ae16647e1b65ef4, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 121dbbc625af44740ae16647e1b65ef4, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2102463952
