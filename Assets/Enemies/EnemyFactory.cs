@@ -5,15 +5,30 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
+	public static EnemyFactory Instance { get; private set; }
+
 	public ObjectPool enemyPool;
 
 	public EnemyTypeDefinition[] enemyTypes;
 
 	private Dictionary<int, EnemyTypeDefinition> enemyTypeDefMap = new Dictionary<int, EnemyTypeDefinition>();
 
+	public EnemyDeathSystem DeathSystem;
+	public EnemyHitSystem HitSystem;
+
 	// Use this for initialization
 	void Start ()
 	{
+		if (Instance == null)
+		{
+			Instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+
 		enemyPool.Initialize();
 
 		for (int i = 0; i < enemyTypes.Length; i++)
@@ -29,6 +44,14 @@ public class EnemyFactory : MonoBehaviour
 			}
 
 			enemyTypeDefMap.Add(enemyType.ID, enemyType);
+		}
+	}
+
+	private void OnDestroy()
+	{
+		if (Instance == this)
+		{
+			Instance = null;
 		}
 	}
 
