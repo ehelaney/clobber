@@ -14,10 +14,11 @@ public class Projectile : MonoBehaviour
 
 	public int Damage { get; private set; }
 
-	public void Initialize(ProjectileTypeDef typeDef, Vector2 startingPoint, Vector2 direction)
+	public void Initialize(ProjectileTypeDef typeDef, Vector2 startingPoint, Vector2 direction, Quaternion rotation)
 	{
 		TypeDefinition = typeDef;
 		gameObject.transform.position = startingPoint;
+		gameObject.transform.rotation = rotation;
 		GetComponent<Rigidbody2D>().AddForce(direction * typeDef.Speed, ForceMode2D.Impulse);
 		Damage = TypeDefinition.Damage;
 	}
@@ -53,4 +54,3 @@ public class Projectile : MonoBehaviour
 		}
 	}
 }
-
