@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Club : MonoBehaviour, IWeapon
 {
-	private Vector3 localPos;
-
 	public bool WeaponActive { get; set; }
 
 	//hard-coding this here, but probably want to pull it out into data
@@ -14,17 +12,7 @@ public class Club : MonoBehaviour, IWeapon
 	// Use this for initialization
 	void Start () 
 	{
-		// Cache the current location relative to the parent
-		localPos = transform.localPosition;
 		WeaponActive = false;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		// Set location relative to parent
-		transform.position = transform.parent.position;
-		transform.localPosition = localPos;
 	}
 
 	/// <summary>

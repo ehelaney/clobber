@@ -8,22 +8,21 @@ public class Player : MonoBehaviour
 {
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
-	public GameObject rightHand;
-	public GameObject rightEquip;
-	public ProjectileWeapon projectileWeapon; //added this to test projectiles, we probably won't keep it here, but I didnt want to wait until I integrated it with the other weapon code
+	public RightHand rightHand;
+	public LeftHand leftHand;
 
 	private void Awake()
 	{
 		switch (playerMovement)
 		{
 			case PlayerMovement.KeyboardAndMouse:
-				gameObject.AddComponent<KeyboardAndMouseMovement>();
+				gameObject.AddComponent<KeyboardAndMouseMovement>().player = this;
 				break;
 			case PlayerMovement.TwinStick:
-				gameObject.AddComponent<TwinStickMovement>();
+				gameObject.AddComponent<TwinStickMovement>().player = this;
 				break;
 			case PlayerMovement.SingleStickMoveAndFace:
-				gameObject.AddComponent<SingleStickMoveAndFace>();
+				gameObject.AddComponent<SingleStickMoveAndFace>().player = this;
 				break;
 		}
 	}
@@ -40,6 +39,15 @@ public class Player : MonoBehaviour
 
 	}
 
+	public void AttackWithProjectile(Vector2 pos)
+	{
+		leftHand.Attack();
+	}
+
+	public void AttackWithMelee(Vector2 pos)
+	{
+		rightHand.Attack();
+	}
 	
 }
 
