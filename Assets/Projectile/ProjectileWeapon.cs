@@ -31,7 +31,7 @@ public class ProjectileWeapon : MonoBehaviour
 		if (timeSinceLastShot > TypeDefinition.RateOfFire)
 		{
 			//fire in the direction of the muzzle
-			ProjectileFactory.TheFactory.SpawnNewProjectile(TypeDefinition.ProjectileType, m_Muzzle.position, m_Muzzle.right);
+			ProjectileFactory.TheFactory.SpawnNewProjectile(TypeDefinition.ProjectileType, m_Muzzle.position, m_Muzzle.right, m_Muzzle.rotation);
 			timeSinceLastShot = 0.0f;
 		}
 	}
