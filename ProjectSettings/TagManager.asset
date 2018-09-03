@@ -16,8 +16,8 @@ TagManager:
   - 
   - Projectile
   - ProjectileThreshold
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1265438047
+    locked: 0
+  - name: Effects
+    uniqueID: 4085936887
     locked: 0

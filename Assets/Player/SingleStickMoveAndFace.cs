@@ -8,6 +8,8 @@ public class SingleStickMoveAndFace : MonoBehaviour
 
 	public float moveSpeed = 5.0f;
 
+	public Player player;
+
 	// Use this for initialization
 	public void Start()
 	{

@@ -24,10 +24,6 @@ public class ProjectileWeapon : MonoBehaviour
 	void Update()
 	{
 		timeSinceLastShot += Time.deltaTime;
-		if (Input.GetMouseButtonDown(0)) // Attack on mouse click - obviously this needs changed to a real input method
-		{
-			OnFire();
-		}
 	}
 
 	public void OnFire()
@@ -35,7 +31,7 @@ public class ProjectileWeapon : MonoBehaviour
 		if (timeSinceLastShot > TypeDefinition.RateOfFire)
 		{
 			//fire in the direction of the muzzle
-			ProjectileFactory.TheFactory.SpawnNewProjectile(TypeDefinition.ProjectileType, transform.position, m_Muzzle.right, m_Muzzle.rotation);
+			ProjectileFactory.TheFactory.SpawnNewProjectile(TypeDefinition.ProjectileType, m_Muzzle.position, m_Muzzle.right, m_Muzzle.rotation);
 			timeSinceLastShot = 0.0f;
 		}
 	}

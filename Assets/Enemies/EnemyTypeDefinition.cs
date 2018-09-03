@@ -8,4 +8,5 @@ public class EnemyTypeDefinition
 	public string HelpfulName;
 	public Sprite Sprite;
 	public int PointsForKilling;
+	public int Health;
 }

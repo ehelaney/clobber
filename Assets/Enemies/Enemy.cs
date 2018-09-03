@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
 
 	public EnemyTypeDefinition TypeDefinition { get; set; }
 
+	public int Health { get; set; }
+
+	private Rigidbody2D rb2d;
+
 	// Use this for initialization
 	void Start ()
 	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
+		rb2d = GetComponent<Rigidbody2D>();
 	}
 
 	public void Initialize(EnemyTypeDefinition typeDef, Vector2 pos)
@@ -26,11 +25,24 @@ public class Enemy : MonoBehaviour
 		transform.position = pos;
 
 		GetComponent<SpriteRenderer>().sprite = typeDef.Sprite;
+		Health = TypeDefinition.Health;
+	}
+
+	public void Hit(int damage, Vector2 damageSource)
+	{
+		Health -= damage;
+
+		Vector2 recoil = ((Vector2)transform.position - damageSource).normalized * 0.25f;
+		rb2d.MovePosition((Vector2)transform.position + recoil);
+
+		EnemyFactory.Instance.HitSystem.OnEnemyHit(TypeDefinition, damageSource);
+
+		if (Health <= 0) Kill();
 	}
 
 	public void Kill()
 	{
-		FindObjectOfType<EnemyDeathSystem>().OnEnemyDeath(TypeDefinition, transform.position);
+		EnemyFactory.Instance.DeathSystem.OnEnemyDeath(TypeDefinition, transform.position);
 		gameObject.SetActive(false);
 	}
 }

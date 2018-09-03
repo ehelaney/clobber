@@ -6,15 +6,13 @@ public class Club : MonoBehaviour, IWeapon
 {
 	public bool WeaponActive { get; set; }
 
+	//hard-coding this here, but probably want to pull it out into data
+	public int Damage = 1;
+
 	// Use this for initialization
 	void Start () 
 	{
 		WeaponActive = false;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
 	}
 
 	/// <summary>
@@ -26,7 +24,7 @@ public class Club : MonoBehaviour, IWeapon
 	{
 		if (WeaponActive && other.gameObject.CompareTag("Enemy"))
 		{
-			other.gameObject.GetComponent<Enemy>().Kill();
+			other.gameObject.GetComponent<Enemy>().Hit(Damage, (transform.position + other.transform.position) / 2f);
 		}
 	}
 }

@@ -5,52 +5,35 @@ using UnityEngine;
 public class RightHand : MonoBehaviour 
 {
 	public GameObject weapon;
+	private IWeapon _weaponInterface;
+
 	private Animator animator;
 
-	private IWeapon weaponInterface 
-	{
-		get
-		{
-			// Find a weapon script on the held object
-			// TODO: only refresh this value on weapon change
-			MonoBehaviour[] components = weapon.GetComponents<MonoBehaviour>();
-			foreach (var component in components)
-			{
-				if (component is IWeapon)
-				{
-					return ((IWeapon)component);
-				}
-			}
-
-			return null;
-		}
-		set { }
-	}
 	// Use this for initialization
 	void Start () 
 	{
 		animator = this.GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		// Attack on mouse click
-		if(Input.GetMouseButtonDown(0))
+
+		// Find a weapon script on the held object
+		MonoBehaviour[] components = weapon.GetComponents<MonoBehaviour>();
+		foreach (var component in components)
 		{
-			Swing();
+			if (component is IWeapon)
+			{
+				_weaponInterface = ((IWeapon)component);
+			}
 		}
 	}
-
-	private void Swing()
+	
+	public void Attack()
 	{
 		animator.SetTrigger("Swing");
-		weaponInterface.WeaponActive = true;
+		_weaponInterface.WeaponActive = true;
 	}
 
 	// Called by animation event
 	private void DeactivateWeapon()
 	{
-		weaponInterface.WeaponActive = false;
+		_weaponInterface.WeaponActive = false;
 	}
 }
