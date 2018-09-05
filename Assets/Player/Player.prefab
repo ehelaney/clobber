@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 58603575582723578}
   m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6871699349c95f943931ef3e81501042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 7
   playerMovement: 1
   rightHand: {fileID: 114663168398970976}
   leftHand: {fileID: 114454291373699522}
