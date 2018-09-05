@@ -6,6 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Player : MonoBehaviour
 {
+	[Range(1, 10)]
+	public int maxHealth = 7;
+
+	private int health;
+	public int Health { get { return health; } }
+
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
 	public RightHand rightHand;
@@ -30,7 +36,7 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-
+		SetHealth(maxHealth);
 	}
 	
 	// Update is called once per frame
@@ -48,7 +54,33 @@ public class Player : MonoBehaviour
 	{
 		rightHand.Attack();
 	}
-	
+
+	#region Health
+
+	public delegate void HealthChanged(int newHealth);
+	public HealthChanged OnHealthChanged;
+
+	public void ChangeHealth(int diff)
+	{
+		SetHealth(health + diff);
+	}
+
+	private void SetHealth(int h)
+	{
+		health = h;
+		health = Mathf.Min(health, maxHealth);
+		if (OnHealthChanged != null)
+		{
+			OnHealthChanged(health);
+		}
+
+		if (health <= 0)
+		{
+			//TODO: do something because the player died
+		}
+	}
+
+	#endregion
 }
 
 public enum PlayerMovement
