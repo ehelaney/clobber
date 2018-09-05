@@ -116,9 +116,9 @@ NavMeshSettings:
 --- !u!1 &365235094
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 365235096}
   - component: {fileID: 365235095}
@@ -132,7 +132,7 @@ GameObject:
 --- !u!114 &365235095
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365235094}
   m_Enabled: 1
@@ -140,11 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e18fe3babfa824ba2e4040f6160aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchingState: 1
+  launchingState: 6
 --- !u!4 &365235096
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365235094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -194,8 +194,8 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 076042f798816474197c13cf6dfe7a91, type: 2}
-  m_IsPrefabParent: 0
+  m_SourcePrefab: {fileID: 100100000, guid: 076042f798816474197c13cf6dfe7a91, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &2144270994
 Prefab:
   m_ObjectHideFlags: 0
@@ -236,5 +236,5 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 18a5bb2dd8cef964b88ed1ea1943e006, type: 2}
-  m_IsPrefabParent: 0
+  m_SourcePrefab: {fileID: 100100000, guid: 18a5bb2dd8cef964b88ed1ea1943e006, type: 2}
+  m_IsPrefabAsset: 0
