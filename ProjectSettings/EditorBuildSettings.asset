@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Screens/Sandbox/Ryan/Ryan.unity
     guid: d464b3104c774ae4a9a335fc2512861f
+  - enabled: 1
+    path: Assets/Screens/GameOver/GameOver.unity
+    guid: 7d40248d1c24c914db86771ab0c59b28
   m_configObjects: {}

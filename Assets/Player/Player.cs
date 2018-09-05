@@ -76,7 +76,8 @@ public class Player : MonoBehaviour
 
 		if (health <= 0)
 		{
-			//TODO: do something because the player died
+			//TODO: do something because the player died (before it transitions to the final scene)
+			FindObjectOfType<GameStateEngine>().ChangeGameState(GameStates.GameOver);
 		}
 	}
 
