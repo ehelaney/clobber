@@ -11,6 +11,11 @@ public class Enemy : MonoBehaviour
 
 	public int Health { get; set; }
 
+	/// <summary>
+	/// The amount of damage the enemy will do to the player upon colliding
+	/// </summary>
+	public int CollisionStrength = 1;
+
 	private Rigidbody2D rb2d;
 
 	// Use this for initialization
@@ -44,5 +49,14 @@ public class Enemy : MonoBehaviour
 	{
 		EnemyFactory.Instance.DeathSystem.OnEnemyDeath(TypeDefinition, transform.position);
 		gameObject.SetActive(false);
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			Player p = collision.gameObject.GetComponent<Player>();
+			p.ChangeHealth(CollisionStrength * -1);
+		}
 	}
 }
