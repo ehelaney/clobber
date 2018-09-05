@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EnemyAI
 {
-	public class NormalPatrol : MonoBehaviour
+	public class NormalPatrol : ScriptBase
 	{
 		public float moveSpeed = 4.0f;
 		public float rotateSpeed = 360.0f;
@@ -14,6 +14,7 @@ namespace EnemyAI
 		
 		void Start () 
 		{
+			Debug.Log("Start NormalPatrol");
 			StartCoroutine(Execute());
 		}
 		public IEnumerator Execute()
