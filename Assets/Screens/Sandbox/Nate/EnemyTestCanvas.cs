@@ -31,4 +31,9 @@ public class EnemyTestCanvas : MonoBehaviour
 
 		aliveEnemies.Clear();
 	}
+
+	public void OnDamagePlayer()
+	{
+		FindObjectOfType<Player>().ChangeHealth(-1);
+	}
 }
