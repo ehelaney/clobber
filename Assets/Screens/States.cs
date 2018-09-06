@@ -26,6 +26,9 @@ public enum GameStates
 	[StateScene("Ryan")]
 	Ryan,
 
+	[StateScene("GameOver")]
+	GameOver,
+
 	[StateScene("Credits")]
 	Credits
 }
