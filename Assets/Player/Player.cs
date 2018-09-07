@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
 	private int health;
 	public int Health { get { return health; } }
 
+	/// <summary>
+	/// Total points the player has accumulated
+	/// </summary>
+	public int TotalPoints;
+
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
 	public RightHand rightHand;
@@ -53,6 +58,16 @@ public class Player : MonoBehaviour
 	public void AttackWithMelee(Vector2 pos)
 	{
 		rightHand.Attack();
+	}
+
+	/// <summary>
+	/// Called when an enemy is killed.  This is invoked from the Enemy base class using UnityEvents
+	/// </summary>
+	/// <param name="enemyPoints"></param>
+	public void OnEnemyKilled(int enemyPoints)
+	{
+		TotalPoints += enemyPoints;
+		Debug.Log("Total points: " + TotalPoints); // Temporary until we have a UI displaying points
 	}
 
 	#region Health
