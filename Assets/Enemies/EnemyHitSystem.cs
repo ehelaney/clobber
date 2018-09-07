@@ -11,13 +11,13 @@ public class EnemyHitSystem : MonoBehaviour
 		hitPool.Initialize();
 	}
 
-	public void OnEnemyHit(EnemyTypeDefinition enemyDef, Vector2 pos)
+	public void OnEnemyHit(EnemyTypeDefinition enemyDef, Vector2 pos, AudioClip clip)
 	{
 		Debug.Log("Enemy Hit at: " + pos.ToString());
 
 		var hit = hitPool.InitNewObject().GetComponent<EnemyHit>();
 		hit.Init(pos);
 
-		//TODO: play hit sound effect
+		SoundManager.instance.PlayClip(clip); //play hit sound effect
 	}
 }
