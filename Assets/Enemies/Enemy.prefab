@@ -105,6 +105,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e3b3eeae63c964c8a630806515f089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyKilled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114867932674946892, guid: 61ddc6bba5d8a284883746ff460572f1,
+          type: 2}
+        m_MethodName: OnEnemyKilled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: EnemyKilledEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   CollisionStrength: 1
 --- !u!212 &212841102309271052
 SpriteRenderer:

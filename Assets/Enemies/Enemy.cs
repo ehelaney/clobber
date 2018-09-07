@@ -1,15 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
+
+[Serializable]
+public class EnemyKilledEvent : UnityEvent<int> { }
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
-
 	public EnemyTypeDefinition TypeDefinition { get; set; }
 
 	public int Health { get; set; }
+
+	public EnemyKilledEvent EnemyKilled;
 
 	/// <summary>
 	/// The amount of damage the enemy will do to the player upon colliding
@@ -48,6 +52,11 @@ public class Enemy : MonoBehaviour
 	public void Kill()
 	{
 		EnemyFactory.Instance.DeathSystem.OnEnemyDeath(TypeDefinition, transform.position);
+		if(EnemyKilled != null)
+		{
+			EnemyKilled.Invoke(TypeDefinition.PointsForKilling);
+		}
+
 		gameObject.SetActive(false);
 	}
 
