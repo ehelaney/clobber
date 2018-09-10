@@ -9,17 +9,17 @@ public class SoundTestCanvas : MonoBehaviour
 
 	public void OnPlaySound()
 	{
-		SoundManager.instance.PlaySound(TestSound);
+		SoundManager.Instance.PlaySound(TestSound, new Vector2(Random.Range(-5, 5), Random.Range(-5, 5)));
 	}
 
 	public void OnPlayMusic()
 	{
-		SoundManager.instance.PlayMusic(MusicClip);
+		SoundManager.Instance.PlayMusic(MusicClip);
 	}
 
 	public void OnStopMusic()
 	{
-		SoundManager.instance.StopMusic();
+		SoundManager.Instance.StopMusic();
 	}
 
 }

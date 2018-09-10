@@ -15,24 +15,22 @@ public class PlayerHealthHUD : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		var thePlayer = FindObjectOfType<Player>();
-
-		if (thePlayer == null)
+		if (PlayerInfo.Instance == null)
 		{
-			Debug.LogError("Unable to find player for the Player Health HUD!!!");
+			Debug.LogError("Unable to find player info for the Player Health HUD!!!");
 		}
 
-		maxHealth = thePlayer.maxHealth;
+		maxHealth = PlayerInfo.Instance.maxHealth;
 
 		for (int i = maxHealth; i < heartImages.Length; i++)
 		{
 			heartImages[i].gameObject.SetActive(false);
 		}
 
-		thePlayer.OnHealthChanged += OnPlayerHealthChanged;
+		PlayerInfo.Instance.OnHealthChanged += OnPlayerHealthChanged;
 
 		//do this so there aren't timing issues between the player and HUD instantiating
-		DisplayHealth(thePlayer.Health);
+		DisplayHealth(PlayerInfo.Instance.Health);
 	}
 	
 	void OnPlayerHealthChanged(int newHealth)

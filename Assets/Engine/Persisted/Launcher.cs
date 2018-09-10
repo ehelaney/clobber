@@ -9,6 +9,8 @@ public class Launcher : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		//this is all throwaway code until we have something more properly transitioning the levels
+		PlayerInfo.Instance.StartGame();
 		FindObjectOfType<GameStateEngine>().ChangeGameState(launchingState);
 		Destroy(this);
 	}
