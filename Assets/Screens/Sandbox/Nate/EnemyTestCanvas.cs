@@ -34,6 +34,6 @@ public class EnemyTestCanvas : MonoBehaviour
 
 	public void OnDamagePlayer()
 	{
-		FindObjectOfType<Player>().ChangeHealth(-1);
+		PlayerInfo.Instance.ChangeHealth(-1);
 	}
 }
