@@ -406,17 +406,37 @@ Prefab:
         type: 2}
       propertyPath: enemyTypes.Array.data[0].onHitSound
       value: 
-      objectReference: {fileID: 8300000, guid: 744347715ab335b4aacb23368a8b0cfd, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114267073435879740, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5,
         type: 2}
       propertyPath: enemyTypes.Array.data[1].onHitSound
       value: 
-      objectReference: {fileID: 8300000, guid: f947cf145a5d03242b6a4d87ea122965, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114267073435879740, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5,
         type: 2}
       propertyPath: enemyTypes.Array.data[2].onHitSound
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267073435879740, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5,
+        type: 2}
+      propertyPath: enemyTypes.Array.data[0].onHitSound.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 744347715ab335b4aacb23368a8b0cfd, type: 3}
+    - target: {fileID: 114267073435879740, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5,
+        type: 2}
+      propertyPath: enemyTypes.Array.data[1].onHitSound.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f947cf145a5d03242b6a4d87ea122965, type: 3}
+    - target: {fileID: 114267073435879740, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5,
+        type: 2}
+      propertyPath: enemyTypes.Array.data[2].onHitSound.clip
+      value: 
       objectReference: {fileID: 8300000, guid: 6e2824a2278604c45ad6a6ab29931078, type: 3}
+    - target: {fileID: 114267073435879740, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5,
+        type: 2}
+      propertyPath: enemyTypes.Array.data[1].onHitSound.volumeModifier
+      value: 0.251
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e2a199562b86ce4099a1b2f3e0fbbe5, type: 2}
   m_IsPrefabAsset: 0
@@ -2011,7 +2031,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daae6b040d31d63459e7cd379f260da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestClip: {fileID: 8300000, guid: ba9b2e0c6bce88644951fce6c3536c0f, type: 3}
+  TestSound:
+    name: 
+    clip: {fileID: 8300000, guid: 744347715ab335b4aacb23368a8b0cfd, type: 3}
+    volume: 0.6
+    pitch: 1
+    volumeModifier: 0.8
+    pitchModifier: 2.81
   MusicClip: {fileID: 8300000, guid: e263cf686959e6b43b5cc22f8a255eae, type: 3}
 --- !u!114 &1932144242
 MonoBehaviour:
