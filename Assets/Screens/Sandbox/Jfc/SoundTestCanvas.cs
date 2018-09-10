@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SoundTestCanvas : MonoBehaviour
 {
-	public AudioClip TestClip;
+	public SoundDefinition TestSound;
 	public AudioClip MusicClip;
 
 	public void OnPlaySound()
 	{
-		SoundManager.instance.PlayClip(TestClip);
+		SoundManager.instance.PlaySound(TestSound);
 	}
 
 	public void OnPlayMusic()

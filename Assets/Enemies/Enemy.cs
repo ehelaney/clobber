@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
 		Vector2 recoil = ((Vector2)transform.position - damageSource).normalized * 0.25f;
 		rb2d.MovePosition((Vector2)transform.position + recoil);
 
-		EnemyFactory.Instance.HitSystem.OnEnemyHit(TypeDefinition, damageSource, TypeDefinition.onHitSound);
+		EnemyFactory.Instance.HitSystem.OnEnemyHit(TypeDefinition, damageSource);
 
 		if (Health <= 0) Kill();
 	}

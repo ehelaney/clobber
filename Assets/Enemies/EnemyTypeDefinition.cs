@@ -9,5 +9,5 @@ public class EnemyTypeDefinition
 	public Sprite Sprite;
 	public int PointsForKilling;
 	public int Health;
-	public AudioClip onHitSound;
+	public SoundDefinition onHitSound;
 }
