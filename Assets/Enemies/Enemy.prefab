@@ -108,7 +108,7 @@ MonoBehaviour:
   EnemyKilled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114867932674946892, guid: 61ddc6bba5d8a284883746ff460572f1,
+      - m_Target: {fileID: 114881823589131922, guid: 028e1caf64fc62149984ed44ed58e7cb,
           type: 2}
         m_MethodName: OnEnemyKilled
         m_Mode: 0

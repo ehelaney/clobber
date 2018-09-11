@@ -64,8 +64,7 @@ public class Enemy : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			Player p = collision.gameObject.GetComponent<Player>();
-			p.ChangeHealth(CollisionStrength * -1);
+			PlayerInfo.Instance.ChangeHealth(CollisionStrength * -1);
 		}
 	}
 }
