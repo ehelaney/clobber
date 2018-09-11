@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class OneTimeSoundEffect : MonoBehaviour
+public class SoundEffect : MonoBehaviour
 {
 	private float timeLeftAlive = 0.0f;
 

@@ -14,13 +14,16 @@ public class SoundContainer : MonoBehaviour
 
 	void OnDestroy()
 	{
-		SoundManager.Instance.ClearCurrentSoundEffectsContainer();
+		if (SoundManager.InstanceExists())
+		{
+			SoundManager.Instance.ClearCurrentSoundEffectsContainer();
+		}
 	}
 
 	public void PlaySoundEffect(SoundDefinition sound, Vector2 pos)
 	{
 		var newSoundEffect = soundEffectPool.InitNewObject();
 		newSoundEffect.transform.position = pos;
-		newSoundEffect.GetComponent<OneTimeSoundEffect>().PlaySoundDefinition(sound);
+		newSoundEffect.GetComponent<SoundEffect>().PlaySoundDefinition(sound);
 	}
 }

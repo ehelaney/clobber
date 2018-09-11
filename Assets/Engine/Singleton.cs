@@ -26,4 +26,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 			return instance;
 		}
 	}
+
+	public static bool InstanceExists()
+	{
+		return (instance != null);
+	}
 }
