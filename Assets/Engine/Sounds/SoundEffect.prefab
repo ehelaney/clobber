@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 82037684636069804}
   - component: {fileID: 114763641607256848}
   m_Layer: 0
-  m_Name: OneTimeSoundEffect
+  m_Name: SoundEffect
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -63,7 +63,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyTestCanvas : MonoBehaviour
 {
-	public GameObject enemyPrefab;
+	public EnemyTypeDefinition[] possibleRandomEnemyTypesToSpawn;
+	public SoundDefinition soundEffectToPlay;
 
 	private List<Enemy> aliveEnemies = new List<Enemy>();
 
 	private EnemyFactory enemyFactory;
+
 
 	// Use this for initialization
 	void Start ()
@@ -18,8 +20,13 @@ public class EnemyTestCanvas : MonoBehaviour
 
 	public void OnSpawnRandomEnemy()
 	{
-		var nextEnemy = enemyFactory.SpawnNewEnemy(Random.Range(1, 4), new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)));
-		aliveEnemies.Add(nextEnemy);
+		if (possibleRandomEnemyTypesToSpawn.Length > 0)
+		{
+			var nextEnemy = enemyFactory.SpawnNewEnemy(
+				possibleRandomEnemyTypesToSpawn[Random.Range(0, possibleRandomEnemyTypesToSpawn.Length)], 
+				new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)));
+			aliveEnemies.Add(nextEnemy);
+		}
 	}
 
 	public void OnKillEnemies()
@@ -35,5 +42,10 @@ public class EnemyTestCanvas : MonoBehaviour
 	public void OnDamagePlayer()
 	{
 		PlayerInfo.Instance.ChangeHealth(-1);
+	}
+
+	public void OnPlaySoundEffect()
+	{
+		SoundManager.Instance.PlaySound(soundEffectToPlay, new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)));
 	}
 }
