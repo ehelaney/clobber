@@ -16,3 +16,4 @@ MonoBehaviour:
   pointsForKilling: 50
   health: 2
   onHitSound: {fileID: 11400000, guid: 49c3e633246d5324ba2ada22a12f7dcf, type: 2}
+  lootTable: {fileID: 11400000, guid: e206d6ea467827f4885558ab621d9a21, type: 2}

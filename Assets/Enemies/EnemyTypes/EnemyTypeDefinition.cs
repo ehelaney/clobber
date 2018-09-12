@@ -53,4 +53,14 @@ public class EnemyTypeDefinition : ScriptableObject
 			return onHitSound;
 		}
 	}
+
+	[SerializeField]
+	private LootTableDefinition lootTable;
+	public LootTableDefinition LootTable
+	{
+		get
+		{
+			return lootTable;
+		}
+	}
 }
