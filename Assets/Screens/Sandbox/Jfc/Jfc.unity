@@ -877,8 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8aff66f9e671847b6f3972a9ebec2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1111095993078988, guid: 4f14fed4e9a00ca49a11616080fb18a8,
-    type: 2}
+  possibleRandomEnemyTypesToSpawn: []
 --- !u!114 &729366525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1979,13 +1978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daae6b040d31d63459e7cd379f260da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestSound:
-    name: 
-    clip: {fileID: 8300000, guid: 744347715ab335b4aacb23368a8b0cfd, type: 3}
-    volume: 0.6
-    pitch: 1
-    volumeModifier: 0.8
-    pitchModifier: 2.81
+  TestSound: {fileID: 11400000, guid: 49c3e633246d5324ba2ada22a12f7dcf, type: 2}
   MusicClip: {fileID: 8300000, guid: e263cf686959e6b43b5cc22f8a255eae, type: 3}
 --- !u!114 &1932144242
 MonoBehaviour:

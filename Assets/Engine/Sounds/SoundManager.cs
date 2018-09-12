@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
 {
-	public AudioSource soundeffectSource;          //audio source which will play sound effects.
 	public AudioSource musicSource;                 //audio source which will play music.
 
 	#region Sound Effects Container
