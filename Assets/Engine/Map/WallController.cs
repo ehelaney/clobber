@@ -22,7 +22,7 @@ public class WallController : MonoBehaviour
 		BottomLeftInsideWall,
 		BottomRightInsideWall
 	}
-	private MapController mapController;
+	private MapGenerator mapGenerator;
 
 	private Tilemap tilemap;
 	
@@ -35,10 +35,10 @@ public class WallController : MonoBehaviour
 	void Start () 
 	{
 		tilemap = GetComponent<Tilemap>();
-		mapController = transform.parent.parent.gameObject.GetComponent<MapController>();
+		mapGenerator = transform.parent.parent.gameObject.GetComponent<MapGenerator>();
 
-		MapSize_x = mapController.MapSize_x;
-		MapSize_y = mapController.MapSize_y;
+		MapSize_x = mapGenerator.MapSize_x;
+		MapSize_y = mapGenerator.MapSize_y;
 
 		tileSchematic = GenerateSchematic();
 		FillTilemap(tileSchematic);
@@ -102,47 +102,47 @@ public class WallController : MonoBehaviour
 				{
 					case WallType.CenterWall:
 					{
-						PaintTile(x, y, mapController.MiddleTile);
+						PaintTile(x, y, mapGenerator.MiddleTile);
 						break;
 					}
 					case WallType.LeftEdgeWall:
 					{
-						PaintTile(x, y, mapController.LeftEdgeTile);
+						PaintTile(x, y, mapGenerator.LeftEdgeTile);
 						break;
 					}
 					case WallType.TopEdgeWall:
 					{
-						PaintTile(x, y, mapController.TopEdgeTile);
+						PaintTile(x, y, mapGenerator.TopEdgeTile);
 						break;
 					}
 					case WallType.RightEdgeWall:
 					{
-						PaintTile(x, y, mapController.RightEdgeTile);
+						PaintTile(x, y, mapGenerator.RightEdgeTile);
 						break;
 					}
 					case WallType.BottomEdgeWall:
 					{
-						PaintTile(x, y, mapController.BottomEdgeTile);
+						PaintTile(x, y, mapGenerator.BottomEdgeTile);
 						break;
 					}
 					case WallType.TopLeftInsideWall:
 					{
-						PaintTile(x, y, mapController.TopLeftInsideTile);
+						PaintTile(x, y, mapGenerator.TopLeftInsideTile);
 						break;
 					}
 					case WallType.TopRightInsideWall:
 					{
-						PaintTile(x, y, mapController.TopRightInsideTile);
+						PaintTile(x, y, mapGenerator.TopRightInsideTile);
 						break;
 					}
 					case WallType.BottomLeftInsideWall:
 					{
-						PaintTile(x, y, mapController.BottomLeftInsideTile);
+						PaintTile(x, y, mapGenerator.BottomLeftInsideTile);
 						break;
 					}
 					case WallType.BottomRightInsideWall:
 					{
-						PaintTile(x, y, mapController.BottomRightInsideTile);
+						PaintTile(x, y, mapGenerator.BottomRightInsideTile);
 						break;
 					}
 					case WallType.Null:
@@ -162,6 +162,6 @@ public class WallController : MonoBehaviour
 
 	void PaintTile(int x, int y, TileBase tile)
 	{
-		tilemap.SetTile(mapController.MapOrigin + new Vector3Int(x, y, 0), tile);
+		tilemap.SetTile(mapGenerator.MapOrigin + new Vector3Int(x, y, 0), tile);
 	}
 }

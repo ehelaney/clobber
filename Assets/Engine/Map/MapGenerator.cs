@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class MapController : MonoBehaviour 
+public class MapGenerator : MonoBehaviour 
 {
 	[Range(10, 50)]
 	public int MapSize_x;

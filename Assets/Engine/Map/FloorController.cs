@@ -8,13 +8,13 @@ public class FloorController : MonoBehaviour
 {
 	private Tilemap map;
 
-	private MapController mapController;
+	private MapGenerator mapGenerator;
 
 	// Use this for initialization
 	void Start () 
 	{
 		map = GetComponent<Tilemap>();
-		mapController = transform.parent.parent.gameObject.GetComponent<MapController>();
+		mapGenerator = transform.parent.parent.gameObject.GetComponent<MapGenerator>();
 
 		FillTilemap();
 	}
@@ -27,11 +27,11 @@ public class FloorController : MonoBehaviour
 
 	void FillTilemap()
 	{
-		for(int x = 0; x < mapController.MapSize_x; x++)
+		for(int x = 0; x < mapGenerator.MapSize_x; x++)
 		{
-			for (int y = 0; y < mapController.MapSize_y; y++)
+			for (int y = 0; y < mapGenerator.MapSize_y; y++)
 			{
-				map.SetTile(mapController.MapOrigin + new Vector3Int(x, y, 0), mapController.FloorTile);
+				map.SetTile(mapGenerator.MapOrigin + new Vector3Int(x, y, 0), mapGenerator.FloorTile);
 			}
 		}
 	}
