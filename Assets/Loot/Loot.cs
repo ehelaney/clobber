@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-	LootTypeDefinition lootType;
+	LootType lootType;
 
 	float lifeLeft = 0.0f;
 	bool isFlashing = false;
 
-	public void Initialize(LootTypeDefinition typeDef, Vector2 pos)
+	public void Initialize(LootType typeDef, Vector2 pos)
 	{
 		lootType = typeDef;
 		transform.position = new Vector2(pos.x + Random.Range(-1.5f, 1.5f), pos.y + Random.Range(-1.5f, 1.5f));
 		isFlashing = false;
 
 		GetComponent<SpriteRenderer>().sprite = lootType.Sprite;
-		//GetComponent<Animator>().Play("Idle");
+		GetComponent<Animator>().Play("Idle");
 
 		lifeLeft = lootType.LifeTime;
 	}
@@ -40,7 +40,7 @@ public class Loot : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
-			EnemyFactory.Instance.LootSystem.OnLootCollected(lootType);
+			lootType.OnCollect();
 			gameObject.SetActive(false);
 		}
 	}
