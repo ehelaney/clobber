@@ -59,7 +59,12 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	/// <param name="enemyPoints"></param>
 	public void OnEnemyKilled(int enemyPoints)
 	{
-		totalPoints += enemyPoints;
+		GainPoints(enemyPoints);
+	}
+
+	public void GainPoints(int points)
+	{
+		totalPoints += points;
 		Debug.Log("Total points: " + TotalPoints); // Temporary until we have a UI displaying points
 	}
 
