@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "NewLootTable", menuName = "Loot Table", order = 54)]
+[CreateAssetMenu(fileName = "NewLootTable", menuName = "Loot/Loot Table", order = 1)]
 public class LootTableDefinition : ScriptableObject
 {
 	[SerializeField]
@@ -39,7 +39,7 @@ public class LootTableDefinition : ScriptableObject
 [Serializable]
 public class LootTableEntry
 {
-	public LootTypeDefinition LootType;
+	public LootType LootType;
 
 	[Range(0f, 100f)]
 	public float Chance;
