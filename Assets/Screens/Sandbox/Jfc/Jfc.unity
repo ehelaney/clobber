@@ -1478,35 +1478,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114867932674946892, guid: 61ddc6bba5d8a284883746ff460572f1,
-        type: 2}
-      propertyPath: projectileWeapon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114867932674946892, guid: 61ddc6bba5d8a284883746ff460572f1,
-        type: 2}
-      propertyPath: playerMovement
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847242701853434, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641071095589458, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114575558682705986, guid: 61ddc6bba5d8a284883746ff460572f1,
-        type: 2}
-      propertyPath: TypeDefinition.RateOfFire
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114575558682705986, guid: 61ddc6bba5d8a284883746ff460572f1,
-        type: 2}
-      propertyPath: TypeDefinition.OnShootSound
-      value: 
-      objectReference: {fileID: 11400000, guid: ad23f8ee0e30c66489a20974dc72e763,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
   m_IsPrefabAsset: 0

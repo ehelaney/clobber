@@ -10,7 +10,6 @@ public class SoundEffect : MonoBehaviour
 	// Use this for initialization
 	public void PlaySoundDefinition(SoundDefinition sound)
 	{
-		Debug.Log("Playing Sound: " + sound.HelpfulName);
 		var soundeffectSource = GetComponent<AudioSource>();
 
 		soundeffectSource.clip = sound.Clip;
