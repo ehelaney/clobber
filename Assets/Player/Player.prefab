@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 212831968235701944}
   - component: {fileID: 50061628523307644}
   - component: {fileID: 58603575582723578}
-  - component: {fileID: 81908175564279506}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -135,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860694712725368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.37, y: 2.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4641071095589458}
@@ -257,13 +256,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14225817, y: 1.23}
   m_EdgeRadius: 0
---- !u!81 &81908175564279506
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860694712725368}
-  m_Enabled: 1
 --- !u!95 &95708772956592246
 Animator:
   serializedVersion: 3
@@ -321,7 +313,8 @@ MonoBehaviour:
   TypeDefinition:
     WeaponPrefab: {fileID: 0}
     ProjectileType: 0
-    RateOfFire: 0.5
+    TimeBetweenShots: 0.3
+    OnShootSound: {fileID: 11400000, guid: ad23f8ee0e30c66489a20974dc72e763, type: 2}
 --- !u!114 &114663168398970976
 MonoBehaviour:
   m_ObjectHideFlags: 1
