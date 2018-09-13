@@ -29,23 +29,9 @@ public class LootSystem : MonoBehaviour
 		}
 	}
 
-	private void SpawnLoot(LootTypeDefinition lootType, Vector2 pos)
+	private void SpawnLoot(LootType lootType, Vector2 pos)
 	{
 		var newLoot = lootPool.InitNewObject().GetComponent<Loot>();
 		newLoot.Initialize(lootType, pos);
-	}
-
-	//this method sucks.  find a better way to do this
-	public void OnLootCollected(LootTypeDefinition lootType)
-	{
-		switch (lootType.BehaviorType)
-		{
-			case LootBehaviorType.Points:
-				PlayerInfo.Instance.GainPoints((int)lootType.BehaviorValue);
-				break;
-			case LootBehaviorType.Health:
-				PlayerInfo.Instance.ChangeHealth((int)lootType.BehaviorValue);
-				break;
-		}
 	}
 }

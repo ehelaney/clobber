@@ -8,11 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75eb0b5c14062ae41bc7f43a1457acfd, type: 3}
-  m_Name: Heart
+  m_Script: {fileID: 11500000, guid: 4b06bd9b8f45b9e45b5bcd764646261b, type: 3}
+  m_Name: 200Points
   m_EditorClassIdentifier: 
-  helpfulName: heart
-  sprite: {fileID: 21300000, guid: 50f5879b4f81f49408ecb0d180178cc2, type: 3}
-  lifeTime: 5
-  behaviorType: 0
-  behaviorValue: 1
+  helpfulName: 200 points
+  sprite: {fileID: 21300000, guid: f2cc78f4b09398e4080b760ea2797b4c, type: 3}
+  lifeTime: 8
+  earnedPoints: 200
