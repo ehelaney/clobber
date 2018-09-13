@@ -85,7 +85,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111095993078988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ec4b5a7615d94444a0e221ec45a62f7, type: 3}
   m_Name: 
@@ -108,8 +108,7 @@ MonoBehaviour:
   EnemyKilled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114867932674946892, guid: 61ddc6bba5d8a284883746ff460572f1,
-          type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: OnEnemyKilled
         m_Mode: 0
         m_Arguments:

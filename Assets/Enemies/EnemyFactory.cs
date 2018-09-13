@@ -2,64 +2,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class EnemyFactory : MonoBehaviour
+[Serializable]
+public class EnemyKilledEvent : UnityEvent<int> { }
+
+public class EnemyFactory : Singleton<EnemyFactory>
 {
-	public static EnemyFactory Instance { get; private set; }
-
 	public ObjectPool enemyPool;
-
-	public EnemyTypeDefinition[] enemyTypes;
-
-	private Dictionary<int, EnemyTypeDefinition> enemyTypeDefMap = new Dictionary<int, EnemyTypeDefinition>();
 
 	public EnemyDeathSystem DeathSystem;
 	public EnemyHitSystem HitSystem;
+	public LootSystem LootSystem;
+
+	public EnemyKilledEvent EnemyKilled;
 
 	// Use this for initialization
 	void Start ()
 	{
-		if (Instance == null)
-		{
-			Instance = this;
-		}
-		else
-		{
-			Destroy(gameObject);
-			return;
-		}
-
 		enemyPool.Initialize();
 
-		for (int i = 0; i < enemyTypes.Length; i++)
-		{
-			var enemyType = enemyTypes[i];
-			for (int j = i + 1; j < enemyTypes.Length; j++)
-			{
-				if (enemyType.ID == enemyTypes[j].ID)
-				{
-					Debug.LogError("Cannot have multiple enemy type definitions with the same ID.");
-					Application.Quit();
-				}
-			}
-
-			enemyTypeDefMap.Add(enemyType.ID, enemyType);
-		}
+		//this is backwards, but necessary because the PlayerInfo is a globally persisted object
+		EnemyKilled.AddListener(PlayerInfo.Instance.OnEnemyKilled);
 	}
 
-	private void OnDestroy()
-	{
-		if (Instance == this)
-		{
-			Instance = null;
-		}
-	}
-
-	public Enemy SpawnNewEnemy(int enemyID, Vector2 pos)
+	public Enemy SpawnNewEnemy(EnemyTypeDefinition enemyType, Vector2 pos)
 	{
 		var newEnemy = enemyPool.InitNewObject();
 		var enemy = newEnemy.GetComponent<Enemy>();
-		enemy.Initialize(enemyTypeDefMap[enemyID], pos);
+		enemy.Initialize(enemyType, pos);
 		return enemy;
 	}
 
@@ -70,5 +41,16 @@ public class EnemyFactory : MonoBehaviour
 	public bool AnyEnemiesStillAlive()
 	{
 		return (enemyPool.ActiveCount > 0);
+	}
+
+	public void OnEnemyDeath(EnemyTypeDefinition enemyType, Vector2 pos)
+	{
+		DeathSystem.OnEnemyDeath(enemyType, pos);
+		LootSystem.OnEnemyDeath(enemyType, pos);
+
+		if (EnemyKilled != null)
+		{
+			EnemyKilled.Invoke(enemyType.PointsForKilling);
+		}
 	}
 }
