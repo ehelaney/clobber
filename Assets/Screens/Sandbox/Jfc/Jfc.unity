@@ -113,11 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &45396278 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4258827351792134, guid: 61ddc6bba5d8a284883746ff460572f1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1425614126}
 --- !u!1 &64476151
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,63 +668,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224682593682340230, guid: 65edbdacc0d2dd647955806a9c6bce8d,
     type: 2}
   m_PrefabInternal: {fileID: 470848112}
---- !u!1001 &544855806
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 45396278}
-    m_Modifications:
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366919436605838, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1227270428658488, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955699047899014, guid: f1747c173e35bed45898a4f0267c2f58,
-        type: 2}
-      propertyPath: TypeDefinition.RateOfFire
-      value: 0.4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f1747c173e35bed45898a4f0267c2f58, type: 2}
-  m_IsPrefabAsset: 0
---- !u!114 &544855807 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114955699047899014, guid: f1747c173e35bed45898a4f0267c2f58,
-    type: 2}
-  m_PrefabInternal: {fileID: 544855806}
-  m_Script: {fileID: 11500000, guid: 8a538a760cbd7d64583b05f2a2e7de23, type: 3}
 --- !u!1001 &588030048
 Prefab:
   m_ObjectHideFlags: 0
@@ -878,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleRandomEnemyTypesToSpawn: []
+  soundEffectToPlay: {fileID: 0}
 --- !u!114 &729366525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,12 +1482,31 @@ Prefab:
         type: 2}
       propertyPath: projectileWeapon
       value: 
-      objectReference: {fileID: 544855807}
+      objectReference: {fileID: 0}
     - target: {fileID: 114867932674946892, guid: 61ddc6bba5d8a284883746ff460572f1,
         type: 2}
       propertyPath: playerMovement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4847242701853434, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641071095589458, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575558682705986, guid: 61ddc6bba5d8a284883746ff460572f1,
+        type: 2}
+      propertyPath: TypeDefinition.RateOfFire
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575558682705986, guid: 61ddc6bba5d8a284883746ff460572f1,
+        type: 2}
+      propertyPath: TypeDefinition.OnShootSound
+      value: 
+      objectReference: {fileID: 11400000, guid: ad23f8ee0e30c66489a20974dc72e763,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61ddc6bba5d8a284883746ff460572f1, type: 2}
   m_IsPrefabAsset: 0
