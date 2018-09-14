@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb20a2e3191b0f449a6bc01410ffede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleScene: {fileID: 11400000, guid: b8ef0cb2dd660c7438d219b2ef8a370a, type: 2}
 --- !u!114 &114484487444179116
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -51,3 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06dd0b08dd50984f8d14a71e7ff6ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 7
+  gameOverScene: {fileID: 11400000, guid: d174507feeea3354389477a44eed0555, type: 2}

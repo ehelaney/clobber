@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameOverCanvas : MonoBehaviour
 {
+	public GameScene titleScene;
+
 	public void OnBackToStart()
 	{
-		FindObjectOfType<GameStateEngine>().ChangeGameState(GameStates.Title);
+		GameSceneController.Instance.ChangeScene(titleScene);
 	}
 }
