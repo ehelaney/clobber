@@ -16,6 +16,8 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
+	public GameScene gameOverScene;
+
 	public void StartGame()
 	{
 		health = maxHealth;
@@ -45,7 +47,8 @@ public class PlayerInfo : Singleton<PlayerInfo>
 		{
 			//TODO: do something because the player died (before it transitions to the final scene)
 			//Also TODO: the PlayerInfo shouldn't be transitioning states.  This logic should move to the room/scene transition system once that is created
-			FindObjectOfType<GameStateEngine>().ChangeGameState(GameStates.GameOver);
+
+			GameSceneController.Instance.ChangeScene(gameOverScene);
 		}
 	}
 
