@@ -12,8 +12,7 @@ public class MapConfiguration : ScriptableObject
 	[Range(10, 50)]
 	public int MapSize_y;
 
-	[SerializeField]
-	private Vector2 mapCenter;
+	public Vector2 mapCenter;
 
 	public Vector2 MapOrigin
 	{
