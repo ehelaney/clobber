@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class MapGenerator : MonoBehaviour 
+[CreateAssetMenu(fileName = "NewMapConfiguration", menuName = "Room/New Map Configuration")]
+public class MapConfiguration : ScriptableObject
 {
 	[Range(10, 50)]
 	public int MapSize_x;
@@ -11,8 +12,7 @@ public class MapGenerator : MonoBehaviour
 	[Range(10, 50)]
 	public int MapSize_y;
 
-	[SerializeField]
-	private Vector2 mapCenter;
+	public Vector2 mapCenter;
 
 	public Vector2 MapOrigin
 	{
@@ -41,13 +41,7 @@ public class MapGenerator : MonoBehaviour
 	// Center Tile (no edges)
 	public TileBase MiddleTile;
 	
-
 	// Floor
 	public TileBase FloorTile;
 
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
 }

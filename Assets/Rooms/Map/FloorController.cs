@@ -8,13 +8,13 @@ public class FloorController : MonoBehaviour
 {
 	private Tilemap map;
 
-	private MapGenerator mapGenerator;
+	private MapConfiguration mapGenerator;
 
 	// Use this for initialization
 	void Start () 
 	{
 		map = GetComponent<Tilemap>();
-		mapGenerator = FindObjectOfType<MapGenerator>();
+		mapGenerator = RoomConfiguration.Instance.mapConfiguration;
 
 		map.size = new Vector3Int(mapGenerator.MapSize_x, mapGenerator.MapSize_y, 0);
 		transform.parent.transform.position = mapGenerator.MapOrigin;
