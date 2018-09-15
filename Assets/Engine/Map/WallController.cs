@@ -35,10 +35,12 @@ public class WallController : MonoBehaviour
 	void Start () 
 	{
 		tilemap = GetComponent<Tilemap>();
-		mapGenerator = transform.parent.parent.gameObject.GetComponent<MapGenerator>();
+		mapGenerator = FindObjectOfType<MapGenerator>();
 
 		MapSize_x = mapGenerator.MapSize_x;
 		MapSize_y = mapGenerator.MapSize_y;
+
+		tilemap.size = new Vector3Int(MapSize_x, MapSize_y, 0);
 
 		tileSchematic = GenerateSchematic();
 		FillTilemap(tileSchematic);
@@ -162,6 +164,6 @@ public class WallController : MonoBehaviour
 
 	void PaintTile(int x, int y, TileBase tile)
 	{
-		tilemap.SetTile(mapGenerator.MapOrigin + new Vector3Int(x, y, 0), tile);
+		tilemap.SetTile(new Vector3Int(x, y, 0), tile);
 	}
 }

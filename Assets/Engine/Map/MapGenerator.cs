@@ -11,7 +11,16 @@ public class MapGenerator : MonoBehaviour
 	[Range(10, 50)]
 	public int MapSize_y;
 
-	public Vector3Int MapOrigin;
+	[SerializeField]
+	private Vector2 mapCenter;
+
+	public Vector2 MapOrigin
+	{
+		get
+		{
+			return new Vector2(mapCenter.x - MapSize_x / 2, mapCenter.y - MapSize_y / 2);
+		}
+	}
 
 	// Tiles for basic edges + outside corners
 	public TileBase TopLeftEdgeTile;
@@ -36,13 +45,6 @@ public class MapGenerator : MonoBehaviour
 	// Floor
 	public TileBase FloorTile;
 
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

@@ -14,7 +14,10 @@ public class FloorController : MonoBehaviour
 	void Start () 
 	{
 		map = GetComponent<Tilemap>();
-		mapGenerator = transform.parent.parent.gameObject.GetComponent<MapGenerator>();
+		mapGenerator = FindObjectOfType<MapGenerator>();
+
+		map.size = new Vector3Int(mapGenerator.MapSize_x, mapGenerator.MapSize_y, 0);
+		transform.parent.transform.position = mapGenerator.MapOrigin;
 
 		FillTilemap();
 	}
@@ -31,7 +34,7 @@ public class FloorController : MonoBehaviour
 		{
 			for (int y = 0; y < mapGenerator.MapSize_y; y++)
 			{
-				map.SetTile(mapGenerator.MapOrigin + new Vector3Int(x, y, 0), mapGenerator.FloorTile);
+				map.SetTile(new Vector3Int(x, y, 0), mapGenerator.FloorTile);
 			}
 		}
 	}
