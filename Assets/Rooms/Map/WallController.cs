@@ -22,7 +22,7 @@ public class WallController : MonoBehaviour
 		BottomLeftInsideWall,
 		BottomRightInsideWall
 	}
-	private MapGenerator mapGenerator;
+	private MapConfiguration mapGenerator;
 
 	private Tilemap tilemap;
 	
@@ -35,7 +35,7 @@ public class WallController : MonoBehaviour
 	void Start () 
 	{
 		tilemap = GetComponent<Tilemap>();
-		mapGenerator = FindObjectOfType<MapGenerator>();
+		mapGenerator = RoomConfiguration.Instance.mapConfiguration;
 
 		MapSize_x = mapGenerator.MapSize_x;
 		MapSize_y = mapGenerator.MapSize_y;
