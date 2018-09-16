@@ -2,23 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TitleCanvas : MonoBehaviour 
+public class TitleMenu : MonoBehaviour 
 {
 	public GameScene creditsScene;
 
 	public GameEventNoParams startGameEvent;
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
 
 	public void OnGoToGame()
 	{
@@ -28,5 +16,11 @@ public class TitleCanvas : MonoBehaviour
 	public void OnGoToCredits()
 	{
 		GameSceneController.Instance.ChangeScene(creditsScene);
+	}
+
+	public void OnQuitGame()
+	{
+		Debug.Log("Quit Button Pressed!");
+		Application.Quit();
 	}
 }
