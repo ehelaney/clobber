@@ -197,3 +197,4 @@ MonoBehaviour:
   DeathSystem: {fileID: 114183140229840372}
   HitSystem: {fileID: 114245195150376470}
   LootSystem: {fileID: 114245371893725186}
+  scoredPointsEvent: {fileID: 11400000, guid: ed108f775beae0d4f8287e13770c694d, type: 2}

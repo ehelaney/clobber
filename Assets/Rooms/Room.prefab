@@ -237,8 +237,8 @@ GameObject:
   - component: {fileID: 4471232547201594}
   - component: {fileID: 20314134454156604}
   - component: {fileID: 124721218479445872}
-  - component: {fileID: 81817472789444038}
   - component: {fileID: 114619654871538732}
+  - component: {fileID: 81475844563611496}
   m_Layer: 0
   m_Name: FollowingCamera
   m_TagString: MainCamera
@@ -887,13 +887,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!81 &81817472789444038
+--- !u!81 &81475844563611496
 AudioListener:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583253158527446}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!95 &95096414502590436
 Animator:
   serializedVersion: 3
@@ -1014,11 +1014,7 @@ MonoBehaviour:
   DeathSystem: {fileID: 114391026055623758}
   HitSystem: {fileID: 114432257936082268}
   LootSystem: {fileID: 114789098069301878}
-  EnemyKilled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: EnemyKilledEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  scoredPointsEvent: {fileID: 11400000, guid: ed108f775beae0d4f8287e13770c694d, type: 2}
 --- !u!114 &114477563585686234
 MonoBehaviour:
   m_ObjectHideFlags: 1
