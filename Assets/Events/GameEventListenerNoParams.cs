@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListenerNoParams
+public class GameEventListenerNoParams : MonoBehaviour
 {
 	[SerializeField]
 	public GameEventNoParams gameEvent;
