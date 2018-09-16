@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TitleCanvas : MonoBehaviour 
 {
-	public GameScene firstLevelScene;
 	public GameScene creditsScene;
+
+	public GameEventNoParams startGameEvent;
 
 	// Use this for initialization
 	void Start () 
@@ -21,7 +22,7 @@ public class TitleCanvas : MonoBehaviour
 
 	public void OnGoToGame()
 	{
-		GameSceneController.Instance.ChangeScene(firstLevelScene);
+		startGameEvent.Raise();
 	}
 
 	public void OnGoToCredits()
