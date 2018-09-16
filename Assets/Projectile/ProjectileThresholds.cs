@@ -11,7 +11,7 @@ public class ProjectileThresholds : MonoBehaviour
 
 	public float distanceFromMap = 5.0f;
 
-	void Start ()
+	void Awake ()
 	{
 		var mapConfig = RoomConfiguration.Instance.mapConfiguration;
 		var mapCenter = mapConfig.mapCenter;

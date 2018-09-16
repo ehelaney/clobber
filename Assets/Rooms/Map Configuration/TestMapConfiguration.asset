@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc432e05bb94f8459dc705c1aa6147a, type: 3}
   m_Name: TestMapConfiguration
   m_EditorClassIdentifier: 
-  MapSize_x: 20
-  MapSize_y: 20
-  mapCenter: {x: 4, y: 4}
+  MapSize_x: 25
+  MapSize_y: 25
+  mapCenter: {x: 3, y: 3}
   TopLeftEdgeTile: {fileID: 11400000, guid: bd9234009887978489fb617f2bcd9259, type: 2}
   TopEdgeTile: {fileID: 11400000, guid: 7ffa05fd9b7f78f488ec85e6bf44c59b, type: 2}
   TopRightEdgeTile: {fileID: 11400000, guid: 6e5d917fffbc4144f9a4f02a52fc9449, type: 2}
