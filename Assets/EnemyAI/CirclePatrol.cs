@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Panda;
 using UnityEngine;
 
 namespace EnemyAI
@@ -13,22 +14,18 @@ namespace EnemyAI
 		void Start () 
 		{
 			Debug.Log("Start CirclePatrol");
-			StartCoroutine(Execute());
+			//StartCoroutine(Execute());
 		}
-		public IEnumerator Execute()
+		[Task]
+		public void ExecuteCirclePatrol()
 		{
-			while (true)
-			{
-				float moveRate = moveSpeed * Time.deltaTime;
+			float moveRate = moveSpeed * Time.deltaTime;
 
-				float spinRate = rotateSpeed * Time.deltaTime;
+			float spinRate = rotateSpeed * Time.deltaTime;
 
-				transform.Rotate(Vector3.forward * spinRate);
+			transform.Rotate(Vector3.forward * spinRate);
 
-				transform.position += transform.up * moveRate;
-
-				yield return null;
-			}
+			transform.position += transform.up * moveRate;
 		}
 	}
 }
