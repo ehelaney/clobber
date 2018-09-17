@@ -23,7 +23,10 @@ GameObject:
   - component: {fileID: 212841102309271052}
   - component: {fileID: 58761360662991062}
   - component: {fileID: 50861712369132530}
-  - component: {fileID: 114242131495430306}
+  - component: {fileID: 114456095690898518}
+  - component: {fileID: 114935840683455400}
+  - component: {fileID: 114965559185824222}
+  - component: {fileID: 114335503597000614}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -79,7 +82,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.514
---- !u!114 &114242131495430306
+--- !u!114 &114335503597000614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,13 +90,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1111095993078988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec4b5a7615d94444a0e221ec45a62f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1433d5bf35014684aafdecc28bbb72e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScriptsToChooseFrom:
-  - {fileID: 11500000, guid: b6919c1a1c6de764193e078ad541f668, type: 3}
-  - {fileID: 11500000, guid: 1433d5bf35014684aafdecc28bbb72e6, type: 3}
-  - {fileID: 11500000, guid: a32e8eb90e4bf634b979f0ba62ae4328, type: 3}
+  moveSpeed: 2.5
+  rotateSpeed: 90
+--- !u!114 &114456095690898518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111095993078988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: ab80f7c6838223f4db6b19192fd13c49, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!114 &114916230897611978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +127,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e3b3eeae63c964c8a630806515f089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114935840683455400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111095993078988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6919c1a1c6de764193e078ad541f668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  rotateSpeed: 60
+  visualAcuity: 3
+  target: {fileID: 0}
+--- !u!114 &114965559185824222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111095993078988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32e8eb90e4bf634b979f0ba62ae4328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  rotateSpeed: 360
+  distanceToTravel: 5
+  timeToPause: 0.25
 --- !u!212 &212841102309271052
 SpriteRenderer:
   m_ObjectHideFlags: 1

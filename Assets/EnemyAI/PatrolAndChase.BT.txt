@@ -1,0 +1,29 @@
+tree("Root")
+	fallback
+		tree("ChasePlayer")
+		tree("Patrol")
+		Wait(0.2)
+
+tree("ChasePlayer")
+	fallback
+		tree("Chase")
+		not Wait(0.4)
+
+tree("Chase")
+	//Chase the player while they are in range
+	while IsTargetNear
+		ChaseTheTarget
+
+tree("Patrol")
+	random
+		tree("CirclePatrol")
+		//tree("NormalPatrol") - not quite reday for prime time
+
+tree("CirclePatrol")
+	while not IsTargetNear
+			ExecuteCirclePatrol
+
+tree("NormalPatrol")
+	while not IsTargetNear			
+			ExecuteNormalPatrol
+
