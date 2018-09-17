@@ -84,4 +84,5 @@ MonoBehaviour:
   TypeDefinition:
     WeaponPrefab: {fileID: 0}
     ProjectileType: 0
-    RateOfFire: 0.5
+    TimeBetweenShots: 0.3
+    OnShootSound: {fileID: 11400000, guid: ad23f8ee0e30c66489a20974dc72e763, type: 2}

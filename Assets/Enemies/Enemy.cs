@@ -1,15 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
-
 	public EnemyTypeDefinition TypeDefinition { get; set; }
 
 	public int Health { get; set; }
+
+	/// <summary>
+	/// The amount of damage the enemy will do to the player upon colliding
+	/// </summary>
+	public int CollisionStrength = 1;
 
 	private Rigidbody2D rb2d;
 
@@ -42,7 +46,16 @@ public class Enemy : MonoBehaviour
 
 	public void Kill()
 	{
-		EnemyFactory.Instance.DeathSystem.OnEnemyDeath(TypeDefinition, transform.position);
+		EnemyFactory.Instance.OnEnemyDeath(TypeDefinition, transform.position);
+
 		gameObject.SetActive(false);
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			PlayerInfo.Instance.ChangeHealth(CollisionStrength * -1);
+		}
 	}
 }

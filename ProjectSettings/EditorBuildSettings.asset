@@ -32,4 +32,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Screens/Sandbox/Ryan/Ryan.unity
     guid: d464b3104c774ae4a9a335fc2512861f
+  - enabled: 1
+    path: Assets/Screens/GameOver/GameOver.unity
+    guid: 7d40248d1c24c914db86771ab0c59b28
+  - enabled: 1
+    path: Assets/Rooms/Room1.unity
+    guid: 51dbacd6a86dd2a46a6630711b705ae7
+  - enabled: 1
+    path: Assets/Rooms/Room2.unity
+    guid: 7a8a9a9071b00b84e928a597ba1535b8
+  - enabled: 1
+    path: Assets/Rooms/Room3.unity
+    guid: 55d2a460525647143835680a26bdf6e8
+  - enabled: 1
+    path: Assets/Rooms/Room4.unity
+    guid: c69f8ea04563635489be361b014ef1cf
+  - enabled: 1
+    path: Assets/Rooms/Room5.unity
+    guid: 3c9a811ce1c1704409510353fb8cd8a9
+  - enabled: 1
+    path: Assets/Rooms/BossRoom.unity
+    guid: 10550271030a9f94799b67135fef334a
   m_configObjects: {}

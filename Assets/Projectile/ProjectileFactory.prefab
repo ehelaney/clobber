@@ -61,4 +61,4 @@ MonoBehaviour:
     objectPrefab: {fileID: 1612045701290638, guid: 0d1cf9aa79ca7484b8474f7eb3cfbe84,
       type: 2}
     parentContainer: {fileID: 1302983951460506}
-    maxPoolSize: 3
+    maxPoolSize: 50

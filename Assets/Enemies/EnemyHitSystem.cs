@@ -18,6 +18,6 @@ public class EnemyHitSystem : MonoBehaviour
 		var hit = hitPool.InitNewObject().GetComponent<EnemyHit>();
 		hit.Init(pos);
 
-		//TODO: play hit sound effect
+		SoundManager.Instance.PlaySound(enemyDef.OnHitSound, pos); //play hit sound effect
 	}
 }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc432e05bb94f8459dc705c1aa6147a, type: 3}
+  m_Name: TestMapConfiguration
+  m_EditorClassIdentifier: 
+  MapSize_x: 25
+  MapSize_y: 25
+  mapCenter: {x: 3, y: 3}
+  TopLeftEdgeTile: {fileID: 11400000, guid: bd9234009887978489fb617f2bcd9259, type: 2}
+  TopEdgeTile: {fileID: 11400000, guid: 7ffa05fd9b7f78f488ec85e6bf44c59b, type: 2}
+  TopRightEdgeTile: {fileID: 11400000, guid: 6e5d917fffbc4144f9a4f02a52fc9449, type: 2}
+  RightEdgeTile: {fileID: 11400000, guid: b3584b1e885b672409f51d36cf7b0a1c, type: 2}
+  BottomRightEdgeTile: {fileID: 11400000, guid: b2f7a7f6d9f2f91478baec98b356de80,
+    type: 2}
+  BottomEdgeTile: {fileID: 11400000, guid: 35cf279cb1cec8049b7a4f005433c01c, type: 2}
+  BottomLeftEdgeTile: {fileID: 11400000, guid: 72b1632c0fa36874a8034cab3cfdd3cc, type: 2}
+  LeftEdgeTile: {fileID: 11400000, guid: a84461902c8002e4094071083b80842a, type: 2}
+  TopLeftInsideTile: {fileID: 11400000, guid: d63b1ba103fd716478f69f2151b0d1bc, type: 2}
+  TopRightInsideTile: {fileID: 11400000, guid: a1f039186df76c74aa45241c659ef205, type: 2}
+  BottomLeftInsideTile: {fileID: 11400000, guid: 36e5f7b425d8ec242bc6c9bdf14cd25e,
+    type: 2}
+  BottomRightInsideTile: {fileID: 11400000, guid: 948be03df5d27334b92b5508b583c071,
+    type: 2}
+  MiddleTile: {fileID: 11400000, guid: d2c232c056d0c0b4ea05872827b68e91, type: 2}
+  FloorTile: {fileID: 11400000, guid: 4b8e6a740b919d440a192f68a015e53a, type: 2}

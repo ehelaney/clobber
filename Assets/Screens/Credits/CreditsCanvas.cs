@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CreditsCanvas : MonoBehaviour 
 {
+	public GameScene titleScene;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -18,6 +20,6 @@ public class CreditsCanvas : MonoBehaviour
 
 	public void OnGoBack()
 	{
-		FindObjectOfType<GameStateEngine>().ChangeGameState(GameStates.Title);
+		GameSceneController.Instance.ChangeScene(titleScene);
 	}
 }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bf2daf95d680447b620ad2ec60dc93, type: 3}
+  m_Name: SimpleMultiLoot
+  m_EditorClassIdentifier: 
+  helpfulName: multi-drop
+  multiDrop: 1
+  lootChances:
+  - LootType: {fileID: 11400000, guid: 7ffea0d328a1fbd41ab493fdc3d6cd1e, type: 2}
+    Chance: 100
+  - LootType: {fileID: 11400000, guid: 7ffea0d328a1fbd41ab493fdc3d6cd1e, type: 2}
+    Chance: 50
+  - LootType: {fileID: 11400000, guid: c9c7a695517cd8d42b455f5cd91364d6, type: 2}
+    Chance: 100
+  - LootType: {fileID: 11400000, guid: abc13b9eaf4466448a4bb816bac6d2e5, type: 2}
+    Chance: 25

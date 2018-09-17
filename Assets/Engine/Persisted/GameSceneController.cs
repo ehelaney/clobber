@@ -3,54 +3,36 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Events;
 
-public class GameSceneController : MonoBehaviour 
+public class GameSceneController : Singleton<GameSceneController> 
 {
-	public string currentScene;
-
-	public Dictionary<GameStates, string> gameStateSceneMap = new Dictionary<GameStates, string>();
+	public GameScene CurrentScene;
 
 	private bool transitioningScenes = false;
 
-	private GameStateEngine theGameStateEngine;
-
-	void Awake()
+	public void ChangeScene(GameScene newScene)
 	{
-		InstantiateGameStateSceneMap();
-	}
-
-	void Start()
-	{
-		theGameStateEngine = FindObjectOfType<GameStateEngine>();
-		theGameStateEngine.AddAllStateListener(OnGameStateChange);
-	}
-
-	void OnGameStateChange()
-	{
-		string nextScene = string.Empty;
-
-		if (gameStateSceneMap.ContainsKey(theGameStateEngine.CurrentState))
+		if (CurrentScene == newScene)
 		{
-			nextScene = gameStateSceneMap[theGameStateEngine.CurrentState];
-		}
-		else
-		{
-			Debug.LogError("State does not have a defined scene: " + theGameStateEngine.CurrentState.ToString());
+			Debug.LogError("This scene is already loaded: " + newScene.name);
+			return;
 		}
 		
-
-		if (currentScene != string.Empty)
+		if (CurrentScene != null)
 		{
-			SceneManager.UnloadSceneAsync(currentScene);
+			SceneManager.UnloadSceneAsync(CurrentScene.SceneName);
+
+			if (sceneUnloadingEvents.ContainsKey(CurrentScene))
+			{
+				sceneUnloadingEvents[CurrentScene].Invoke();
+			}
+			allSceneUnloadingEvent.Invoke();
 		}
 
-		if (nextScene != string.Empty)
-		{
-			SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
-			currentScene = nextScene;
-			transitioningScenes = true;
-			
-		}
+		SceneManager.LoadScene(newScene.SceneName, LoadSceneMode.Additive);
+		CurrentScene = newScene;
+		transitioningScenes = true;
 	}
 
 	//this is required because LoadScene triggers the scene to be loaded in the next cycle
@@ -59,31 +41,80 @@ public class GameSceneController : MonoBehaviour
 	{
 		if (transitioningScenes)
 		{
-			Scene s = SceneManager.GetSceneByName(currentScene);
+			Scene s = SceneManager.GetSceneByName(CurrentScene.SceneName);
 			if (s.isLoaded)
 			{
 				SceneManager.SetActiveScene(s);
 				transitioningScenes = false;
+
+				if (sceneLoadingEvents.ContainsKey(CurrentScene))
+				{
+					sceneLoadingEvents[CurrentScene].Invoke();
+				}
+				allSceneLoadingEvent.Invoke();
 			}
-			
 		}
 	}
 
-	private void InstantiateGameStateSceneMap()
+	private Dictionary<GameScene, UnityEvent> sceneLoadingEvents = new Dictionary<GameScene, UnityEvent>();
+	private Dictionary<GameScene, UnityEvent> sceneUnloadingEvents = new Dictionary<GameScene, UnityEvent>();
+	private UnityEvent allSceneLoadingEvent = new UnityEvent();
+	private UnityEvent allSceneUnloadingEvent = new UnityEvent();
+
+	public void AddSceneLoadingListener(GameScene state, UnityAction action)
 	{
-		int stateCount = Enum.GetNames(typeof(GameStates)).Length;
-		for (int i = 0; i < stateCount; ++i)
+		if (!sceneLoadingEvents.ContainsKey(state))
 		{
-			var memInfo = typeof(GameStates).GetMember(((GameStates)i).ToString());
-			var attributes = memInfo[0].GetCustomAttributes(typeof(StateSceneAttribute), false);
-			if (attributes.Length > 0)
-			{
-				gameStateSceneMap.Add((GameStates)i, ((StateSceneAttribute)attributes[0]).SceneName);
-			}
-			else
-			{
-				Debug.LogError("State does not have a defined scene: " + theGameStateEngine.CurrentState.ToString());
-			}
-		}	
+			sceneLoadingEvents.Add(state, new UnityEvent());
+		}
+
+		sceneLoadingEvents[state].AddListener(action);
 	}
+
+	public void RemoveSceneLoadingListener(GameScene state, UnityAction action)
+	{
+		if (sceneLoadingEvents.ContainsKey(state))
+		{
+			sceneLoadingEvents[state].RemoveListener(action);
+		}
+	}
+
+	public void AddSceneUnloadingListener(GameScene state, UnityAction action)
+	{
+		if (!sceneUnloadingEvents.ContainsKey(state))
+		{
+			sceneUnloadingEvents.Add(state, new UnityEvent());
+		}
+
+		sceneUnloadingEvents[state].AddListener(action);
+	}
+
+	public void RemoveSceneUnloadingListener(GameScene state, UnityAction action)
+	{
+		if (sceneUnloadingEvents.ContainsKey(state))
+		{
+			sceneUnloadingEvents[state].RemoveListener(action);
+		}
+	}
+
+	public void AddAllSceneLoadingListener(UnityAction action)
+	{
+		allSceneLoadingEvent.AddListener(action);
+	}
+
+	public void RemoveAllSceneLoadingListener(UnityAction action)
+	{
+		allSceneLoadingEvent.RemoveListener(action);
+	}
+
+	public void AddAllSceneUnloadingListener(UnityAction action)
+	{
+		allSceneUnloadingEvent.AddListener(action);
+	}
+
+	public void RemoveAllSceneUnloadingListener(UnityAction action)
+	{
+		allSceneUnloadingEvent.RemoveListener(action);
+	}
+
 }

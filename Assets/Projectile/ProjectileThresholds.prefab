@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4170616965035396}
+  - component: {fileID: 114510860148182744}
   m_Layer: 0
   m_Name: ProjectileThresholds
   m_TagString: Untagged
@@ -296,6 +297,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955219b553b4d6a4b97779311b89d049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114510860148182744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199203728884094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f2fa8832f995b4d8985b319d0366de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 1682210014647542}
+  bottom: {fileID: 1450870165774790}
+  left: {fileID: 1469558403956074}
+  right: {fileID: 1674596689809158}
+  distanceFromMap: 5
 --- !u!114 &114663105681341796
 MonoBehaviour:
   m_ObjectHideFlags: 1
