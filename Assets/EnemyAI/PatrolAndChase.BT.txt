@@ -23,7 +23,7 @@ tree("CirclePatrol")
 	while not IsTargetNear
 			ExecuteCirclePatrol
 
-tree("NormalPatrol")
-	while not IsTargetNear			
-			ExecuteNormalPatrol
+//tree("NormalPatrol")
+//	while not IsTargetNear			
+//			ExecuteNormalPatrol
 
