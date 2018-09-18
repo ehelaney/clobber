@@ -14,7 +14,7 @@ public class SoundTestCanvas : MonoBehaviour
 
 	public void OnPlayMusic()
 	{
-		SoundManager.Instance.PlayMusic(MusicClip);
+		SoundManager.Instance.PlayClip(MusicClip);
 	}
 
 	public void OnStopMusic()
