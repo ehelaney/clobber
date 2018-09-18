@@ -7,6 +7,8 @@ public class RoomSelector : Singleton<RoomSelector>
 	private int roomIndex = -1;
 	public GameScene[] roomSequence;
 	public GameScene gameOver;
+	public SoundDefinition gameOverSong;
+	public SoundDefinition roomSong1; //turn this into an array if we want to randomize songs per room or per playthrough
 
 	public GameScene CurrentRoom
 	{
@@ -20,7 +22,7 @@ public class RoomSelector : Singleton<RoomSelector>
 	{
 		roomIndex = 0;
 		LoadCurrentRoom();
-		SoundManager.Instance.PlaySongByName("RoomSong1");
+		SoundManager.Instance.PlayMusic(roomSong1);
 	}
 
 	public void GoToNextRoom()
@@ -32,7 +34,7 @@ public class RoomSelector : Singleton<RoomSelector>
 	public void GoToGameOver()
 	{
 		GameSceneController.Instance.ChangeScene(gameOver);
-		SoundManager.Instance.PlaySongByName("GameOver");
+		SoundManager.Instance.PlayMusic(gameOverSong);
 	}
 
 	private void LoadCurrentRoom()

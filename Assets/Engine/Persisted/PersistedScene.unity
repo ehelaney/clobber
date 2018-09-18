@@ -152,6 +152,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114150845811352646, guid: 5fb1b7c52904cfc45a499e15f5a53314,
+        type: 2}
+      propertyPath: gameOverSong
+      value: 
+      objectReference: {fileID: 11400000, guid: 90976b9e25c777b4e9796e5c16e63d2d,
+        type: 2}
+    - target: {fileID: 114150845811352646, guid: 5fb1b7c52904cfc45a499e15f5a53314,
+        type: 2}
+      propertyPath: roomSong1
+      value: 
+      objectReference: {fileID: 11400000, guid: e0c71a544b9ec8f47b251cd31ffb7c1b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb1b7c52904cfc45a499e15f5a53314, type: 2}
   m_IsPrefabAsset: 0
