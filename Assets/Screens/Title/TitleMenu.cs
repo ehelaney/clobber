@@ -8,6 +8,11 @@ public class TitleMenu : MonoBehaviour
 
 	public GameEventNoParams startGameEvent;
 
+	void Start()
+	{
+		SoundManager.Instance.PlaySongByName("TitleSong");
+	}
+
 	public void OnGoToGame()
 	{
 		startGameEvent.Raise();

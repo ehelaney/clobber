@@ -5,6 +5,8 @@ public class SoundManager : Singleton<SoundManager>
 {
 	public AudioSource musicSource;                 //audio source which will play music.
 
+	public SoundDefinition[] songs;
+
 	#region Sound Effects Container
 
 	public GameObject soundContainerPrefab;
@@ -39,6 +41,26 @@ public class SoundManager : Singleton<SoundManager>
 	{
 		musicSource.clip = music;
 		musicSource.Play();
+	}
+
+	/// <summary>
+	/// Plays a song in the songs array if it exists, otherwise does nothing.
+	/// </summary>
+	/// <param name="name"></param>
+	public void PlaySongByName(string name)
+	{
+		foreach (SoundDefinition sounddef in songs)
+		{
+			if (name.Equals(sounddef.name))
+			{
+				musicSource.clip = sounddef.Clip;
+				musicSource.Play();
+			}
+			else
+			{
+				Debug.Log("Song " + name + " not found in SoundManager songs list.");
+			}
+		}
 	}
 
 	/*

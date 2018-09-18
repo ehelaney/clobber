@@ -20,6 +20,7 @@ public class RoomSelector : Singleton<RoomSelector>
 	{
 		roomIndex = 0;
 		LoadCurrentRoom();
+		SoundManager.Instance.PlaySongByName("RoomSong1");
 	}
 
 	public void GoToNextRoom()
@@ -27,7 +28,13 @@ public class RoomSelector : Singleton<RoomSelector>
 		roomIndex++;
 		LoadCurrentRoom();
 	}
-	
+
+	public void GoToGameOver()
+	{
+		GameSceneController.Instance.ChangeScene(gameOver);
+		SoundManager.Instance.PlaySongByName("GameOver");
+	}
+
 	private void LoadCurrentRoom()
 	{
 		if (roomIndex < roomSequence.Length)
@@ -36,7 +43,7 @@ public class RoomSelector : Singleton<RoomSelector>
 		}
 		else
 		{
-			GameSceneController.Instance.ChangeScene(gameOver);
+			GoToGameOver();
 		}
 	}
 }
