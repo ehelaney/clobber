@@ -13,11 +13,11 @@ public class GameEventListenerScriptableObjectInt : GameEventListenerScriptableO
 	private void OnEnable()
 	{
 		response = eventResponse;
-		gameEvent.RegisterListener(this);
+		if (gameEvent != null) gameEvent.RegisterListener(this);
 	}
 
 	private void OnDisable()
 	{
-		gameEvent.UnregisterListener(this);
+		if (gameEvent != null) gameEvent.UnregisterListener(this);
 	}
 }

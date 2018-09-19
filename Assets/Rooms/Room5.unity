@@ -152,6 +152,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.0142345
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
   m_IsPrefabAsset: 0
@@ -199,6 +203,12 @@ Prefab:
       propertyPath: mapConfiguration
       value: 
       objectReference: {fileID: 11400000, guid: 0277792ba56bb9e4e885454389ee1e83,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSong1
+      value: 
+      objectReference: {fileID: 11400000, guid: e0c71a544b9ec8f47b251cd31ffb7c1b,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
