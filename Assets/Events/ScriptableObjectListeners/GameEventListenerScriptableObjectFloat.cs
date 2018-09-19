@@ -13,11 +13,11 @@ public class GameEventListenerScriptableObjectFloat : GameEventListenerScriptabl
 	private void OnEnable()
 	{
 		response = floatEventResponse;
-		gameEvent.RegisterListener(this);
+		if (gameEvent != null) gameEvent.RegisterListener(this);
 	}
 
 	private void OnDisable()
 	{
-		gameEvent.UnregisterListener(this);
+		if (gameEvent != null) gameEvent.UnregisterListener(this);
 	}
 }
