@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : ScriptableSingleton<PlayerInfo>
+public class PlayerInfo : Singleton<PlayerInfo>
 {
 	[Range(1, 10)]
 	public int maxHealth = 7;
@@ -16,7 +16,7 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
-	public GameEventListenerScriptableObjectInt scoredPointsListener;
+	public GameEventInt pointsChanged;
 
 	public void StartGame()
 	{
@@ -68,7 +68,10 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	public void GainPoints(int points)
 	{
 		totalPoints += points;
-		Debug.Log("Total points: " + TotalPoints); // Temporary until we have a UI displaying points
+		if (pointsChanged != null)
+		{
+			pointsChanged.Raise(totalPoints); 
+		}
 	}
 
 	#endregion Points

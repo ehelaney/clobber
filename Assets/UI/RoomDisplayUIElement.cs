@@ -13,7 +13,7 @@ public class RoomDisplayUIElement : MonoBehaviour {
 		}
 		catch(System.IndexOutOfRangeException)
 		{
-			GetComponent<UnityEngine.UI.Text>().text = "Scene name out of range";
+			GetComponent<UnityEngine.UI.Text>().text = "Room: Unknown";
 		}
 		
 	}

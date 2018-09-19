@@ -5,8 +5,6 @@ public class SoundManager : Singleton<SoundManager>
 {
 	public AudioSource musicSource;                 //audio source which will play music.
 
-	public SoundDefinition[] songs;
-
 	#region Sound Effects Container
 
 	public GameObject soundContainerPrefab;
@@ -36,13 +34,17 @@ public class SoundManager : Singleton<SoundManager>
 		_currentSoundEffectsContainer.PlaySoundEffect(sound, pos);
 	}
 
-	//both load the clip and start playing it
-	public void PlayMusic(AudioClip music)
+	//Note - currently we're not using any of the additional properties of the sound definition to change the sound of music files.  
+	//So far there is no reason to but we can easily modify this method to use pitch, volume, etc. 
+	public void PlayMusic(SoundDefinition song)
 	{
-		musicSource.clip = music;
+		musicSource.clip = song.Clip;
 		musicSource.Play();
 	}
+		
+	//******* leave the methods below for now but most likely we can remove all of them. 
 
+	/*
 	/// <summary>
 	/// Plays a song in the songs array if it exists, otherwise does nothing.
 	/// </summary>
@@ -62,6 +64,7 @@ public class SoundManager : Singleton<SoundManager>
 			}
 		}
 	}
+	*/
 
 	/*
 	//Not sure if we will need to separate out selecting the music and starting the music.  If we do have those public methods we should probably also call them internally in case we add addtional logic to those methods.
@@ -71,6 +74,13 @@ public class SoundManager : Singleton<SoundManager>
 		StartMusic();
 	}
 	*/
+
+	//both load the clip and start playing it
+	public void PlayClip(AudioClip music)
+	{
+		musicSource.clip = music;
+		musicSource.Play();
+	}
 
 	//didnt bother adding variance to pitch or volume for music
 	public void SelectMusic(AudioClip music)
