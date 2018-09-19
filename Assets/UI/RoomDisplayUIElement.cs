@@ -11,9 +11,9 @@ public class RoomDisplayUIElement : MonoBehaviour {
 		{
 			GetComponent<UnityEngine.UI.Text>().text = "Room: " + RoomSelector.Instance.CurrentRoom.SceneName;
 		}
-		catch(System.IndexOutOfRangeException ex)
+		catch(System.IndexOutOfRangeException)
 		{
-			GetComponent<UnityEngine.UI.Text>().text = "Scene name out of range";
+			GetComponent<UnityEngine.UI.Text>().text = "Room: Unknown";
 		}
 		
 	}
