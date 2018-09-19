@@ -8,6 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c425d3718a16ff43bbe0960635ab09c, type: 3}
-  m_Name: StartGame
+  m_Script: {fileID: 11500000, guid: e06dd0b08dd50984f8d14a71e7ff6ebe, type: 3}
+  m_Name: PlayerInfo
   m_EditorClassIdentifier: 
+  maxHealth: 7
+  scoredPointsListener: {fileID: 11400000, guid: ff2ab79066d16314abc699ec0fd8ab21,
+    type: 2}

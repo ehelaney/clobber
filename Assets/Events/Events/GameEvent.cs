@@ -3,9 +3,9 @@ using UnityEngine;
 
 // taken from: https://www.raywenderlich.com/6183-scriptable-objects-tutorial-getting-started
 
-public class GameEvent<T> : ScriptableObject
+public abstract class GameEvent<T> : ScriptableObject
 {
-	protected List<GameEventListener<T>> listeners = new List<GameEventListener<T>>();
+	protected List<IGameEventListener<T>> listeners = new List<IGameEventListener<T>>();
 
 	public void Raise(T val)
 	{
@@ -15,12 +15,12 @@ public class GameEvent<T> : ScriptableObject
 		}
 	}
 
-	public void RegisterListener(GameEventListener<T> listener)
+	public void RegisterListener(IGameEventListener<T> listener)
 	{
 		listeners.Add(listener);
 	}
 
-	public void UnregisterListener(GameEventListener<T> listener)
+	public void UnregisterListener(IGameEventListener<T> listener)
 	{
 		listeners.Remove(listener);
 	}

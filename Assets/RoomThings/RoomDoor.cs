@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomDoor : MonoBehaviour
 {
-	public GameEventNoParams nextRoomEvent;
+	public GameEventInt nextRoomEvent;
 
 	void Awake()
 	{
