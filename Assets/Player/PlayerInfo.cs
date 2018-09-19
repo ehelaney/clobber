@@ -16,6 +16,8 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
+	public GameEventInt pointsChanged;
+
 	public void StartGame()
 	{
 		health = maxHealth;
@@ -66,7 +68,10 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	public void GainPoints(int points)
 	{
 		totalPoints += points;
-		Debug.Log("Total points: " + TotalPoints); // Temporary until we have a UI displaying points
+		if (pointsChanged != null)
+		{
+			pointsChanged.Raise(totalPoints); 
+		}
 	}
 
 	#endregion Points

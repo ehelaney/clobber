@@ -81,4 +81,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 7
-  gameOverScene: {fileID: 11400000, guid: d174507feeea3354389477a44eed0555, type: 2}
+  pointsChanged: {fileID: 11400000, guid: c63b21ea7e354524f9c30558ed93814b, type: 2}
