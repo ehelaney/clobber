@@ -5,7 +5,7 @@ using UnityEngine;
 public class TitleMenu : MonoBehaviour 
 {
 	public GameScene creditsScene;
-	public GameEventNoParams startGameEvent;
+	public GameEventInt startGameEvent;
 	public SoundDefinition titleSong;
 
 	void Start()
