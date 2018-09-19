@@ -6,7 +6,7 @@ public class TitleMenu : MonoBehaviour
 {
 	public GameScene creditsScene;
 
-	public GameEventNoParams startGameEvent;
+	public GameEventInt startGameEvent;
 
 	void Start()
 	{

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Events;
 
-public class GameEventListenerInt : GameEventListener<int>
+public class GameEventListenerMonoBehaviourInt : GameEventListenerMonoBehaviour<int>
 {
 	[SerializeField]
 	public GameEventInt gameEvent;

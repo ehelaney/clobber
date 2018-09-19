@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : Singleton<PlayerInfo>
+public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 {
 	[Range(1, 10)]
 	public int maxHealth = 7;
@@ -15,6 +15,8 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	/// </summary>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
+
+	public GameEventListenerScriptableObjectInt scoredPointsListener;
 
 	public void StartGame()
 	{
