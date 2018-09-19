@@ -1,9 +1,24 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class SoundManager : Singleton<SoundManager>
+[CreateAssetMenu(menuName="SoundManager")]
+public class SoundManager : ScriptableSingleton<SoundManager>
 {
-	public AudioSource musicSource;                 //audio source which will play music.
+	public GameObject backgroundMusicPrefab;
+	private GameObject _musicSource;                 //audio source which will play music.
+
+	private GameObject musicSource
+	{
+		get
+		{
+			if (_musicSource == null)
+			{
+				_musicSource = Instantiate(backgroundMusicPrefab);
+				DontDestroyOnLoad(_musicSource);
+			}
+			return _musicSource;
+		}
+	}
 
 	#region Sound Effects Container
 
@@ -38,8 +53,8 @@ public class SoundManager : Singleton<SoundManager>
 	//So far there is no reason to but we can easily modify this method to use pitch, volume, etc. 
 	public void PlayMusic(SoundDefinition song)
 	{
-		musicSource.clip = song.Clip;
-		musicSource.Play();
+		musicSource.GetComponent<AudioSource>().clip = song.Clip;
+		musicSource.GetComponent<AudioSource>().Play();
 	}
 		
 	//******* leave the methods below for now but most likely we can remove all of them. 
@@ -78,24 +93,24 @@ public class SoundManager : Singleton<SoundManager>
 	//both load the clip and start playing it
 	public void PlayClip(AudioClip music)
 	{
-		musicSource.clip = music;
-		musicSource.Play();
+		musicSource.GetComponent<AudioSource>().clip = music;
+		musicSource.GetComponent<AudioSource>().Play();
 	}
 
 	//didnt bother adding variance to pitch or volume for music
 	public void SelectMusic(AudioClip music)
 	{
-		musicSource.clip = music;
+		musicSource.GetComponent<AudioSource>().clip = music;
 	}
 
 	public void StartMusic()
 	{
-		musicSource.Play();
+		musicSource.GetComponent<AudioSource>().Play();
 	}
 
 	public void StopMusic()
 	{
-		musicSource.Stop();
+		musicSource.GetComponent<AudioSource>().Stop();
 	}
 
 
