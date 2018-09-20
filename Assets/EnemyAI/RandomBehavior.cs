@@ -7,6 +7,7 @@ namespace EnemyAI
 {
 	public class RandomBehavior : MonoBehaviour
 	{
+
 		public List<MonoScript> ScriptsToChooseFrom;
 		// Use this for initialization
 		void Start () 

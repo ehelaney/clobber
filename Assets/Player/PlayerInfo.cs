@@ -17,6 +17,7 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	public int TotalPoints { get { return totalPoints; } }
 
 	public GameEventListenerScriptableObjectInt scoredPointsListener; //this is necessary so the asset loads with the playerinfo
+	public GameEventListenerScriptableObjectInt startGameListener;
 	public GameEventInt pointsChanged;
 
 	public void StartGame()

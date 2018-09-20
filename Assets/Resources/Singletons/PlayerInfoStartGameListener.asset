@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1861eac8176e3d042be5aa6327377bcf, type: 3}
-  m_Name: ScoredPointsListener
+  m_Name: PlayerInfoStartGameListener
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: ed108f775beae0d4f8287e13770c694d, type: 2}
+  gameEvent: {fileID: 11400000, guid: 61869013e3bf58b40a4a3225f95f945f, type: 2}
   eventResponse:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 1eab53e6a0c54a0409f1fef37a0399a6, type: 2}
-        m_MethodName: GainPoints
-        m_Mode: 0
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

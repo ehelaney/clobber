@@ -5,6 +5,8 @@ public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObjec
 {
 	protected static T instance;
 
+	static bool haveLoadedPreloads = false;
+
 	//Returns the instance of this singleton.
 	public static T Instance
 	{
@@ -18,6 +20,13 @@ public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObjec
 				T[] objs = null;
 
 				#if UNITY_EDITOR
+
+				if (!haveLoadedPreloads)
+				{
+					Resources.LoadAll("Singletons");
+					haveLoadedPreloads = true;
+				}
+
 				// If we're running the game in the editor, the "Preloaded Assets" array will be ignored.
 				// So get all the assets of type T using AssetDatabase.
 				string[] objsGUID = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T).Name);
