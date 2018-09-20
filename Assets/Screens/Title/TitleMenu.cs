@@ -5,8 +5,13 @@ using UnityEngine;
 public class TitleMenu : MonoBehaviour 
 {
 	public GameScene creditsScene;
+	public GameEventInt startGameEvent;
+	public SoundDefinition titleSong;
 
-	public GameEventNoParams startGameEvent;
+	void Start()
+	{
+		SoundManager.Instance.PlayMusic(titleSong);
+	}
 
 	public void OnGoToGame()
 	{

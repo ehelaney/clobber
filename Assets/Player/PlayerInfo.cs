@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : Singleton<PlayerInfo>
+public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 {
 	[Range(1, 10)]
 	public int maxHealth = 7;
@@ -16,7 +16,9 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
-	public GameScene gameOverScene;
+	public GameEventListenerScriptableObjectInt scoredPointsListener; //this is necessary so the asset loads with the playerinfo
+	public GameEventListenerScriptableObjectInt startGameListener;
+	public GameEventInt pointsChanged;
 
 	public void StartGame()
 	{
@@ -48,7 +50,7 @@ public class PlayerInfo : Singleton<PlayerInfo>
 			//TODO: do something because the player died (before it transitions to the final scene)
 			//Also TODO: the PlayerInfo shouldn't be transitioning states.  This logic should move to the room/scene transition system once that is created
 
-			GameSceneController.Instance.ChangeScene(gameOverScene);
+			RoomSelector.Instance.GoToGameOver();
 		}
 	}
 
@@ -68,7 +70,10 @@ public class PlayerInfo : Singleton<PlayerInfo>
 	public void GainPoints(int points)
 	{
 		totalPoints += points;
-		Debug.Log("Total points: " + TotalPoints); // Temporary until we have a UI displaying points
+		if (pointsChanged != null)
+		{
+			pointsChanged.Raise(totalPoints); 
+		}
 	}
 
 	#endregion Points

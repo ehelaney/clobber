@@ -14,11 +14,11 @@ public class SoundEffect : MonoBehaviour
 
 		soundeffectSource.clip = sound.Clip;
 
-		float globalVolumeSettingsPlaceholder = 1.0f; //TODO: once we have a settings dialog I think we'll want to replace this with the global volume setting - NOTE: may want to handle this via events instead
+		float magicNumber = 1.0f;
 
 		//NOTE - feel free to find a better algorithm to vary volume and pitch. 
-		soundeffectSource.volume = sound.Volume * (globalVolumeSettingsPlaceholder + Random.Range(1.0f - sound.VolumeModifier, 0.5f + sound.VolumeModifier));
-		soundeffectSource.pitch = sound.Pitch * (globalVolumeSettingsPlaceholder + Random.Range(1.0f - sound.PitchModifier, 1.0f + sound.PitchModifier));
+		soundeffectSource.volume = sound.Volume * (magicNumber + Random.Range(1.0f - sound.VolumeModifier, 0.5f + sound.VolumeModifier));
+		soundeffectSource.pitch = sound.Pitch * (magicNumber + Random.Range(1.0f - sound.PitchModifier, 1.0f + sound.PitchModifier));
 
 		timeLeftAlive = sound.Clip.length;
 		soundeffectSource.Play();

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomSelector : Singleton<RoomSelector>
+public class RoomSelector : ScriptableSingleton<RoomSelector>
 {
 	private int roomIndex = -1;
 	public GameScene[] roomSequence;
 	public GameScene gameOver;
+
+	public GameEventListenerScriptableObjectInt[] listeners;
 
 	public GameScene CurrentRoom
 	{
@@ -27,16 +29,23 @@ public class RoomSelector : Singleton<RoomSelector>
 		roomIndex++;
 		LoadCurrentRoom();
 	}
-	
+
+	public void GoToGameOver()
+	{
+		GameSceneController.Instance.ChangeScene(gameOver);
+	}
+
 	private void LoadCurrentRoom()
 	{
+		Debug.Log("Load Current Room");
 		if (roomIndex < roomSequence.Length)
 		{
+			Debug.Log("Loading Current Room");
 			GameSceneController.Instance.ChangeScene(CurrentRoom);
 		}
 		else
 		{
-			GameSceneController.Instance.ChangeScene(gameOver);
+			GoToGameOver();
 		}
 	}
 }
