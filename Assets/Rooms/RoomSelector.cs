@@ -37,8 +37,10 @@ public class RoomSelector : ScriptableSingleton<RoomSelector>
 
 	private void LoadCurrentRoom()
 	{
+		Debug.Log("Load Current Room");
 		if (roomIndex < roomSequence.Length)
 		{
+			Debug.Log("Loading Current Room");
 			GameSceneController.Instance.ChangeScene(CurrentRoom);
 		}
 		else

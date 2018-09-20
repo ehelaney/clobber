@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EditorLoadScript
 {
-	[MenuItem("Edit/Play from Persisted Scene")]
+	[MenuItem("Edit/Play from Title Scene")]
 	public static void PlayFromPrelaunchScene()
 	{
 		if (EditorApplication.isPlaying == true)
@@ -15,7 +15,7 @@ public class EditorLoadScript
 		}
 
 		EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-		EditorSceneManager.OpenScene("Assets/Engine/Persisted/PersistedScene.unity");
+		EditorSceneManager.OpenScene("Assets/Screens/Title/Title.unity");
 		EditorApplication.isPlaying = true;
 	}
 }

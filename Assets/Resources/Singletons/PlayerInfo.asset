@@ -14,4 +14,5 @@ MonoBehaviour:
   maxHealth: 7
   scoredPointsListener: {fileID: 11400000, guid: ff2ab79066d16314abc699ec0fd8ab21,
     type: 2}
+  startGameListener: {fileID: 11400000, guid: 3bcfb0a9dd77769469137ef6bbc8acf5, type: 2}
   pointsChanged: {fileID: 11400000, guid: c63b21ea7e354524f9c30558ed93814b, type: 2}
