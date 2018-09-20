@@ -1,4 +1,5 @@
 ﻿using System;
+using Panda;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +9,17 @@ public class Enemy : MonoBehaviour
 {
 	public EnemyTypeDefinition TypeDefinition { get; set; }
 
-	public int Health { get; set; }
+	private int CurrentHealth { get; set; }
+	private int _health;
+	public int Health 
+	{ 
+		get{ return _health;} 
+		set
+		{
+			_health = value;
+			CurrentHealth = value;
+		}
+	}
 
 	/// <summary>
 	/// The amount of damage the enemy will do to the player upon colliding
@@ -34,14 +45,14 @@ public class Enemy : MonoBehaviour
 
 	public void Hit(int damage, Vector2 damageSource)
 	{
-		Health -= damage;
+		CurrentHealth -= damage;
 
 		Vector2 recoil = ((Vector2)transform.position - damageSource).normalized * 0.25f;
 		rb2d.MovePosition((Vector2)transform.position + recoil);
 
 		EnemyFactory.Instance.HitSystem.OnEnemyHit(TypeDefinition, damageSource);
 
-		if (Health <= 0) Kill();
+		if (CurrentHealth <= 0) Kill();
 	}
 
 	public void Kill()
@@ -49,6 +60,13 @@ public class Enemy : MonoBehaviour
 		EnemyFactory.Instance.OnEnemyDeath(TypeDefinition, transform.position);
 
 		gameObject.SetActive(false);
+	}
+
+	[Task]
+	public void LowHealth()
+	{
+		int percentHealthRemain = (int)((double)CurrentHealth / Health * 100);
+		Task.current.Complete( percentHealthRemain <= 25 );
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)

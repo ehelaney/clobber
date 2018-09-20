@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114456095690898518}
   - component: {fileID: 114935840683455400}
   - component: {fileID: 114335503597000614}
+  - component: {fileID: 114749147451312536}
+  - component: {fileID: 114922880624713836}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -115,6 +117,20 @@ MonoBehaviour:
     breakPointStatuses: 
     collapsedLines: 
     btScript: 
+--- !u!114 &114749147451312536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111095993078988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73e45afe2f410e4ab4ed3a6e07ec540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  upperRange: 6
+  speed: 3
 --- !u!114 &114916230897611978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,6 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionStrength: 1
+--- !u!114 &114922880624713836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111095993078988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a856700e01f978c40820c6e92f895137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  upperRange: 4
+  speed: 1
 --- !u!114 &114935840683455400
 MonoBehaviour:
   m_ObjectHideFlags: 1
