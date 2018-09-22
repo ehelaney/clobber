@@ -515,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1856250723302986
 GameObject:
   m_ObjectHideFlags: 1
@@ -1943,6 +1943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creditsScene: {fileID: 11400000, guid: a017c24b118bc4846b9e0d53b8d7a283, type: 2}
   startGameEvent: {fileID: 11400000, guid: 61869013e3bf58b40a4a3225f95f945f, type: 2}
+  titleSong: {fileID: 0}
 --- !u!114 &114872283855571622
 MonoBehaviour:
   m_ObjectHideFlags: 1
