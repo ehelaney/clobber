@@ -14,6 +14,7 @@ public class OptionsMenu : MonoBehaviour
 	{
 		//load volumes from player prefs
 		LoadFromPlayerPrefs();
+		gameObject.SetActive(false);
 	}
 
 	private void LoadFromPlayerPrefs()
