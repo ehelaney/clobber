@@ -51,12 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be09a500c07b7fc4cb87284a16662b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileTypes:
-  - ProjectilePrefab: {fileID: 1612045701290638, guid: 0d1cf9aa79ca7484b8474f7eb3cfbe84,
-      type: 2}
-    ProjectileType: 0
-    Speed: 5
-    Damage: 1
   projectilePool:
     objectPrefab: {fileID: 1612045701290638, guid: 0d1cf9aa79ca7484b8474f7eb3cfbe84,
       type: 2}

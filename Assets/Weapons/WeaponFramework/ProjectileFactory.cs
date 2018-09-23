@@ -14,25 +14,13 @@ public class ProjectileFactory : MonoBehaviour
 
 	}
 
-	public ProjectileTypeDef[] projectileTypes;
-
 	public ObjectPool projectilePool; //may need a separate object pool for each projectile type.  So maybe this needs updated to be an array?
-
-	private Dictionary<ProjectileType, ProjectileTypeDef> projectileTypeDefMap = new Dictionary<ProjectileType, ProjectileTypeDef>();
-
 
 	// Use this for initialization
 	void Start()
 	{
-
 		projectilePool.Initialize();
 		theProjectileFactory = this;
-
-		for (int i = 0; i < projectileTypes.Length; i++)
-		{
-			var projectileType = projectileTypes[i];
-			projectileTypeDefMap.Add(projectileType.ProjectileType, projectileType);
-		}
 	}
 
 	private void OnDestroy()
@@ -43,12 +31,10 @@ public class ProjectileFactory : MonoBehaviour
 		}
 	}
 
-	public void SpawnNewProjectile(ProjectileType projectileType, Vector2 pos, Vector2 direction, Quaternion rotation)
+	public void SpawnNewProjectile(ProjectileDefinition projectileDefintion, Vector2 pos, Vector2 direction, Quaternion rotation)
 	{
 		var newProjectile = projectilePool.InitNewObject();
-		var typeDef = projectileTypeDefMap[projectileType];
-		newProjectile.GetComponent<Projectile>().Initialize(typeDef, pos, direction, rotation);
-		//newProjectile.layer = (int)typeDef.Layer;
+		newProjectile.GetComponent<Projectile>().Initialize(projectileDefintion, pos, direction, rotation);
 	}
 
 	public void KillAllProjectiles()

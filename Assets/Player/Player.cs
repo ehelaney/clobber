@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 {
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
-	public SecondaryWeapon secondaryWeapon;
-	public PrimaryWeapon primaryWeapon;
+	public MeleeWeapon meleeWeapon;
+	public ProjectileWeapon projectileWeapon;
 
 	private void Awake()
 	{
@@ -27,14 +27,21 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		//this will reset the weapons each room - move this so it only happens once when the game starts
+		meleeWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingMeleeWeapon);
+		projectileWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingProjectileWeapon);
+	}
+
 	public void AttackWithPrimary(Vector2 pos)
 	{
-		primaryWeapon.Attack();
+		projectileWeapon.OnFire();
 	}
 
 	public void AttackWithSecondary(Vector2 pos)
 	{
-		secondaryWeapon.Attack();
+		meleeWeapon.Attack();
 	}
 }
 
