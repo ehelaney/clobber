@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftHand : MonoBehaviour
+public class PrimaryWeapon : MonoBehaviour
 {
 	public ProjectileWeapon projectileWeapon;
 

@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 {
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
-	public RightHand rightHand;
-	public LeftHand leftHand;
+	public SecondaryWeapon secondaryWeapon;
+	public PrimaryWeapon primaryWeapon;
 
 	private void Awake()
 	{
@@ -27,14 +27,14 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	public void AttackWithProjectile(Vector2 pos)
+	public void AttackWithPrimary(Vector2 pos)
 	{
-		leftHand.Attack();
+		primaryWeapon.Attack();
 	}
 
-	public void AttackWithMelee(Vector2 pos)
+	public void AttackWithSecondary(Vector2 pos)
 	{
-		rightHand.Attack();
+		secondaryWeapon.Attack();
 	}
 }
 
