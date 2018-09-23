@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RightHand : MonoBehaviour 
+public class SecondaryWeapon : MonoBehaviour 
 {
 	public GameObject weapon;
 	private IWeapon _weaponInterface;
