@@ -16,6 +16,9 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
+	public ProjectileWeaponDefinition startingProjectileWeapon;
+	public MeleeWeaponDefinition startingMeleeWeapon;
+
 	public GameEventListenerScriptableObjectInt scoredPointsListener; //this is necessary so the asset loads with the playerinfo
 	public GameEventListenerScriptableObjectInt startGameListener;
 	public GameEventInt pointsChanged;

@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Projectile : MonoBehaviour
 {
-	public ProjectileTypeDef TypeDefinition
+	public ProjectileDefinition TypeDefinition
 	{
 		get;
 		private set;
@@ -14,25 +14,14 @@ public class Projectile : MonoBehaviour
 
 	public int Damage { get; private set; }
 
-	public void Initialize(ProjectileTypeDef typeDef, Vector2 startingPoint, Vector2 direction, Quaternion rotation)
+	public void Initialize(ProjectileDefinition projectileDefintion, Vector2 startingPoint, Vector2 direction, Quaternion rotation)
 	{
-		TypeDefinition = typeDef;
+		TypeDefinition = projectileDefintion;
 		gameObject.transform.position = startingPoint;
 		gameObject.transform.rotation = rotation;
-		GetComponent<Rigidbody2D>().AddForce(direction * typeDef.Speed, ForceMode2D.Impulse);
+		GetComponent<Rigidbody2D>().AddForce(direction * TypeDefinition.Speed, ForceMode2D.Impulse);
 		Damage = TypeDefinition.Damage;
-	}
-
-	// Use this for initialization
-	void Start()
-	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
+		GetComponent<SpriteRenderer>().sprite = projectileDefintion.sprite;
 	}
 
 	public void OnHitSomething()
