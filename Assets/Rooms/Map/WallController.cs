@@ -23,6 +23,7 @@ public class WallController : MonoBehaviour
 		BottomRightInsideWall
 	}
 	private MapConfiguration mapGenerator;
+	private ObstacleConfiguration[] obstacleConfiguration;
 
 	private Tilemap tilemap;
 	
@@ -36,6 +37,7 @@ public class WallController : MonoBehaviour
 	{
 		tilemap = GetComponent<Tilemap>();
 		mapGenerator = RoomConfiguration.Instance.mapConfiguration;
+		obstacleConfiguration = RoomConfiguration.Instance.obstacleConfigurations;
 
 		MapSize_x = mapGenerator.MapSize_x;
 		MapSize_y = mapGenerator.MapSize_y;
@@ -44,12 +46,6 @@ public class WallController : MonoBehaviour
 
 		tileSchematic = GenerateSchematic();
 		FillTilemap(tileSchematic);
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
 	}
 
 	WallType[,] GenerateSchematic()
@@ -75,21 +71,6 @@ public class WallController : MonoBehaviour
 		schematic[MapSize_x - 1, 0] = WallType.TopLeftInsideWall;
 		schematic[0, MapSize_y - 1] = WallType.BottomRightInsideWall;
 		schematic[MapSize_x - 1, MapSize_y - 1] = WallType.BottomLeftInsideWall;
-
-		// Add random rocks (example)
-		// for(int x = 0; x < MapSize_x; x++)
-		// {
-		// 	for (int y = 0; y < MapSize_y; y++)
-		// 	{
-		// 		if(schematic[x, y] == WallType.Null)
-		// 		{
-		// 			if(Random.Range(0,100) < 5)
-		// 			{
-		// 				schematic[x, y] = WallType.CenterWall;
-		// 			}
-		// 		}
-		// 	}
-		// }
 
 		return schematic;
 	}
@@ -149,8 +130,18 @@ public class WallController : MonoBehaviour
 					}
 					case WallType.Null:
 					{
-						// This space intentionally left blank (wasn't filled during map generation)
-						break;
+							foreach (var obstacleConfig in obstacleConfiguration)
+							{
+								if (Random.value < obstacleConfig.chancePerTile)
+								{
+									PaintTile(x, y, obstacleConfig.obstacle[Random.Range(0, obstacleConfig.obstacle.Length)]);
+								}
+							}
+							if (Random.Range(0, 100) < 5)
+							{
+								schematic[x, y] = WallType.CenterWall;
+							}
+							break;
 					}
 					default:
 					{

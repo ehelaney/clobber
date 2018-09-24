@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256320d48ef78874ca5eadde7a0b4d19, type: 3}
+  m_Name: GrayAsteroids
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 11400000, guid: 67cabeb459a450446b99218f966d63bf, type: 2}
+  - {fileID: 11400000, guid: f30503721cc4aba4e9dd6d1c57ec55d4, type: 2}
+  - {fileID: 11400000, guid: 06a5bf23f8dbd7840beb402d4d8bb32e, type: 2}
+  - {fileID: 11400000, guid: 2bc81f4e466315940b3f955338bd15d9, type: 2}
+  chancePerTile: 0.02
