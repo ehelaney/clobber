@@ -7,8 +7,6 @@ public class DebugMenu : MonoBehaviour
 	public EnemyTypeDefinition[] possibleRandomEnemyTypesToSpawn;
 	public SoundDefinition soundEffectToPlay;
 
-	private List<Enemy> aliveEnemies = new List<Enemy>();
-
 	private EnemyFactory enemyFactory;
 
 	private CanvasGroup canvasGroup;
@@ -50,18 +48,21 @@ public class DebugMenu : MonoBehaviour
 			var nextEnemy = enemyFactory.SpawnNewEnemy(
 				possibleRandomEnemyTypesToSpawn[Random.Range(0, possibleRandomEnemyTypesToSpawn.Length)], 
 				new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)));
-			aliveEnemies.Add(nextEnemy);
 		}
+	}
+
+	public void OnSpawnEnemies()
+	{
+		enemyFactory.SpawnEnemies();
 	}
 
 	public void OnKillEnemies()
 	{
-		foreach(var enemy in aliveEnemies)
+		var foundEnemies = FindObjectsOfType<Enemy>();
+		foreach(var enemy in foundEnemies)
 		{
 			enemy.Kill();
 		}
-
-		aliveEnemies.Clear();
 	}
 
 	public void OnDamagePlayer()
