@@ -57,20 +57,20 @@ public class WallController : MonoBehaviour
 		// Fill edges
 		for (int x = 0; x < MapSize_x; x++)
 		{
-			schematic[x, 0] = WallType.TopEdgeWall;
-			schematic[x, MapSize_y - 1] = WallType.BottomEdgeWall;
+			schematic[x, 0] = WallType.BottomEdgeWall; 
+			schematic[x, MapSize_y - 1] = WallType.TopEdgeWall;
 		}
 		for (int y = 0; y < MapSize_y; y++)
 		{
-			schematic[0, y] = WallType.RightEdgeWall;
-			schematic[MapSize_x - 1, y] = WallType.LeftEdgeWall;
+			schematic[0, y] = WallType.LeftEdgeWall;
+			schematic[MapSize_x - 1, y] = WallType.RightEdgeWall; 
 		}
 
 		// Set corners
-		schematic[0, 0] = WallType.TopRightInsideWall;
-		schematic[MapSize_x - 1, 0] = WallType.TopLeftInsideWall;
-		schematic[0, MapSize_y - 1] = WallType.BottomRightInsideWall;
-		schematic[MapSize_x - 1, MapSize_y - 1] = WallType.BottomLeftInsideWall;
+		schematic[0, 0] = WallType.BottomLeftInsideWall; 
+		 schematic[MapSize_x - 1, 0] = WallType.BottomRightInsideWall; 
+		 schematic[0, MapSize_y - 1] = WallType.TopLeftInsideWall;
+		schematic[MapSize_x - 1, MapSize_y - 1] = WallType.TopRightInsideWall;
 
 		return schematic;
 	}
@@ -83,11 +83,6 @@ public class WallController : MonoBehaviour
 			{
 				switch (schematic[x,y])
 				{
-					case WallType.CenterWall:
-					{
-						PaintTile(x, y, mapGenerator.MiddleTile);
-						break;
-					}
 					case WallType.LeftEdgeWall:
 					{
 						PaintTile(x, y, mapGenerator.LeftEdgeTile);
@@ -110,22 +105,22 @@ public class WallController : MonoBehaviour
 					}
 					case WallType.TopLeftInsideWall:
 					{
-						PaintTile(x, y, mapGenerator.TopLeftInsideTile);
+						PaintTile(x, y, mapGenerator.TopLeftInsideCornerTile);
 						break;
 					}
 					case WallType.TopRightInsideWall:
 					{
-						PaintTile(x, y, mapGenerator.TopRightInsideTile);
+						PaintTile(x, y, mapGenerator.TopRightInsideCornerTile);
 						break;
 					}
 					case WallType.BottomLeftInsideWall:
 					{
-						PaintTile(x, y, mapGenerator.BottomLeftInsideTile);
+						PaintTile(x, y, mapGenerator.BottomLeftInsideCornerTile);
 						break;
 					}
 					case WallType.BottomRightInsideWall:
 					{
-						PaintTile(x, y, mapGenerator.BottomRightInsideTile);
+						PaintTile(x, y, mapGenerator.BottomRightInsideCornerTile);
 						break;
 					}
 					case WallType.Null:
@@ -135,11 +130,8 @@ public class WallController : MonoBehaviour
 								if (Random.value < obstacleConfig.chancePerTile)
 								{
 									PaintTile(x, y, obstacleConfig.obstacle[Random.Range(0, obstacleConfig.obstacle.Length)]);
+									break;
 								}
-							}
-							if (Random.Range(0, 100) < 5)
-							{
-								schematic[x, y] = WallType.CenterWall;
 							}
 							break;
 					}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc432e05bb94f8459dc705c1aa6147a, type: 3}
+  m_Name: SpaceMapConfiguration
+  m_EditorClassIdentifier: 
+  MapSize_x: 25
+  MapSize_y: 25
+  mapCenter: {x: 0, y: 0}
+  TopEdgeTile: {fileID: 11400000, guid: 9574f1d8803c1574fa38a8f60f783542, type: 2}
+  RightEdgeTile: {fileID: 11400000, guid: 64eaa0b4553bb414a98a64d4dc7c8a88, type: 2}
+  BottomEdgeTile: {fileID: 11400000, guid: 96ebcee44f531e548b788124e3b70589, type: 2}
+  LeftEdgeTile: {fileID: 11400000, guid: d3888af7576875b46be724d431cca6a3, type: 2}
+  TopLeftInsideCornerTile: {fileID: 11400000, guid: a7fcee67e7eda424dad9c07dffb4767f,
+    type: 2}
+  TopRightInsideCornerTile: {fileID: 11400000, guid: f659d94e88f224b47b70f09135711dae,
+    type: 2}
+  BottomLeftInsideCornerTile: {fileID: 11400000, guid: 9e5de439922419743bd487504638bdf7,
+    type: 2}
+  BottomRightInsideCornerTile: {fileID: 11400000, guid: d854fbda33bf0014dbe7100002a1c674,
+    type: 2}
+  FloorTile: {fileID: 11400000, guid: c285cb310fa6ba743be4aaa0c94a59bb, type: 2}
