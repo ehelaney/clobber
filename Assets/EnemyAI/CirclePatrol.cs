@@ -22,9 +22,8 @@ namespace EnemyAI
 
 			float spinRate = rotateSpeed * Time.deltaTime;
 
-			transform.Rotate(Vector3.forward * spinRate);
-
-			transform.position += transform.up * moveRate;
+			rb2d.MoveRotation(rb2d.rotation + spinRate);
+			rb2d.velocity = moveSpeed * transform.up;
 		}
 	}
 }
