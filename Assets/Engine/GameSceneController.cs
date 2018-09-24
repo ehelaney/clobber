@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName ="GameSceneController")]
 public class GameSceneController : ScriptableSingleton<GameSceneController> 
 {
 	private GameScene currentScene = null;

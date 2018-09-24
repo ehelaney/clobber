@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="SoundManager")]
 public class SoundManager : ScriptableSingleton<SoundManager>
 {
 	public GameObject backgroundMusicPrefab;

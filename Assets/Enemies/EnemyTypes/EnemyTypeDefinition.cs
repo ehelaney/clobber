@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewEnemyType", menuName = "Enemy Type", order = 51)]
+[CreateAssetMenu(fileName = "NewEnemyType", menuName = "Clobber Misc/Enemy Type")]
 public class EnemyTypeDefinition : ScriptableObject
 {
 	[SerializeField]

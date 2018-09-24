@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewSoundDefinition", menuName = "Sound Definition", order = 52)]
+[CreateAssetMenu(fileName = "NewSoundDefinition", menuName = "Clobber Misc/Sound Definition")]
 public class SoundDefinition : ScriptableObject
 {
 	[SerializeField]

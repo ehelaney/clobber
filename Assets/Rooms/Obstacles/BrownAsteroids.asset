@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256320d48ef78874ca5eadde7a0b4d19, type: 3}
+  m_Name: BrownAsteroids
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 11400000, guid: f9590e6ef50bcd84785f5e1078dc036c, type: 2}
+  - {fileID: 11400000, guid: 36163ae86d2ad5e4da016a51fc3d37b4, type: 2}
+  - {fileID: 11400000, guid: 78bad7345e0243f478e4cadf498dc78d, type: 2}
+  - {fileID: 11400000, guid: e5b9127012b7fb4428c26a4368e3a4a6, type: 2}
+  chancePerTile: 0.02
