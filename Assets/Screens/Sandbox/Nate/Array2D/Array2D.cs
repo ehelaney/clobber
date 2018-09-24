@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/*
 public class Array2D<T> : ScriptableObject where T : UnityEngine.Object
 {
 	public Vector2Int size;
@@ -59,7 +60,7 @@ public class Array2DEditor<T> : Editor where T : UnityEngine.Object
 
 
 	}
-}
+}*/
 /*
 public class Array2D<T> : ScriptableObject where T : UnityEngine.Object
 {

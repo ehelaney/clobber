@@ -23,23 +23,16 @@ public class MapConfiguration : ScriptableObject
 	}
 
 	// Tiles for basic edges + outside corners
-	public TileBase TopLeftEdgeTile;
 	public TileBase TopEdgeTile;
-	public TileBase TopRightEdgeTile;
 	public TileBase RightEdgeTile;
-	public TileBase BottomRightEdgeTile;
 	public TileBase BottomEdgeTile;
-	public TileBase BottomLeftEdgeTile;
 	public TileBase LeftEdgeTile;
 	
 	// Inside corners
-	public TileBase TopLeftInsideTile;
-	public TileBase TopRightInsideTile;
-	public TileBase BottomLeftInsideTile;
-	public TileBase BottomRightInsideTile;
-
-	// Center Tile (no edges)
-	public TileBase MiddleTile;
+	public TileBase TopLeftInsideCornerTile;
+	public TileBase TopRightInsideCornerTile;
+	public TileBase BottomLeftInsideCornerTile;
+	public TileBase BottomRightInsideCornerTile;
 	
 	// Floor
 	public TileBase FloorTile;
