@@ -13,7 +13,6 @@ public class RandomPatrol : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		Debug.Log("Start RandomPatrol");
 		target = GameObject.FindWithTag("Player");
 	}
 	

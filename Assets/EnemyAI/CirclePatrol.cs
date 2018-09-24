@@ -13,8 +13,7 @@ namespace EnemyAI
 		
 		void Start () 
 		{
-			Debug.Log("Start CirclePatrol");
-			//StartCoroutine(Execute());
+			
 		}
 		[Task]
 		public void ExecuteCirclePatrol()

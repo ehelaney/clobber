@@ -19,9 +19,7 @@ namespace EnemyAI
 		
 		void Start () 
 		{
-			Debug.Log("Start ChaseTarget");
 			target = GameObject.FindWithTag("Player");
-			//StartCoroutine(Execute());
 		}
 
 		[Task]

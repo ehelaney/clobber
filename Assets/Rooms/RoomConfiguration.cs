@@ -6,6 +6,7 @@ public class RoomConfiguration : Singleton<RoomConfiguration>
 {
 	public MapConfiguration mapConfiguration;
 	public SoundDefinition roomSong1; //turn this into an array if we want to randomize songs per room or per playthrough
+	public Array2DEnemySpawnDefinition enemyMap;
 
 	//note: this is an array so we can pepper a map with more than one type of obstacle
 	//the engine independently calculates the obstacle odds
