@@ -6,6 +6,7 @@ public class RoomConfiguration : Singleton<RoomConfiguration>
 {
 	public MapConfiguration mapConfiguration;
 	public SoundDefinition roomSong1; //turn this into an array if we want to randomize songs per room or per playthrough
+	public Array2DEnemySpawnDefinition enemyMap;
 
 	// Use this for initialization
 	void Start ()

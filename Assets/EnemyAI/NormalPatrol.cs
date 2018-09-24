@@ -15,8 +15,7 @@ namespace EnemyAI
 		
 		void Start () 
 		{
-			Debug.Log("Start NormalPatrol");
-			//StartCoroutine(Execute());
+
 		}
 		[Task]
 		public void ExecuteNormalPatrol()
