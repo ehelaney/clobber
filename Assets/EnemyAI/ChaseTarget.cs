@@ -41,11 +41,17 @@ namespace EnemyAI
 			//look at player first
 			if (directionToTarget != Vector3.zero)
 			{
-				transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.FromToRotation (Vector3.right, directionToTarget), spinRate);
+				float currentAngle;
+				Vector3 axis;
+				transform.rotation.ToAngleAxis(out currentAngle, out axis);
+
+				float destAngle;
+				Quaternion.FromToRotation(Vector3.right, directionToTarget).ToAngleAxis(out destAngle, out axis);
+
+				rb2d.MoveRotation(Mathf.LerpAngle(currentAngle, destAngle, spinRate));
 			}
-			//now move towards target
-			float moveRate = moveSpeed * Time.deltaTime;
-			transform.position += (target.transform.position - transform.position).normalized * moveRate;
+
+			rb2d.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
 
 			IsTargetNear();
 		}
