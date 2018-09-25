@@ -44,9 +44,11 @@ public class Enemy : MonoBehaviour
 
 		GetComponent<SpriteRenderer>().sprite = typeDef.Sprite;
 		Health = TypeDefinition.Health;
-	
-		GetComponent<PandaBehaviour>().scripts = typeDef.aiType.behaviorTree;
-		GetComponent<PandaBehaviour>().Apply();
+
+		var panda = GetComponent<PandaBehaviour>();
+		panda.scripts = typeDef.aiType.behaviorTree;
+		panda.Apply();
+		panda.Compile();
 
 		projectileWeapon.SetWeaponDefinition(typeDef.weapon);
 	}
