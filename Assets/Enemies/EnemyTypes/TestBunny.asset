@@ -17,3 +17,4 @@ MonoBehaviour:
   health: 7
   onHitSound: {fileID: 11400000, guid: 49c3e633246d5324ba2ada22a12f7dcf, type: 2}
   lootTable: {fileID: 11400000, guid: 35393c8211b32c1479070a855c01c3d9, type: 2}
+  aiType: {fileID: 11400000, guid: 964e283a1a93d124487c0516c696a33f, type: 2}

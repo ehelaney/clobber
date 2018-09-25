@@ -8,10 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca95b7107a299848bf8198010c5e097, type: 3}
-  m_Name: Bullet
+  m_Script: {fileID: 11500000, guid: 92bd5e840c08b60449ee337e34bdaea9, type: 3}
+  m_Name: PatrolAndChase
   m_EditorClassIdentifier: 
-  Name: bullet
-  Speed: 30
-  Damage: 1
-  sprite: {fileID: 21300000, guid: 64d50b98b6b690d4396d2c58cc8892b9, type: 3}
+  behaviorTree:
+  - {fileID: 4900000, guid: ab80f7c6838223f4db6b19192fd13c49, type: 3}

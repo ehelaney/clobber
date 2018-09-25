@@ -63,4 +63,6 @@ public class EnemyTypeDefinition : ScriptableObject
 			return lootTable;
 		}
 	}
+
+	public EnemyAIType aiType;
 }
