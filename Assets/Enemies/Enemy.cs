@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 {
 	public EnemyTypeDefinition TypeDefinition { get; set; }
 
+	public ProjectileWeapon projectileWeapon;
+
 	private int CurrentHealth { get; set; }
 	private int _health;
 	public int Health 
@@ -45,6 +47,8 @@ public class Enemy : MonoBehaviour
 	
 		GetComponent<PandaBehaviour>().scripts = typeDef.aiType.behaviorTree;
 		GetComponent<PandaBehaviour>().Apply();
+
+		projectileWeapon.SetWeaponDefinition(typeDef.weapon);
 	}
 
 	public void Hit(int damage, Vector2 damageSource)
@@ -77,7 +81,14 @@ public class Enemy : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			PlayerInfo.Instance.ChangeHealth(CollisionStrength * -1);
+			collision.gameObject.GetComponent<Player>().Hit(CollisionStrength, (transform.position + collision.gameObject.transform.position) / 2f);
 		}
+	}
+
+	[Task]
+	public bool Attack()
+	{
+		projectileWeapon.OnFire();
+		return true;
 	}
 }

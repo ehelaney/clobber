@@ -14,14 +14,14 @@ TagManager:
   - UI
   - 
   - 
-  - Projectile
+  - 
   - ProjectileThreshold
   - Enemy
   - Player
   - Camera
   - 
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 

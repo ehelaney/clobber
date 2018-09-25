@@ -18,10 +18,7 @@ namespace EnemyAI
 		[Task]
 		public void ExecuteCirclePatrol()
 		{
-			float moveRate = moveSpeed * Time.deltaTime;
-
 			float spinRate = rotateSpeed * Time.deltaTime;
-
 			rb2d.MoveRotation(rb2d.rotation + spinRate);
 			rb2d.velocity = moveSpeed * transform.up;
 		}
