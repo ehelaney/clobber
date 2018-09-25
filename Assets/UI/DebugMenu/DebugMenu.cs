@@ -19,7 +19,6 @@ public class DebugMenu : MonoBehaviour
 	{
 		enemyFactory = FindObjectOfType<EnemyFactory>();	
 		canvasGroup = GetComponent<CanvasGroup>();
-		visible = false; //start with debug menu hidden
 		RefreshDebugUI();
 	}
 

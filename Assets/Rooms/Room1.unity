@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &100622026
+--- !u!1001 &810652585
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,14 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.0302372
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.3599997
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
   m_IsPrefabAsset: 0
@@ -173,7 +165,7 @@ Prefab:
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: obstacleConfigurations.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4359893467268140, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -223,14 +215,12 @@ Prefab:
         type: 2}
       propertyPath: obstacleConfigurations.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 64a165a3237313345be888a108233c17,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: obstacleConfigurations.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 1a773a6e98e3163498f7ab18094202f6,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
   m_IsPrefabAsset: 0

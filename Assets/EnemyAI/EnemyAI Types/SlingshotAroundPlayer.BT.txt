@@ -1,0 +1,24 @@
+tree("Root")
+	fallback
+		tree("FlyTowardsPlayer")
+		//tree("NearOrbitPlayer")
+		tree("FlyAwayFromPlayer")
+		//tree("SweepAround")
+		Wait(0.2)
+
+tree("FlyTowardsPlayer")
+	sequence
+		SetChaseTarget_UnitCircleAroundPlayer
+		while not NearChaseTarget	
+			ChaseTheTargetUntilNear
+
+//tree("NearOrbitPlayer")
+
+tree("FlyAwayFromPlayer")
+	sequence
+		SetDestination_Safe
+		while not NearMoveDestination
+			MoveToDestination
+
+//tree("SweepAround")
+
