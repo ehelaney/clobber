@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(PandaBehaviour))]
 public class Enemy : MonoBehaviour
 {
 	public EnemyTypeDefinition TypeDefinition { get; set; }
@@ -41,6 +42,9 @@ public class Enemy : MonoBehaviour
 
 		GetComponent<SpriteRenderer>().sprite = typeDef.Sprite;
 		Health = TypeDefinition.Health;
+	
+		GetComponent<PandaBehaviour>().scripts = typeDef.aiType.behaviorTree;
+		GetComponent<PandaBehaviour>().Apply();
 	}
 
 	public void Hit(int damage, Vector2 damageSource)
