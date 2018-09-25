@@ -1,0 +1,220 @@
+﻿using UnityEngine;
+using Panda;
+
+namespace EnemyAI
+{
+	public class BaseTasks : ScriptBase
+	{
+		#region Chase Target
+
+		[Task]
+		bool CanSeeThePlayer()
+		{
+			float distanceToTarget = Vector2.Distance(transform.position, thePlayer.transform.position);
+			return (distanceToTarget <= typeDefinition.visualAcuity);
+		}
+
+		Transform chaseTarget;
+		bool relativeChaseMode;
+		Vector2 relativeTarget;
+
+		Vector2 GetChaseTarget()
+		{
+			if (relativeChaseMode)
+			{
+				return (Vector2)chaseTarget.position + relativeTarget;
+			}
+			else
+			{
+				return chaseTarget.position;
+			}
+		}
+
+		[Task]
+		bool SetChaseTarget_Player()
+		{
+			chaseTarget = thePlayer.transform;
+			relativeChaseMode = false;
+			return true;
+		}
+
+		[Task]
+		bool SetChaseTarget_UnitCircleAroundPlayer()
+		{
+			Vector2 directionToTarget = thePlayer.transform.position - transform.position;
+			var perpendicular = Vector2.Perpendicular(directionToTarget).normalized;
+
+			chaseTarget = thePlayer.transform;
+			relativeChaseMode = true;
+			relativeTarget = perpendicular * 1.5f;
+
+			return true;
+		}
+
+		[Task]
+		void ChaseTheTargetUntilCanSee()
+		{
+			ChaseTheTarget(true);
+		}
+
+		[Task]
+		void ChaseTheTargetUntilNear()
+		{
+			ChaseTheTarget(false);
+		}
+
+		void ChaseTheTarget(bool untilCanSee)
+		{
+			Vector2 directionToTarget = GetChaseTarget() - (Vector2)transform.position;
+
+			float spinRate = typeDefinition.rotationSpeed * Time.deltaTime;
+			//look at player first
+			if (directionToTarget != Vector2.zero)
+			{
+				float currentAngle;
+				Vector3 axis;
+				transform.rotation.ToAngleAxis(out currentAngle, out axis);
+
+				float destAngle;
+				Quaternion.FromToRotation(Vector3.right, directionToTarget).ToAngleAxis(out destAngle, out axis);
+
+				rb2d.MoveRotation(Mathf.LerpAngle(currentAngle, destAngle, spinRate));
+			}
+
+			rb2d.velocity = (GetChaseTarget() - (Vector2)transform.position).normalized * typeDefinition.moveSpeed;
+
+			if (untilCanSee)
+			{
+				if (CanSeeChaseTarget()) Task.current.Succeed();
+			}
+			else
+			{
+				if (NearChaseTarget()) Task.current.Succeed();
+			}
+		}
+
+		[Task]
+		bool CanSeeChaseTarget()
+		{
+			float distanceToTarget = Vector2.Distance(transform.position, GetChaseTarget());
+			return (distanceToTarget <= typeDefinition.visualAcuity);
+		}
+
+		[Task]
+		bool NearChaseTarget()
+		{
+			return (Vector2.Distance(GetChaseTarget(), transform.position) < 0.1f);
+		}
+
+		[Task]
+		void RotateAroundChaseTarget()
+		{
+			//TODO for Basic Fodder
+		}
+
+		// public IEnumerator Execute()
+		// {
+		// 	while (true)
+		// 	{
+		// 		if (target != null) 
+		// 		{
+		// 			float distanceToTarget = Vector2.Distance (transform.position, target.transform.position);
+		//  			if (distanceToTarget <= visualAcuity) 
+		// 			{
+		// 				Vector3 directionToTarget = target.transform.position - transform.position;
+		// 				//somehow screwed up some enemies and they were above the player...so do this for now???
+		// 				directionToTarget.z = 0f;
+
+		// 				float spinRate = rotateSpeed * Time.deltaTime;
+		// 				//look at player first
+		// 				if (directionToTarget != Vector3.zero)
+		// 				{
+		// 					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.FromToRotation (Vector3.right, directionToTarget), spinRate);
+		// 				}
+		// 				//now move towards target
+		// 				float moveRate = moveSpeed * Time.deltaTime;
+		// 				transform.position += (target.transform.position - transform.position).normalized * moveRate;
+		// 			}
+		// 		}
+		// 		yield return null;
+		// 	}
+		// }
+
+		#endregion Chase Target
+
+		#region Circle Patrol
+
+		[Task]
+		public void ExecuteCirclePatrol()
+		{
+			float spinRate = typeDefinition.rotationSpeed * Time.deltaTime;
+			rb2d.MoveRotation(rb2d.rotation + spinRate);
+			rb2d.velocity = typeDefinition.moveSpeed * transform.up;
+		}
+
+		#endregion Circle Patrol
+
+		#region Move to Destination
+
+		Vector3 moveDestination = Vector3.zero;
+
+		/*
+	     * Move to the destination at the current speed and succeeds when the destination has been reached.
+	     */
+		[Task]
+		void MoveToDestination()
+		{
+			var task = Task.current;
+			var delta = moveDestination - transform.position;
+
+			if (transform.position != moveDestination)
+			{
+				rb2d.velocity = delta.normalized * typeDefinition.moveSpeed;
+			}
+
+			if (NearMoveDestination()) Task.current.Succeed();
+		}
+
+		[Task]
+		bool NearMoveDestination()
+		{
+			// Succeed when the destination is reached.
+			return (Vector3.Distance(moveDestination, transform.position) < 0.1f);
+		}
+
+		#endregion Move to Destination
+
+		#region Flee
+
+		[Task]
+		bool SetDestination_Safe()
+		{
+			Vector3 playerDirection = (thePlayer.transform.position - this.transform.position).normalized;
+			//probably not really what we want, but it is close enough
+			moveDestination = playerDirection * -1f;
+			moveDestination.z = 0.0f;
+			return true;
+		}
+
+		#endregion Flee
+
+		#region Random Patrol
+
+		public float randomPatrolMinRange = 1.0f;
+		public float randomPatrolMaxRange = 4.0f;
+
+		/*
+		* Used the a random position as destination and succeeds.
+		*/
+		[Task]
+		bool SetDestination_Random()
+		{
+			moveDestination = Random.insideUnitSphere * Random.Range(randomPatrolMinRange, randomPatrolMaxRange);
+			moveDestination.z = 0.0f;
+
+			return true;
+		}
+
+		#endregion Random Patrol
+	}
+}

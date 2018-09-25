@@ -8,9 +8,10 @@ tree("Root")
 tree("RunAwayLittleBoy")
 	while LowHealth
 		sequence
-			IsTargetNear
-			SetSafeDestination
-			RunAway
+			CanSeeThePlayer
+			SetDestination_Safe
+			while not NearMoveDestination
+				MoveToDestination
 
 tree("ChasePlayer")
 	fallback
@@ -19,9 +20,10 @@ tree("ChasePlayer")
 
 tree("Chase")
 	//Chase the player while they are in range
-	while IsTargetNear
+	while CanSeeThePlayer
 		sequence
-			ChaseTheTarget
+			SetChaseTarget_Player
+			ChaseTheTargetUntilCanSee
 			Attack
 			not LowHealth
 
@@ -32,16 +34,16 @@ tree("Patrol")
 		//tree("NormalPatrol") - not quite reday for prime time
 
 tree("CirclePatrol")
-	while not IsTargetNear
+	while not CanSeeThePlayer
 			ExecuteCirclePatrol
 
 tree("RandomPatrol")
-	while not IsTargetNear
+	while not CanSeeThePlayer
 		sequence
 			SetDestination_Random
 			MoveToDestination
 
 //tree("NormalPatrol")
-//	while not IsTargetNear			
+//	while not CanSeeThePlayer			
 //			ExecuteNormalPatrol
 
