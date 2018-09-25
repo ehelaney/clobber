@@ -272,6 +272,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114181691555816744, guid: f1971f0a108e88b4284a263b51fb3e9c,
+        type: 2}
+      propertyPath: gameOverSong
+      value: 
+      objectReference: {fileID: 11400000, guid: 90976b9e25c777b4e9796e5c16e63d2d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1971f0a108e88b4284a263b51fb3e9c, type: 2}
   m_IsPrefabAsset: 0
