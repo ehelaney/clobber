@@ -65,4 +65,5 @@ public class EnemyTypeDefinition : ScriptableObject
 	}
 
 	public EnemyAIType aiType;
+	public ProjectileWeaponDefinition weapon;
 }

@@ -45,7 +45,7 @@ public class DebugMenu : MonoBehaviour
 	{
 		if (possibleRandomEnemyTypesToSpawn.Length > 0)
 		{
-			var nextEnemy = enemyFactory.SpawnNewEnemy(
+			enemyFactory.SpawnNewEnemy(
 				possibleRandomEnemyTypesToSpawn[Random.Range(0, possibleRandomEnemyTypesToSpawn.Length)], 
 				new Vector2(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f)));
 		}

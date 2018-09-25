@@ -22,6 +22,7 @@ tree("Chase")
 	while IsTargetNear
 		sequence
 			ChaseTheTarget
+			Attack
 			not LowHealth
 
 tree("Patrol")

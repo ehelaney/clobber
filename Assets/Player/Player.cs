@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
 	{
 		meleeWeapon.Attack();
 	}
+
+	public void Hit(int damage, Vector2 damageSource)
+	{
+		PlayerInfo.Instance.ChangeHealth(damage * -1);
+	}
 }
 
 public enum PlayerMovement

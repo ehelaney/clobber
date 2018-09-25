@@ -9,7 +9,6 @@ namespace EnemyAI
 	{
 		public GameObject target;
 		Vector3 destination = Vector3.zero;
-		public float upperRange = 4.0f;
 
 		public float speed = 1.0f;
 		// Use this for initialization

@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
 		gameObject.transform.rotation = rotation;
 		GetComponent<Rigidbody2D>().AddForce(direction * TypeDefinition.Speed, ForceMode2D.Impulse);
 		Damage = TypeDefinition.Damage;
+		gameObject.layer = projectileDefintion.Layer;
 		GetComponent<SpriteRenderer>().sprite = projectileDefintion.sprite;
 	}
 
@@ -40,6 +41,10 @@ public class Projectile : MonoBehaviour
 		{
 			other.gameObject.GetComponent<Enemy>().Hit(Damage, (transform.position + other.transform.position) / 2f);
 			OnHitSomething();
+		}
+		else if (other.gameObject.CompareTag("Player"))
+		{
+			other.gameObject.GetComponent<Player>().Hit(Damage, (transform.position + other.transform.position) / 2f);
 		}
 	}
 }
