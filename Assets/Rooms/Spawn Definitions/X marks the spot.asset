@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb9ece5a9c00c314aac278145ad10610, type: 3}
-  m_Name: newone
+  m_Name: X marks the spot
   m_EditorClassIdentifier: 
   size: {x: 0, y: 0}
   values: []
