@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(PandaBehaviour))]
 public class Enemy : MonoBehaviour
 {
+	public SpriteRenderer spriteRenderer;
+
 	public EnemyTypeDefinition TypeDefinition { get; set; }
 
 	public ProjectileWeapon projectileWeapon;
@@ -31,10 +32,20 @@ public class Enemy : MonoBehaviour
 
 	private Rigidbody2D rb2d;
 
+	private bool rapidFireShooting = false;
+
 	// Use this for initialization
 	void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D>();
+	}
+
+	private void Update()
+	{
+		if (rapidFireShooting)
+		{
+			Attack();
+		}
 	}
 
 	public void Initialize(EnemyTypeDefinition typeDef, Vector2 pos)
@@ -42,7 +53,7 @@ public class Enemy : MonoBehaviour
 		TypeDefinition = typeDef;
 		transform.position = pos;
 
-		GetComponent<SpriteRenderer>().sprite = typeDef.Sprite;
+		spriteRenderer.sprite = typeDef.Sprite;
 		Health = TypeDefinition.Health;
 
 		var panda = GetComponent<PandaBehaviour>();
@@ -91,6 +102,20 @@ public class Enemy : MonoBehaviour
 	public bool Attack()
 	{
 		projectileWeapon.OnFire();
+		return true;
+	}
+
+	[Task]
+	public bool StartShootingAtGunRate()
+	{
+		rapidFireShooting = true;
+		return true;
+	}
+
+	[Task]
+	public bool StopShootingAtGunRate()
+	{
+		rapidFireShooting = false;
 		return true;
 	}
 }

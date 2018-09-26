@@ -1,24 +1,20 @@
 tree("Root")
 	fallback
 		tree("FlyTowardsPlayer")
-		//tree("NearOrbitPlayer")
-		tree("FlyAwayFromPlayer")
-		//tree("SweepAround")
+		tree("KeepInTheSameDirection")
 		Wait(0.2)
 
 tree("FlyTowardsPlayer")
 	sequence
 		SetChaseTarget_UnitCircleAroundPlayer
+		StartShootingAtGunRate
 		while not NearChaseTarget	
 			ChaseTheTargetUntilNear
+		StopShootingAtGunRate
 
-//tree("NearOrbitPlayer")
-
-tree("FlyAwayFromPlayer")
+tree("KeepInTheSameDirection")
 	sequence
-		SetDestination_Safe
+		SetDestination_DirectlyAhead(8.0)
 		while not NearMoveDestination
 			MoveToDestination
-
-//tree("SweepAround")
 
