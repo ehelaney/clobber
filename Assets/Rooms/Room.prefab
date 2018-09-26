@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 3664157344466760354}
   - component: {fileID: 2113883504329088158}
   - component: {fileID: 114844241256622160}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Wall Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1641176186172268
 GameObject:
   m_ObjectHideFlags: 1
@@ -911,7 +911,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986816177678500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0211926, y: 2.3599997, z: -10}
+  m_LocalPosition: {x: -1.0174465, y: 2.3599997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4619326914908458}
@@ -1910,9 +1910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleRandomEnemyTypesToSpawn:
-  - {fileID: 11400000, guid: f946b1b6358b7c1408f89b6a341082ae, type: 2}
-  - {fileID: 11400000, guid: e13f18982c0ef2844a6150bb02f22b0e, type: 2}
-  - {fileID: 11400000, guid: 1a7d785a7eb28734da2d92b6fa938c15, type: 2}
+  - {fileID: 11400000, guid: 28697780295ed004cb419a27383243b7, type: 2}
   soundEffectToPlay: {fileID: 11400000, guid: 49c3e633246d5324ba2ada22a12f7dcf, type: 2}
 --- !u!114 &114371535694346276
 MonoBehaviour:

@@ -196,6 +196,13 @@ namespace EnemyAI
 			return true;
 		}
 
+		[Task]
+		bool SetDestination_DirectlyAhead(float ahead)
+		{
+			moveDestination = (Vector2)transform.position + ((Vector2)transform.right).normalized * ahead;
+			return true;
+		}
+
 		#endregion Flee
 
 		#region Random Patrol

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorTree:
   - {fileID: 4900000, guid: a729bffaf04aa6340a5888920c28c132, type: 3}
-  moveSpeed: 5
+  moveSpeed: 10
   rotationSpeed: 90
   visualAcuity: 3
