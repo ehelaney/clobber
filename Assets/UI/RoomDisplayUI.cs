@@ -32,7 +32,7 @@ public class RoomDisplayUI: MonoBehaviour
 
 		maxHealth = PlayerInfo.Instance.maxHealth;
 		playerHealth.maxValue = (float)maxHealth;
-		playerHealth.value = (float)maxHealth;
+		playerHealth.value = (float)PlayerInfo.Instance.Health; //current health
 		PlayerInfo.Instance.OnHealthChanged += OnPlayerHealthChanged;
 	}
 
