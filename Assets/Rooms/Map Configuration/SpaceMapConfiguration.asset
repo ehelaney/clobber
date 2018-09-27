@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc432e05bb94f8459dc705c1aa6147a, type: 3}
   m_Name: SpaceMapConfiguration
   m_EditorClassIdentifier: 
-  MapSize_x: 25
-  MapSize_y: 25
+  MapSize_x: 18
+  MapSize_y: 10
   mapCenter: {x: 0, y: 0}
   TopEdgeTile: {fileID: 11400000, guid: 9574f1d8803c1574fa38a8f60f783542, type: 2}
   RightEdgeTile: {fileID: 11400000, guid: 64eaa0b4553bb414a98a64d4dc7c8a88, type: 2}
