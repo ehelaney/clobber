@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
 	public MeleeWeapon meleeWeapon;
 	public ProjectileWeapon projectileWeapon;
+	public SoundDefinition playerHitSound;
 
 	private void Awake()
 	{
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
 	public void Hit(int damage, Vector2 damageSource)
 	{
 		PlayerInfo.Instance.ChangeHealth(damage * -1);
+		SoundManager.Instance.PlaySound(playerHitSound, this.gameObject.transform.position);
 	}
 }
 

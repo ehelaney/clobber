@@ -246,7 +246,7 @@ BoxCollider2D:
   m_Offset: {x: 0.0048238523, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.50557584, y: 0.044403635}
     oldSize: {x: 0.3, y: 1.23}
     newSize: {x: 0.3, y: 1.23}
     adaptiveTilingThreshold: 0.5
@@ -339,8 +339,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: 1
-  rightHand: {fileID: 114663168398970976}
-  leftHand: {fileID: 114454291373699522}
+  meleeWeapon: {fileID: 0}
+  projectileWeapon: {fileID: 0}
+  playerHitSound: {fileID: 11400000, guid: 20024ac7964cce0448d4106e898dff47, type: 2}
 --- !u!212 &212262040402713970
 SpriteRenderer:
   m_ObjectHideFlags: 1
