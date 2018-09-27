@@ -2466,6 +2466,7 @@ MonoBehaviour:
   playerMovement: 1
   meleeWeapon: {fileID: 114230659214009946}
   projectileWeapon: {fileID: 114850023739012774}
+  playerHitSound: {fileID: 11400000, guid: 20024ac7964cce0448d4106e898dff47, type: 2}
 --- !u!114 &114844241256622160
 MonoBehaviour:
   m_ObjectHideFlags: 1
