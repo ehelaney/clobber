@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
 		projectileWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingProjectileWeapon);
 	}
 
+	public void EquipProjectileWeapon(ProjectileWeaponDefinition weapon)
+	{
+		projectileWeapon.SetWeaponDefinition(weapon);
+	}
+
 	public void AttackWithPrimary(Vector2 pos)
 	{
 		projectileWeapon.OnFire();
