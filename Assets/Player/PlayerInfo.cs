@@ -16,7 +16,7 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
-	public ProjectileWeaponDefinition startingProjectileWeapon;
+	public ProjectileWeaponDefinition currentProjectileWeapon;
 	public MeleeWeaponDefinition startingMeleeWeapon;
 
 	public GameEventListenerScriptableObjectInt scoredPointsListener; //this is necessary so the asset loads with the playerinfo
@@ -55,6 +55,28 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 
 			RoomSelector.Instance.GoToGameOver();
 		}
+	}
+
+	#endregion
+
+	#region Weapons
+
+	public delegate void ProjectileWeaponChanged(ProjectileWeaponDefinition newWeapon);
+	public ProjectileWeaponChanged OnProjectileWeaponChanged;
+
+	public void ChangeProjectileWeapon(ProjectileWeaponDefinition weapon)
+	{
+		SetProjectileWeapon(weapon);
+	}
+
+	private void SetProjectileWeapon(ProjectileWeaponDefinition weapon)
+	{
+		if(OnProjectileWeaponChanged != null)
+		{
+			OnProjectileWeaponChanged(weapon);
+		}
+
+		currentProjectileWeapon = weapon;
 	}
 
 	#endregion
