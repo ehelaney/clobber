@@ -357,41 +357,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114205063618790702, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114205063618790702, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114205063618790702, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114205063618790702, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114838997594248438, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f,
-        type: 2}
-      propertyPath: titleSong
-      value: 
-      objectReference: {fileID: 11400000, guid: 6bc2c4e7d8689f94683185d26f9025d6,
-        type: 2}
-    - target: {fileID: 1842581425339910, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224415184033606724, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.0037841797
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c261fa3ace8cc04cb2c48cad4d4aa4f, type: 2}
   m_IsPrefabAsset: 0

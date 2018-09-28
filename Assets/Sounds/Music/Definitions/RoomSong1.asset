@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66b1487aa0346c46b12ff25aaf820ed, type: 3}
   m_Name: RoomSong1
   m_EditorClassIdentifier: 
-  helpfulName: Polka
-  clip: {fileID: 8300000, guid: e263cf686959e6b43b5cc22f8a255eae, type: 3}
+  helpfulName: simple but steady
+  clip: {fileID: 8300000, guid: 6ab2e381aad80034786ec444899a9f02, type: 3}
   volume: 1
   pitch: 1
   volumeModifier: 0.1
