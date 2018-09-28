@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4e2c6acdfcfceb478c590f45929c5f7, type: 3}
-  m_Name: PlayerLaser
+  m_Name: PlayerBulletSmall
   m_EditorClassIdentifier: 
-  Name: playerlaser
-  Speed: 20
-  Damage: 3
-  sprite: {fileID: 21300000, guid: 1a1309fd93f90434db6e40821950f698, type: 3}
+  Name: small green missile
+  Speed: 25
+  Damage: 1
+  sprite: {fileID: 21300000, guid: 83c0cd2d17668fb43a4622fdbc5da641, type: 3}
   Layer: 14

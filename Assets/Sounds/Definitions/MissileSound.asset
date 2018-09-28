@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e66b1487aa0346c46b12ff25aaf820ed, type: 3}
-  m_Name: PlayerLaserSound
+  m_Name: MissileSound
   m_EditorClassIdentifier: 
-  helpfulName: basic laser projectile weapon
-  clip: {fileID: 8300000, guid: 97f5a037fcd652d48809c0bffb4aaa71, type: 3}
-  volume: 0.325
-  pitch: 1
+  helpfulName: for a slow moving projectile
+  clip: {fileID: 8300000, guid: 365b2bb7d4cb99143a60422c481a56a2, type: 3}
+  volume: 0.706
+  pitch: 1.018
   volumeModifier: 0.1
-  pitchModifier: 0.202
+  pitchModifier: 0.1
