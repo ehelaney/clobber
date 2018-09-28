@@ -71,14 +71,7 @@ namespace EnemyAI
 			//look at player first
 			if (directionToTarget != Vector2.zero)
 			{
-				float currentAngle;
-				Vector3 axis;
-				transform.rotation.ToAngleAxis(out currentAngle, out axis);
-
-				float destAngle;
-				Quaternion.FromToRotation(Vector3.right, directionToTarget).ToAngleAxis(out destAngle, out axis);
-
-				rb2d.MoveRotation(Mathf.LerpAngle(currentAngle, destAngle, spinRate));
+				RotateToFacePlayer();
 			}
 
 			rb2d.velocity = (GetChaseTarget() - (Vector2)transform.position).normalized * typeDefinition.moveSpeed;
@@ -150,6 +143,41 @@ namespace EnemyAI
 			float spinRate = typeDefinition.rotationSpeed * Time.deltaTime;
 			rb2d.MoveRotation(rb2d.rotation + spinRate);
 			rb2d.velocity = typeDefinition.moveSpeed * transform.up;
+		}
+
+
+		[Task]
+		public void Rotate()
+		{
+			float spinRate = typeDefinition.rotationSpeed * Time.deltaTime;
+			rb2d.MoveRotation(rb2d.rotation + spinRate);
+		}
+
+		static Quaternion rightToUp = Quaternion.Euler(0f, 0f, 90f);
+
+		[Task]
+		public bool RotateToFacePlayer()
+		{
+			var newRotation = Quaternion.LookRotation(transform.position - thePlayer.transform.position, Vector3.forward);
+			newRotation.x = 0.0f;
+			newRotation.y = 0.0f;
+			newRotation *= rightToUp;
+			transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, typeDefinition.rotationSpeed * Time.deltaTime);
+
+			return (Quaternion.Angle(transform.rotation, newRotation) < 5.0f);
+		}
+
+		//runs forever, returns failure when the player falls out of vision
+		[Task]
+		public void ContinuouslyFacePlayer()
+		{
+			var newRotation = Quaternion.LookRotation(transform.position - thePlayer.transform.position, Vector3.forward);
+			newRotation.x = 0.0f;
+			newRotation.y = 0.0f;
+			newRotation *= rightToUp;
+			transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, typeDefinition.rotationSpeed * Time.deltaTime);
+
+			if (!CanSeeThePlayer()) Task.current.Fail();
 		}
 
 		#endregion Circle Patrol

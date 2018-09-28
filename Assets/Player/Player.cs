@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour , ICanBeHitByProjectile
 {
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
 	{
 		PlayerInfo.Instance.ChangeHealth(damage * -1);
 		SoundManager.Instance.PlaySound(playerHitSound, this.gameObject.transform.position);
+	}
+
+	void ICanBeHitByProjectile.OnHitByProjectile(int damage, Vector2 location)
+	{
+		Hit(damage, location);
 	}
 }
 

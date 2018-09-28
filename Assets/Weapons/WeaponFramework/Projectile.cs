@@ -37,14 +37,15 @@ public class Projectile : MonoBehaviour
 	/// <param name="other">The other Collider2D involved in this collision.</param>
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.CompareTag("Enemy"))
+		var target = other.gameObject.GetComponent<ICanBeHitByProjectile>();
+		if (target != null)
 		{
-			other.gameObject.GetComponent<Enemy>().Hit(Damage, (transform.position + other.transform.position) / 2f);
-			OnHitSomething();
-		}
-		else if (other.gameObject.CompareTag("Player"))
-		{
-			other.gameObject.GetComponent<Player>().Hit(Damage, (transform.position + other.transform.position) / 2f);
+			target.OnHitByProjectile(Damage, (transform.position + other.transform.position) / 2f);
 		}
 	}
+}
+
+public interface ICanBeHitByProjectile
+{
+	void OnHitByProjectile(int damage, Vector2 location);
 }
