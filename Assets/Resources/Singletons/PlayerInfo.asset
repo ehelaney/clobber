@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   maxHealth: 7
-  startingProjectileWeapon: {fileID: 11400000, guid: c2203d9961e648e4d8226d3e141293bd,
+  currentProjectileWeapon: {fileID: 11400000, guid: ad1ad7d794ca0684d8acf5ebab605560,
     type: 2}
   startingMeleeWeapon: {fileID: 11400000, guid: f93144c8bd2e31e4e8c5e78f96bca544,
     type: 2}

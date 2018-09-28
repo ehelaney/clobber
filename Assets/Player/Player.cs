@@ -32,13 +32,22 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 	{
 		//this will reset the weapons each room - move this so it only happens once when the game starts
 		meleeWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingMeleeWeapon);
-		projectileWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingProjectileWeapon);
+		projectileWeapon.SetWeaponDefinition(PlayerInfo.Instance.currentProjectileWeapon);
+
+		PlayerInfo.Instance.OnProjectileWeaponChanged += OnPlayerProjectileWeaponChanged;
 	}
 
 	public void EquipProjectileWeapon(ProjectileWeaponDefinition weapon)
 	{
+		PlayerInfo.Instance.ChangeProjectileWeapon(weapon);
+		//projectileWeapon.SetWeaponDefinition(weapon);
+	}
+
+	void OnPlayerProjectileWeaponChanged(ProjectileWeaponDefinition weapon)
+	{
 		projectileWeapon.SetWeaponDefinition(weapon);
 	}
+
 
 	public void AttackWithPrimary(Vector2 pos)
 	{
