@@ -40,6 +40,8 @@ public class SoundManager : ScriptableSingleton<SoundManager>
 	//Used to play sound clips with various settings
 	public void PlaySound(SoundDefinition sound, Vector2 pos)
 	{
+		if (sound == null) return;
+
 		if (_currentSoundEffectsContainer == null)
 		{
 			SetCurrentSoundEffectsContainer();
