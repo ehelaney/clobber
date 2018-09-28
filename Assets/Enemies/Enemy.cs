@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PandaBehaviour))]
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ICanBeHitByProjectile
 {
 	public SpriteRenderer spriteRenderer;
 
@@ -117,5 +117,10 @@ public class Enemy : MonoBehaviour
 	{
 		rapidFireShooting = false;
 		return true;
+	}
+
+	void ICanBeHitByProjectile.OnHitByProjectile(int damage, Vector2 location)
+	{
+		Hit(damage, location);
 	}
 }

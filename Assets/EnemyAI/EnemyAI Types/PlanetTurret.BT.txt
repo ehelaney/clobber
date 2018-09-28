@@ -1,0 +1,25 @@
+tree("Root")
+	fallback
+		tree("Rotate")
+		//tree("RotateToFacePlayer")
+		tree("FollowAndShootPlayer")
+		Wait(0.2)
+
+tree("Rotate")
+	sequence
+		while not CanSeeThePlayer
+			Rotate
+
+tree("RotateToFacePlayer")
+	sequence
+		while CanSeeThePlayer
+			RotateToFacePlayer				
+
+
+tree("FollowAndShootPlayer")
+	sequence
+		StartShootingAtGunRate
+		not 
+			sequence
+				ContinuouslyFacePlayer			
+		StopShootingAtGunRate
