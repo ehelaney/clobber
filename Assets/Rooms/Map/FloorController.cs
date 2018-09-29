@@ -38,4 +38,9 @@ public class FloorController : MonoBehaviour
 			}
 		}
 	}
+
+	public Vector3 GetWorldCoordinatesOfPoint(int x, int y)
+	{
+		return map.CellToWorld(new Vector3Int(x, y, 0));
+	}
 }
