@@ -10,6 +10,9 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	private int health;
 	public int Health { get { return health; } }
 
+	private bool playerIsDead;
+	public bool PlayerIsDead { get { return playerIsDead; } }
+
 	/// <summary>
 	/// Total points the player has accumulated
 	/// </summary>
@@ -27,6 +30,7 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	{
 		health = maxHealth;
 		totalPoints = 0;
+		playerIsDead = false;
 	}
 
 	#region Health
@@ -51,9 +55,8 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 		if (health <= 0)
 		{
 			//TODO: do something because the player died (before it transitions to the final scene)
-			//Also TODO: the PlayerInfo shouldn't be transitioning states.  This logic should move to the room/scene transition system once that is created
 
-			RoomSelector.Instance.GoToGameOver();
+			playerIsDead = true;
 		}
 	}
 

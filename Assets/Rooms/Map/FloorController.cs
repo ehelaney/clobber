@@ -6,8 +6,9 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(Tilemap))]
 public class FloorController : MonoBehaviour 
 {
-	private Tilemap map;
+	public GameObject roomTeleporter;
 
+	private Tilemap map;
 	private MapConfiguration mapGenerator;
 
 	// Use this for initialization
@@ -42,5 +43,10 @@ public class FloorController : MonoBehaviour
 	public Vector3 GetWorldCoordinatesOfPoint(int x, int y)
 	{
 		return map.CellToWorld(new Vector3Int(x, y, 0));
+	}
+
+	public void OnSpawnRoomTeleporter()
+	{
+		Instantiate(roomTeleporter);
 	}
 }

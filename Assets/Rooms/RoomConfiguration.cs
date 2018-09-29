@@ -14,6 +14,10 @@ public class RoomConfiguration : Singleton<RoomConfiguration>
 
 	public RoomSpawn[] roomSpawns;
 
+	[Header("Room Triggers")]
+	public bool continueConditionChecksAfterFirstTrigger = false;
+	public RoomTrigger[] roomTriggers;
+
 	// Use this for initialization
 	void Start ()
 	{
