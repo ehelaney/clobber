@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5068328406c45240b6716cc95592be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextRoomEvent: {fileID: 11400000, guid: 8fab20bf4eb953c4f952f6f435a40230, type: 2}
+  nextRoomEvent: {fileID: 11400000, guid: fa6dbadc97ce15e4b8adf461697af232, type: 2}
 --- !u!212 &212299315818841954
 SpriteRenderer:
   m_ObjectHideFlags: 1

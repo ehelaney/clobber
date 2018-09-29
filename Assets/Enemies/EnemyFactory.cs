@@ -18,6 +18,8 @@ public class EnemyFactory : Singleton<EnemyFactory>
 	void Start ()
 	{
 		enemyPool.Initialize();
+
+		SpawnEnemies();
 	}
 
 	public Enemy SpawnNewEnemy(EnemyTypeDefinition enemyType, Vector2 pos)
