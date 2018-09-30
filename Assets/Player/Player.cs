@@ -12,6 +12,11 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 	public ProjectileWeapon projectileWeapon;
 	public SoundDefinition playerHitSound;
 
+	public Transform turret;
+
+	public float moveSpeed = 5.0f;
+	private Rigidbody2D rb;
+
 	private void Awake()
 	{
 		switch (playerMovement)
@@ -34,6 +39,8 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 
 		//this will reset the weapons each room - move this so it only happens once when the game starts
 		meleeWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingMeleeWeapon);
+
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	public void OnPlayerProjectileWeaponChanged(UnityEngine.Object weapon)
@@ -58,10 +65,35 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 		SoundManager.Instance.PlaySound(playerHitSound, this.gameObject.transform.position);
 	}
 
+	public void RotateTurret(Vector3 direction)
+	{
+		//drop the z coord from the mouse position.  in a 2D game we can't determine depth, so use the same depth as the transform
+		turret.up = new Vector3(direction.x, direction.y, turret.position.z) - turret.position;
+	}
+
+	public void Move(Vector2 moveDirection)
+	{
+		rb.velocity = moveDirection * moveSpeed;
+
+		leftJet.SetPower(moveDirection.x);
+		rightJet.SetPower(moveDirection.x * -1);
+		topJet.SetPower(moveDirection.y * -1);
+		bottomJet.SetPower(moveDirection.y);
+	}
+
 	void ICanBeHitByProjectile.OnHitByProjectile(int damage, Vector2 location)
 	{
 		Hit(damage, location);
 	}
+
+	#region Jets
+
+	public Jet leftJet;
+	public Jet rightJet;
+	public Jet topJet;
+	public Jet bottomJet;
+
+	#endregion Jets
 }
 
 public enum PlayerMovement
