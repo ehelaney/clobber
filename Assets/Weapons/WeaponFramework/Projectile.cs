@@ -14,15 +14,39 @@ public class Projectile : MonoBehaviour
 
 	public int Damage { get; private set; }
 
+	public float SpeedBurstDuration;
+	private bool awaitingSlowdown = false;
+	private float speedBurstTimer = 0.0f;
+	private Vector2 slowDownForce;
+
 	public void Initialize(ProjectileDefinition projectileDefintion, Vector2 startingPoint, Vector2 direction, Quaternion rotation)
 	{
 		TypeDefinition = projectileDefintion;
 		gameObject.transform.position = startingPoint;
 		gameObject.transform.rotation = rotation;
-		GetComponent<Rigidbody2D>().AddForce(direction * TypeDefinition.Speed, ForceMode2D.Impulse);
+
 		Damage = TypeDefinition.Damage;
 		gameObject.layer = projectileDefintion.Layer;
 		GetComponent<SpriteRenderer>().sprite = projectileDefintion.sprite;
+
+		Vector2 projectileForce = direction * TypeDefinition.Speed;
+		GetComponent<Rigidbody2D>().AddForce(projectileForce * 2.0f, ForceMode2D.Impulse);
+		speedBurstTimer = SpeedBurstDuration;
+		slowDownForce = projectileForce * -1;
+		awaitingSlowdown = true;
+	}
+
+	private void Update()
+	{
+		if (awaitingSlowdown)
+		{
+			speedBurstTimer -= Time.deltaTime;
+			if (speedBurstTimer <= 0.0f)
+			{
+				GetComponent<Rigidbody2D>().AddForce(slowDownForce, ForceMode2D.Impulse);
+				awaitingSlowdown = false;
+			}
+		}
 	}
 
 	public void OnHitSomething()
