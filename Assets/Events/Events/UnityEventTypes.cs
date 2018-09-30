@@ -13,3 +13,9 @@ public class UnityEventInt : UnityEvent<int>
 {
 
 }
+
+[System.Serializable]
+public class UnityEventUnityObject : UnityEvent<UnityEngine.Object>
+{
+
+}

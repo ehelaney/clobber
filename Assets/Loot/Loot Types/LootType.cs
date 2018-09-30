@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class LootType : ScriptableObject
 {
 	[SerializeField]
-	private string helpfulName;
+	protected string helpfulName;
 	public string HelpfulName
 	{
 		get
@@ -14,7 +14,7 @@ public abstract class LootType : ScriptableObject
 	}
 
 	[SerializeField]
-	private Sprite sprite;
+	protected Sprite sprite;
 	public Sprite Sprite
 	{
 		get
@@ -24,7 +24,7 @@ public abstract class LootType : ScriptableObject
 	}
 
 	[SerializeField]
-	private float lifeTime;
+	protected float lifeTime;
 	public float LifeTime
 	{
 		get

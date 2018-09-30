@@ -7,6 +7,10 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	[Range(1, 10)]
 	public int maxHealth = 7;
 
+	public ProjectileWeaponDefinition startingProjectileWeapon;
+	public MeleeWeaponDefinition startingMeleeWeapon;
+
+
 	private int health;
 	public int Health { get { return health; } }
 
@@ -19,9 +23,6 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	private int totalPoints;
 	public int TotalPoints { get { return totalPoints; } }
 
-	public ProjectileWeaponDefinition startingProjectileWeapon;
-	public MeleeWeaponDefinition startingMeleeWeapon;
-
 	public GameEventListenerScriptableObjectInt scoredPointsListener; //this is necessary so the asset loads with the playerinfo
 	public GameEventListenerScriptableObjectInt startGameListener;
 	public GameEventInt pointsChanged;
@@ -31,6 +32,8 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 		health = maxHealth;
 		totalPoints = 0;
 		playerIsDead = false;
+
+		ChangeProjectileWeapon(startingProjectileWeapon);
 	}
 
 	#region Health
@@ -83,4 +86,22 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	}
 
 	#endregion Points
+
+	#region Weapons
+
+	private ProjectileWeaponDefinition currentProjectileWeapon;
+	public ProjectileWeaponDefinition CurrentProjectileWeapon { get { return currentProjectileWeapon; } }
+
+	public GameEventUnityObject projectileWeaponChanged;
+
+	public void ChangeProjectileWeapon(ProjectileWeaponDefinition weapon)
+	{
+		SetProjectileWeapon(weapon);
+	}
+	private void SetProjectileWeapon(ProjectileWeaponDefinition weapon)
+	{
+		currentProjectileWeapon = weapon;
+		projectileWeaponChanged.Raise(currentProjectileWeapon);
+	}
+	#endregion
 }

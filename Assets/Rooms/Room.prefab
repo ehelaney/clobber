@@ -822,6 +822,7 @@ GameObject:
   - component: {fileID: 212558094785002400}
   - component: {fileID: 50383955934545266}
   - component: {fileID: 58048851234096864}
+  - component: {fileID: 114721071382948076}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -1066,7 +1067,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986816177678500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.08, y: 3, z: -10}
+  m_LocalPosition: {x: -1.0222225, y: 2.9999998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4619326914908458}
@@ -2337,7 +2338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58646dfc40e310243afd7c346e4b70e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 114841778741755920}
   laserWeapon: {fileID: 11400000, guid: ad1ad7d794ca0684d8acf5ebab605560, type: 2}
   machineGun: {fileID: 11400000, guid: ac01698a279840441b69ffb83ab2cd75, type: 2}
   missileLauncher: {fileID: 11400000, guid: f592669352469a74d96849d8da8cbaf8, type: 2}
@@ -2690,6 +2690,34 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114721071382948076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893564411828936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde5209f4b0700440880ca35ee828946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 31a67fa625e7ed9409bf1949b78a1aa8, type: 2}
+  unityObjectEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114841778741755920}
+        m_MethodName: OnPlayerProjectileWeaponChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEventUnityObject, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114731567742759222
 MonoBehaviour:
   m_ObjectHideFlags: 1
