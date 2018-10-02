@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class RoomDisplayUI: MonoBehaviour
 {
 	public Slider playerHealth;
+	public Image projectileImage;
+	public Image meleeImage;
 	private int maxHealth;
 
 	// Use this for initialization
@@ -40,4 +42,11 @@ public class RoomDisplayUI: MonoBehaviour
 	{
 		playerHealth.value = (float)newHealth;
 	}
+
+	public void OnPlayerProjectileWeaponChanged(UnityEngine.Object weapon)
+	{
+		ProjectileWeaponDefinition weaponDef = (ProjectileWeaponDefinition)weapon;
+		projectileImage.sprite = weaponDef.ProjectileType.sprite;
+	}
+
 }
