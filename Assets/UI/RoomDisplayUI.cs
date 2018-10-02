@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RoomDisplayUI: MonoBehaviour
 {
+	public Text roomText;
 	public Slider playerHealth;
 	public Image projectileImage;
 	public Image meleeImage;
@@ -15,11 +16,11 @@ public class RoomDisplayUI: MonoBehaviour
 	{
 		try
 		{
-			GetComponent<UnityEngine.UI.Text>().text = "Room: " + RoomSelector.Instance.CurrentRoom.SceneName;
+			roomText.text = "Room: " + RoomSelector.Instance.CurrentRoom.SceneName;
 		}
 		catch(System.IndexOutOfRangeException)
 		{
-			GetComponent<UnityEngine.UI.Text>().text = "Room: Unknown";
+			roomText.text = "Room: Unknown";
 		}
 
 		InitPlayerHealth();
