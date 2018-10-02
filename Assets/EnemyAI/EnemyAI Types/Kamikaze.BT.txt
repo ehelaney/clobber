@@ -1,0 +1,11 @@
+tree("Root")
+	fallback
+		tree("Attack!")
+		FullStop
+
+tree("Attack!")
+	sequence
+		CanSeeThePlayer
+		SetDestination_Player
+		while not NearMoveDestination
+				MoveToDestination
