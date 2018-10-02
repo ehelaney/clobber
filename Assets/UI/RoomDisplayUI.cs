@@ -23,7 +23,6 @@ public class RoomDisplayUI: MonoBehaviour
 		}
 
 		InitPlayerHealth();
-		PlayerInfo.Instance.OnProjectileWeaponChanged += OnPlayerProjectileWeaponChanged;
 	}
 
 	private void InitPlayerHealth()
@@ -44,14 +43,10 @@ public class RoomDisplayUI: MonoBehaviour
 		playerHealth.value = (float)newHealth;
 	}
 
-	void OnPlayerProjectileWeaponChanged(ProjectileWeaponDefinition weapon)
+	public void OnPlayerProjectileWeaponChanged(UnityEngine.Object weapon)
 	{
-		//update the sprite
-		projectileImage.sprite = weapon.ProjectileType.sprite;
+		ProjectileWeaponDefinition weaponDef = (ProjectileWeaponDefinition)weapon;
+		projectileImage.sprite = weaponDef.ProjectileType.sprite;
 	}
 
-	void OnPlayerMeleeWeaponChanged(MeleeWeaponDefinition weapon)
-	{
-
-	}
 }
