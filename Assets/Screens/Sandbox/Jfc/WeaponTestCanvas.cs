@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class WeaponTestCanvas : MonoBehaviour
 {
-	public Player player;
 	public ProjectileWeaponDefinition laserWeapon;
 	public ProjectileWeaponDefinition machineGun;
 	public ProjectileWeaponDefinition missileLauncher;
 
 	public void EquipLaserWeapon()
 	{
-		player.EquipProjectileWeapon(laserWeapon);
+		PlayerInfo.Instance.ChangeProjectileWeapon(laserWeapon);
 	}
 
 	public void EquipMachineGun()
 	{
-		player.EquipProjectileWeapon(machineGun);
+		PlayerInfo.Instance.ChangeProjectileWeapon(machineGun);
 	}
 
 	public void EquipMissileLauncher()
 	{
-		player.EquipProjectileWeapon(missileLauncher);
+		PlayerInfo.Instance.ChangeProjectileWeapon(missileLauncher);
 	}
 }
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Club
   Damage: 1
-  sprite: {fileID: 21300000, guid: 00cfeda1d4964e4429e93ea95be86258, type: 3}
+  sprite: {fileID: 21300000, guid: 56f074321a9cfa94a9636454f189ef2a, type: 3}

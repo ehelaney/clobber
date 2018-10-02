@@ -8,4 +8,5 @@ public class ProjectileWeaponDefinition : ScriptableObject
 	public float TimeBetweenShots;
 	public SoundDefinition OnShootSound;
 	public Sprite sprite;
+	public Sprite lootSprite;
 }

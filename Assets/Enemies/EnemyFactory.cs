@@ -18,6 +18,8 @@ public class EnemyFactory : Singleton<EnemyFactory>
 	void Start ()
 	{
 		enemyPool.Initialize();
+
+		SpawnEnemies();
 	}
 
 	public Enemy SpawnNewEnemy(EnemyTypeDefinition enemyType, Vector2 pos)
@@ -30,6 +32,19 @@ public class EnemyFactory : Singleton<EnemyFactory>
 
 	public void SpawnEnemies()
 	{
+		var floor = FindObjectOfType<FloorController>();
+		foreach(var roomSpawn in RoomConfiguration.instance.roomSpawns)
+		{
+			foreach(var patternPoint in roomSpawn.spawnPattern.GetValues())
+			{
+				var tilePoint = patternPoint + roomSpawn.centerPoint;
+				Vector3 worldPoint = floor.GetWorldCoordinatesOfPoint(tilePoint.x, tilePoint.y);
+				SpawnNewEnemy(roomSpawn.enemyType, worldPoint);
+			}
+		}
+
+
+		/*
 		MapConfiguration map = RoomConfiguration.instance.mapConfiguration;
 		Array2DEnemySpawnDefinition enemyMap = RoomConfiguration.instance.enemyMap;
 
@@ -59,6 +74,7 @@ public class EnemyFactory : Singleton<EnemyFactory>
 			position.y -= ychunk;
 			position.x = initialPosition.x;
 		}
+		*/
 	}
 
 	/// <summary>
