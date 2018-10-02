@@ -95,6 +95,7 @@ public class Enemy : MonoBehaviour, ICanBeHitByProjectile
 		if (collision.gameObject.CompareTag("Player"))
 		{
 			collision.gameObject.GetComponent<Player>().Hit(CollisionStrength, (transform.position + collision.gameObject.transform.position) / 2f);
+			Hit(CollisionStrength, collision.relativeVelocity);
 		}
 	}
 
