@@ -45,6 +45,16 @@ public class EnemyTypeDefinition : ScriptableObject
 	}
 
 	[SerializeField]
+	private int collisionStrength = 1;
+	public int CollisionStrength
+	{
+		get
+		{
+			return collisionStrength;
+		}
+	}
+
+	[SerializeField]
 	private SoundDefinition onHitSound;
 	public SoundDefinition OnHitSound
 	{

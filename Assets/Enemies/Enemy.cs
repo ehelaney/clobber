@@ -25,11 +25,6 @@ public class Enemy : MonoBehaviour, ICanBeHitByProjectile
 		}
 	}
 
-	/// <summary>
-	/// The amount of damage the enemy will do to the player upon colliding
-	/// </summary>
-	public int CollisionStrength = 1;
-
 	private Rigidbody2D rb2d;
 
 	private bool rapidFireShooting = false;
@@ -94,8 +89,8 @@ public class Enemy : MonoBehaviour, ICanBeHitByProjectile
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			collision.gameObject.GetComponent<Player>().Hit(CollisionStrength, (transform.position + collision.gameObject.transform.position) / 2f);
-			Hit(CollisionStrength, collision.relativeVelocity);
+			collision.gameObject.GetComponent<Player>().Hit(TypeDefinition.CollisionStrength, (transform.position + collision.gameObject.transform.position) / 2f);
+			Hit(TypeDefinition.CollisionStrength, collision.relativeVelocity);
 		}
 	}
 
