@@ -225,6 +225,24 @@ namespace EnemyAI
 		}
 
 		[Task]
+		bool SetDestination_Player()
+		{
+			moveDestination = thePlayer.transform.position;
+			moveDestination.z = 0.0f;
+			Debug.Log(moveDestination);
+			return true;
+		}
+
+		[Task]
+		bool FullStop()
+		{
+			moveDestination = Vector3.zero;
+			rb2d.velocity = Vector3.zero;
+			rb2d.angularVelocity = 0.0f;
+			return true;
+		}
+
+		[Task]
 		bool SetDestination_DirectlyAhead(float ahead)
 		{
 			moveDestination = (Vector2)transform.position + ((Vector2)transform.right).normalized * ahead;
