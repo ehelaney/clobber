@@ -24,6 +24,7 @@ public class RoomDisplayUI: MonoBehaviour
 		}
 
 		InitPlayerHealth();
+		projectileImage.sprite = PlayerInfo.Instance.CurrentProjectileWeapon.ProjectileType.sprite; //new room instance each room so need to set current weapon in start
 	}
 
 	private void InitPlayerHealth()
