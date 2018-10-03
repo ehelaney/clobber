@@ -8,7 +8,6 @@ public class RoomDisplayUI: MonoBehaviour
 	public Text roomText;
 	public Slider playerHealth;
 	public Image projectileImage;
-	public Image meleeImage;
 	private int maxHealth;
 
 	// Use this for initialization

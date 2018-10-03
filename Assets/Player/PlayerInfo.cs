@@ -8,8 +8,7 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	public int maxHealth = 7;
 
 	public ProjectileWeaponDefinition startingProjectileWeapon;
-	public MeleeWeaponDefinition startingMeleeWeapon;
-
+	
 
 	private int health;
 	public int Health { get { return health; } }
