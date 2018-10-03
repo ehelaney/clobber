@@ -8,11 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e2c6acdfcfceb478c590f45929c5f7, type: 3}
-  m_Name: PlayerBulletSmall
+  m_Script: {fileID: 11500000, guid: 09bf2daf95d680447b620ad2ec60dc93, type: 3}
+  m_Name: LaserGunLootTable
   m_EditorClassIdentifier: 
-  Name: small yellow ball
-  Speed: 25
-  Damage: 1
-  sprite: {fileID: 21300000, guid: 4577b92fe591c974290e27c907de6780, type: 3}
-  Layer: 14
+  helpfulName: 
+  multiDrop: 0
+  lootChances:
+  - LootType: {fileID: 11400000, guid: 6093dc2684d8de847b00faf15523e108, type: 2}
+    Chance: 100

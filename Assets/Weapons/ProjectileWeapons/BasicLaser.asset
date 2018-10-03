@@ -16,4 +16,4 @@ MonoBehaviour:
   TimeBetweenShots: 0.25
   OnShootSound: {fileID: 11400000, guid: f871a18e696e9db4d827012ab544d78e, type: 2}
   sprite: {fileID: 21300000, guid: 50a31bed995651f4897b3060160a06ab, type: 3}
-  lootSprite: {fileID: 21300000, guid: 1a1309fd93f90434db6e40821950f698, type: 3}
+  lootSprite: {fileID: 21300000, guid: 081210a9dcdadb74b85df86ac94009f3, type: 3}

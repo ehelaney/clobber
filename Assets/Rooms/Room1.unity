@@ -123,7 +123,7 @@ Prefab:
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -241,12 +241,12 @@ Prefab:
         type: 2}
       propertyPath: roomSpawns.Array.data[1].enemyType
       value: 
-      objectReference: {fileID: 11400000, guid: d55c1d9dd9450b346b90c8aaeaa431e3,
+      objectReference: {fileID: 11400000, guid: a453a2f9542b87a4099a9433a333c39e,
         type: 2}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.data[1].centerPoint.x
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -331,11 +331,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.08
+      value: -1.0222225
       objectReference: {fileID: 0}
     - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.9999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
