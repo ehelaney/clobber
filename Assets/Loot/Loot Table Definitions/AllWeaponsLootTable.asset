@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bf2daf95d680447b620ad2ec60dc93, type: 3}
+  m_Name: AllWeaponsLootTable
+  m_EditorClassIdentifier: 
+  helpfulName: all weapons
+  multiDrop: 0
+  lootChances:
+  - LootType: {fileID: 11400000, guid: 6093dc2684d8de847b00faf15523e108, type: 2}
+    Chance: 34
+  - LootType: {fileID: 11400000, guid: a878cc86c06e5264dbeaa8fa4ad61a69, type: 2}
+    Chance: 33
+  - LootType: {fileID: 11400000, guid: 1dd1645c6789cfc47b963deaf82c9b9e, type: 2}
+    Chance: 33
