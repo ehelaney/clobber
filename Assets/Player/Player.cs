@@ -8,7 +8,6 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 {
 	public PlayerMovement playerMovement = PlayerMovement.KeyboardAndMouse;
 
-	public MeleeWeapon meleeWeapon;
 	public ProjectileWeapon projectileWeapon;
 	public SoundDefinition playerHitSound;
 
@@ -36,10 +35,6 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 	private void Start()
 	{
 		projectileWeapon.SetWeaponDefinition(PlayerInfo.Instance.CurrentProjectileWeapon);
-
-		//this will reset the weapons each room - move this so it only happens once when the game starts
-		meleeWeapon.SetWeaponDefinition(PlayerInfo.Instance.startingMeleeWeapon);
-
 		rb = GetComponent<Rigidbody2D>();
 	}
 
@@ -56,7 +51,7 @@ public class Player : MonoBehaviour , ICanBeHitByProjectile
 
 	public void AttackWithSecondary(Vector2 pos)
 	{
-		meleeWeapon.Attack();
+		Debug.Log("No Secondary Weapon Exists");
 	}
 
 	public void Hit(int damage, Vector2 damageSource)
