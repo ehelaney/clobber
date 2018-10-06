@@ -29,8 +29,9 @@ tree("Chase")
 
 tree("Patrol")
 	random
-		tree("RandomPatrol")
+		//tree("RandomPatrol")
 		tree("CirclePatrol")
+		FullStop
 		//tree("NormalPatrol") - not quite reday for prime time
 
 tree("CirclePatrol")

@@ -15,4 +15,4 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 50760620708a6044aaf53fbebc6092d7, type: 3}
   moveSpeed: 4
   rotationSpeed: 360
-  visualAcuity: 4
+  visualAcuity: 5

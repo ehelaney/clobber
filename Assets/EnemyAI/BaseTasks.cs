@@ -105,34 +105,6 @@ namespace EnemyAI
 			//TODO for Basic Fodder
 		}
 
-		// public IEnumerator Execute()
-		// {
-		// 	while (true)
-		// 	{
-		// 		if (target != null) 
-		// 		{
-		// 			float distanceToTarget = Vector2.Distance (transform.position, target.transform.position);
-		//  			if (distanceToTarget <= visualAcuity) 
-		// 			{
-		// 				Vector3 directionToTarget = target.transform.position - transform.position;
-		// 				//somehow screwed up some enemies and they were above the player...so do this for now???
-		// 				directionToTarget.z = 0f;
-
-		// 				float spinRate = rotateSpeed * Time.deltaTime;
-		// 				//look at player first
-		// 				if (directionToTarget != Vector3.zero)
-		// 				{
-		// 					transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.FromToRotation (Vector3.right, directionToTarget), spinRate);
-		// 				}
-		// 				//now move towards target
-		// 				float moveRate = moveSpeed * Time.deltaTime;
-		// 				transform.position += (target.transform.position - transform.position).normalized * moveRate;
-		// 			}
-		// 		}
-		// 		yield return null;
-		// 	}
-		// }
-
 		#endregion Chase Target
 
 		#region Circle Patrol
@@ -153,15 +125,15 @@ namespace EnemyAI
 			rb2d.MoveRotation(rb2d.rotation + spinRate);
 		}
 
-		static Quaternion rightToUp = Quaternion.Euler(0f, 0f, 90f);
-
 		[Task]
 		public bool RotateToFacePlayer()
 		{
-			var newRotation = Quaternion.LookRotation(transform.position - thePlayer.transform.position, Vector3.forward);
+			Vector3 lookVec = transform.position - thePlayer.transform.position;
+			lookVec.Normalize();
+			var newRotation = Quaternion.LookRotation(lookVec, Vector3.forward);
+			newRotation.Normalize();
 			newRotation.x = 0.0f;
 			newRotation.y = 0.0f;
-			newRotation *= rightToUp;
 			transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, typeDefinition.rotationSpeed * Time.deltaTime);
 
 			return (Quaternion.Angle(transform.rotation, newRotation) < 5.0f);
@@ -174,7 +146,7 @@ namespace EnemyAI
 			var newRotation = Quaternion.LookRotation(transform.position - thePlayer.transform.position, Vector3.forward);
 			newRotation.x = 0.0f;
 			newRotation.y = 0.0f;
-			newRotation *= rightToUp;
+			//newRotation *= rightToUp;
 			transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, typeDefinition.rotationSpeed * Time.deltaTime);
 
 			if (!CanSeeThePlayer()) Task.current.Fail();
