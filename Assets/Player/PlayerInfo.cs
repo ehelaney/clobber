@@ -43,6 +43,10 @@ public class PlayerInfo : ScriptableSingleton<PlayerInfo>
 	public void ChangeHealth(int diff)
 	{
 		SetHealth(health + diff);
+		if (0 > diff)
+		{
+			Stats.Instance.DamageTakenTotalIncrement(Mathf.Abs(diff));
+		}
 	}
 
 	private void SetHealth(int h)

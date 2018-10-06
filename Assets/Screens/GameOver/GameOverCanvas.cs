@@ -9,6 +9,7 @@ public class GameOverCanvas : MonoBehaviour
 	public SoundDefinition gameOverSong;
 	public Text roomText;
 	public Text pointsText;
+	public Text highScoreText;
 	public Canvas Success;
 	public Canvas Failure;
 
@@ -29,10 +30,13 @@ public class GameOverCanvas : MonoBehaviour
 		}
 		else //success
 		{
+			Stats.Instance.RoomsCompletedlIncrementByOne(); //GoToGameOver has no knowledge of whether this is game over success or failure so incrementing room count here instead.  Not ideal
 			Failure.gameObject.SetActive(false);
 		}
 
+		Stats.Instance.PersistStats();
 		roomText.text = "You made it to Room " + RoomSelector.Instance.CurrentRoomNumber();
 		pointsText.text = "Points: " + PlayerInfo.Instance.TotalPoints;
+		highScoreText.text = "High Score: " + Stats.Instance.HighScore;
 	}
 }

@@ -17,5 +17,6 @@ public class EnemyDeathSystem : MonoBehaviour
 
 		var points = pointsPool.InitNewObject().GetComponent<PointsNotification>();
 		points.Init(enemyDef.PointsForKilling, pos + Vector2.up);
+		Stats.Instance.EnemiesKilledIncrementByOne();
 	}
 }
