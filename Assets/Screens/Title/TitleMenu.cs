@@ -18,6 +18,12 @@ public class TitleMenu : MonoBehaviour
 		startGameEvent.Raise();
 	}
 
+	public void OnStatsClicked()
+	{
+		Stats.Instance.StatScreenVisitsIncrement();
+		Stats.Instance.PersistStats(); //this seems kinda dumb but otherwise this won't get saved if you quit the game without hitting the game over screen
+	}
+
 	public void OnGoToCredits()
 	{
 		GameSceneController.Instance.ChangeScene(creditsScene);

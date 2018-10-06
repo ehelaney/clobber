@@ -32,11 +32,13 @@ public class RoomSelector : ScriptableSingleton<RoomSelector>
 	public void GoToNextRoom()
 	{
 		roomIndex++;
+		Stats.Instance.RoomsCompletedlIncrementByOne();
 		LoadCurrentRoom();
 	}
 
 	public void GoToGameOver()
 	{
+		//this method has no knowledge of whether this is game over success or failure so incrementing room count in gameover canvas instead
 		GameSceneController.Instance.ChangeScene(gameOver);
 	}
 
