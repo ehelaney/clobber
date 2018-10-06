@@ -129,9 +129,7 @@ namespace EnemyAI
 		public bool RotateToFacePlayer()
 		{
 			Vector3 lookVec = transform.position - thePlayer.transform.position;
-			//lookVec.Normalize();
 			var newRotation = Quaternion.LookRotation(lookVec, Vector3.forward);
-			//newRotation.Normalize();
 			newRotation.x = 0.0f;
 			newRotation.y = 0.0f;
 			transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, typeDefinition.rotationSpeed * Time.deltaTime);
