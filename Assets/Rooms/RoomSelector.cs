@@ -18,6 +18,11 @@ public class RoomSelector : ScriptableSingleton<RoomSelector>
 		}
 	}
 
+	public int CurrentRoomNumber()
+	{
+		return roomIndex + 1;
+	}
+
 	public void GoToFirstRoom()
 	{
 		roomIndex = 0;
