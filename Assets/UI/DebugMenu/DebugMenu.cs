@@ -11,7 +11,7 @@ public class DebugMenu : MonoBehaviour
 
 	private CanvasGroup canvasGroup;
 
-	private bool visible = true;
+	private bool visible = false;
 
 
 	// Use this for initialization

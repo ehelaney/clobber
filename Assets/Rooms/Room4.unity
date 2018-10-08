@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.0142345
+      value: -1.0200748
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
@@ -166,6 +166,36 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[0].roomActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[1].roomActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[0].roomConditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[1].roomConditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4359893467268140, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -202,7 +232,7 @@ Prefab:
         type: 2}
       propertyPath: mapConfiguration
       value: 
-      objectReference: {fileID: 11400000, guid: 0277792ba56bb9e4e885454389ee1e83,
+      objectReference: {fileID: 11400000, guid: a25cf862aacd6334da44589fdb6083f6,
         type: 2}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -210,6 +240,52 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: e0c71a544b9ec8f47b251cd31ffb7c1b,
         type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[0].roomConditions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e395fe47ca7b64d43893d5e284ae52fd,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[0].roomActions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 459786347daf5074c885dffd1be25a05,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[1].roomConditions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 66206456a6f1bb14b9a3b75895ea2697,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[1].roomActions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f88600892a62b14f921a23374609586,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[0].enemyType
+      value: 
+      objectReference: {fileID: 11400000, guid: 11fd2b1f71b42544b859a288a96fe0a4,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[0].spawnPattern
+      value: 
+      objectReference: {fileID: 11400000, guid: bb5ab21e7b101b247843fd703ffb63e5,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[0].centerPoint.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[0].centerPoint.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
   m_IsPrefabAsset: 0
