@@ -11,10 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06dd0b08dd50984f8d14a71e7ff6ebe, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  maxHealth: 7
+  maxHealth: 10
   startingProjectileWeapon: {fileID: 11400000, guid: c2203d9961e648e4d8226d3e141293bd,
-    type: 2}
-  startingMeleeWeapon: {fileID: 11400000, guid: f93144c8bd2e31e4e8c5e78f96bca544,
     type: 2}
   scoredPointsListener: {fileID: 11400000, guid: ff2ab79066d16314abc699ec0fd8ab21,
     type: 2}

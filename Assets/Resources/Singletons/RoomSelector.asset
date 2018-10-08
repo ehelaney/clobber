@@ -17,7 +17,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d8493ada159f96b45b9072847c67d6ff, type: 2}
   - {fileID: 11400000, guid: 70fb98f6b5c224b4699842b845f7a8a4, type: 2}
   - {fileID: 11400000, guid: f9482d75d789b7b4f95523c3c677d550, type: 2}
-  - {fileID: 11400000, guid: 547cd9ed284cfea4aba3fefb310cff90, type: 2}
   gameOver: {fileID: 11400000, guid: d174507feeea3354389477a44eed0555, type: 2}
   listeners:
   - {fileID: 11400000, guid: 91e1c8ebb96aa16448ae1082e360e4c2, type: 2}
