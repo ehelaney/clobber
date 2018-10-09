@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4217807716538900, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.0200748
+      value: -1.02458
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0fe43c342fd2544ca0d29de0bb41cd2, type: 2}
@@ -169,7 +169,7 @@ Prefab:
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -189,7 +189,7 @@ Prefab:
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomTriggers.Array.data[1].roomActions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -303,7 +303,7 @@ Prefab:
         type: 2}
       propertyPath: roomTriggers.Array.data[1].roomActions.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 2f88600892a62b14f921a23374609586,
+      objectReference: {fileID: 11400000, guid: 0ed7f96db007c3a489a1ccd52a142774,
         type: 2}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -457,6 +457,12 @@ Prefab:
       propertyPath: roomSpawns.Array.data[7].centerPoint.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomTriggers.Array.data[1].roomActions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f88600892a62b14f921a23374609586,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
   m_IsPrefabAsset: 0

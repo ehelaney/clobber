@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 309d0aaf960016847ba50c5ada05f18e, type: 3}
-  m_Name: MissileLauncherWeaponCapsule
+  m_Name: MissileGunWeaponCapsule
   m_EditorClassIdentifier: 
   helpfulName: 
   sprite: {fileID: 21300000, guid: e999a20d67a5dfd4e8dc41fd5f83b6b4, type: 3}
