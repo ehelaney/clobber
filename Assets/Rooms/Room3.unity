@@ -169,12 +169,17 @@ Prefab:
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomTriggers.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: obstacleConfigurations.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
@@ -273,24 +278,118 @@ Prefab:
         type: 2}
       propertyPath: roomSpawns.Array.data[0].enemyType
       value: 
-      objectReference: {fileID: 11400000, guid: 11fd2b1f71b42544b859a288a96fe0a4,
+      objectReference: {fileID: 11400000, guid: 28697780295ed004cb419a27383243b7,
         type: 2}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.data[0].spawnPattern
       value: 
-      objectReference: {fileID: 11400000, guid: bb5ab21e7b101b247843fd703ffb63e5,
+      objectReference: {fileID: 11400000, guid: b4c5847b80a26fa40b52c37e0436069b,
         type: 2}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.data[0].centerPoint.x
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
         type: 2}
       propertyPath: roomSpawns.Array.data[0].centerPoint.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[1].enemyType
+      value: 
+      objectReference: {fileID: 11400000, guid: 11fd2b1f71b42544b859a288a96fe0a4,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[1].spawnPattern
+      value: 
+      objectReference: {fileID: 11400000, guid: bb5ab21e7b101b247843fd703ffb63e5,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[1].centerPoint.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[1].centerPoint.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[2].enemyType
+      value: 
+      objectReference: {fileID: 11400000, guid: d55c1d9dd9450b346b90c8aaeaa431e3,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[2].spawnPattern
+      value: 
+      objectReference: {fileID: 11400000, guid: bb5ab21e7b101b247843fd703ffb63e5,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[2].centerPoint.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[2].centerPoint.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[3].enemyType
+      value: 
+      objectReference: {fileID: 11400000, guid: d55c1d9dd9450b346b90c8aaeaa431e3,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[3].spawnPattern
+      value: 
+      objectReference: {fileID: 11400000, guid: 5db38bc9a34ec6e4daa824f9fe3928f5,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[3].centerPoint.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[3].centerPoint.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[4].enemyType
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d9d038cc9e9c44281312c62616d745,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[4].spawnPattern
+      value: 
+      objectReference: {fileID: 11400000, guid: a9c99f5d74a04514e80568f4fe515937,
+        type: 2}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[4].centerPoint.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: roomSpawns.Array.data[4].centerPoint.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114652273714601214, guid: e78a8837e5da34f47bf5b1c1d6fcca4d,
+        type: 2}
+      propertyPath: obstacleConfigurations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a773a6e98e3163498f7ab18094202f6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78a8837e5da34f47bf5b1c1d6fcca4d, type: 2}
   m_IsPrefabAsset: 0

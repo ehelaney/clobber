@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: MissileLauncherLoot
   m_EditorClassIdentifier: 
   helpfulName: 
-  sprite: {fileID: 0}
-  lifeTime: 4
+  sprite: {fileID: 21300000, guid: 13a427b45d964944f89f161b516c119f, type: 3}
+  lifeTime: 6
   projectileWeaponDefinition: {fileID: 11400000, guid: f592669352469a74d96849d8da8cbaf8,
     type: 2}
