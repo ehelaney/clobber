@@ -20,5 +20,3 @@ MonoBehaviour:
     Chance: 100
   - LootType: {fileID: 11400000, guid: abc13b9eaf4466448a4bb816bac6d2e5, type: 2}
     Chance: 50
-  - LootType: {fileID: 11400000, guid: 6093dc2684d8de847b00faf15523e108, type: 2}
-    Chance: 100

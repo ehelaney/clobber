@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: MachineGunLoot
   m_EditorClassIdentifier: 
   helpfulName: 
-  sprite: {fileID: 0}
-  lifeTime: 4
+  sprite: {fileID: 21300000, guid: 88b4e5193612d1444be9962e45b27128, type: 3}
+  lifeTime: 6
   projectileWeaponDefinition: {fileID: 11400000, guid: ac01698a279840441b69ffb83ab2cd75,
     type: 2}

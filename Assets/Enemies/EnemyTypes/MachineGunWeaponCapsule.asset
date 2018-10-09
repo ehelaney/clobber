@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d0aaf960016847ba50c5ada05f18e, type: 3}
+  m_Name: MachineGunWeaponCapsule
+  m_EditorClassIdentifier: 
+  helpfulName: 
+  sprite: {fileID: 21300000, guid: e999a20d67a5dfd4e8dc41fd5f83b6b4, type: 3}
+  pointsForKilling: 1
+  health: 5
+  collisionStrength: 1
+  onHitSound: {fileID: 11400000, guid: 49c3e633246d5324ba2ada22a12f7dcf, type: 2}
+  lootTable: {fileID: 11400000, guid: 2bda216dc3ff92b4aa79ef41adf88ecb, type: 2}
+  aiType: {fileID: 11400000, guid: 7aced4e7efb6cf444b96cb5a998f0a38, type: 2}
+  weapon: {fileID: 0}
