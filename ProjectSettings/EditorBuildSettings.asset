@@ -9,24 +9,6 @@ EditorBuildSettings:
     path: Assets/Screens/Title/Title.unity
     guid: 232911f74ffa9334982203706a7e518a
   - enabled: 1
-    path: Assets/Screens/Credits/Credits.unity
-    guid: 1b1d8db4adf54364192d99bfe383ec2b
-  - enabled: 1
-    path: Assets/Screens/Sandbox/Eric/Eric.unity
-    guid: 3c65e49b04a73cf46b4a1de362ffa293
-  - enabled: 1
-    path: Assets/Screens/Sandbox/Jfc/Jfc.unity
-    guid: eb755129f43404b499953f448e921a0b
-  - enabled: 1
-    path: Assets/Screens/Sandbox/Nate/Nate.unity
-    guid: 1fc24d186a115ee478fd743ab77d5dcd
-  - enabled: 1
-    path: Assets/Screens/Sandbox/Phil/Phil.unity
-    guid: fc152ef7eb983d8488fa4b565e05dc45
-  - enabled: 1
-    path: Assets/Screens/Sandbox/Ryan/Ryan.unity
-    guid: d464b3104c774ae4a9a335fc2512861f
-  - enabled: 1
     path: Assets/Screens/GameOver/GameOver.unity
     guid: 7d40248d1c24c914db86771ab0c59b28
   - enabled: 1
@@ -44,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rooms/Room5.unity
     guid: 3c9a811ce1c1704409510353fb8cd8a9
+  - enabled: 1
+    path: Assets/Screens/Credits/Credits.unity
+    guid: 1b1d8db4adf54364192d99bfe383ec2b
   - enabled: 1
     path: Assets/Rooms/BossRoom.unity
     guid: 10550271030a9f94799b67135fef334a
