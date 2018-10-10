@@ -4,7 +4,7 @@ using UnityEditor;
 //This property drawer logic was pulled from: https://docs.unity3d.com/Manual/editor-PropertyDrawers.html
 
 [CustomPropertyDrawer(typeof(LootTableEntry))]
-public class IngredientDrawer : PropertyDrawer
+public class LootTableDrawer : PropertyDrawer
 {
 	// Draw the property inside the given rect
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
