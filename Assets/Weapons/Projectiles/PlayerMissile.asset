@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: PlayerMissile
   m_EditorClassIdentifier: 
   Name: red missile
-  Speed: 5
+  Speed: 10
   Damage: 5
   sprite: {fileID: 21300000, guid: ae8ec05ff72afb849bfb5a2618c1a6c2, type: 3}
   Layer: 14
