@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpfulName: 
   clip: {fileID: 8300000, guid: 2e121352375532242ab97c01cdf3a4fa, type: 3}
-  volume: 0.6
+  volume: 0.689
   pitch: 1
   volumeModifier: 0.3
   pitchModifier: 0.5
