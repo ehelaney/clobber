@@ -15,7 +15,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 58aaac64ec900ae44aea3cd4c4583931, type: 3}
   pointsForKilling: 50
   health: 8
-  onHitSound: {fileID: 11400000, guid: 49c3e633246d5324ba2ada22a12f7dcf, type: 2}
+  collisionStrength: 1
+  onHitSound: {fileID: 11400000, guid: e839b0397c47d8c4e945614b5a70f2eb, type: 2}
   lootTable: {fileID: 11400000, guid: 35393c8211b32c1479070a855c01c3d9, type: 2}
   aiType: {fileID: 11400000, guid: 2a50168198744fa42ad8b01f8b5feb47, type: 2}
   weapon: {fileID: 11400000, guid: 3cbd315045c0d6046ae3d6a29b5e4d18, type: 2}

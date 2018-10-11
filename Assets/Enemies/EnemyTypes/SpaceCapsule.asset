@@ -16,7 +16,7 @@ MonoBehaviour:
   pointsForKilling: 50
   health: 3
   collisionStrength: 1
-  onHitSound: {fileID: 0}
+  onHitSound: {fileID: 11400000, guid: 7df501af250d7994f9e3106a71b02feb, type: 2}
   lootTable: {fileID: 11400000, guid: 1385b1ef1acaa5740be62f37288879c8, type: 2}
   aiType: {fileID: 11400000, guid: 7aced4e7efb6cf444b96cb5a998f0a38, type: 2}
   weapon: {fileID: 0}

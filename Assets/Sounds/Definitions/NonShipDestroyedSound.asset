@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66b1487aa0346c46b12ff25aaf820ed, type: 3}
+  m_Name: NonShipDestroyedSound
+  m_EditorClassIdentifier: 
+  helpfulName: 
+  clip: {fileID: 8300000, guid: 2e121352375532242ab97c01cdf3a4fa, type: 3}
+  volume: 0.6
+  pitch: 1
+  volumeModifier: 0.3
+  pitchModifier: 0.5
