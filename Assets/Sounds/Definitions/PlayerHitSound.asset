@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpfulName: Player Hit
   clip: {fileID: 8300000, guid: e4f62f80015ddc84189f81f91120c822, type: 3}
-  volume: 0.6
+  volume: 0.338
   pitch: 1
-  volumeModifier: 0.3
-  pitchModifier: 0.5
+  volumeModifier: 0.1
+  pitchModifier: 0.1

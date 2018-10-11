@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpfulName: machine gun sound
   clip: {fileID: 8300000, guid: 7de95b3b9bdd1bf4a8cd68fdf75265a5, type: 3}
-  volume: 0.49
+  volume: 0.44
   pitch: 0.87
   volumeModifier: 0.1
   pitchModifier: 0.5
