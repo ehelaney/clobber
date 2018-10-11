@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpfulName: 
   sprite: {fileID: 21300000, guid: a8d2e3f13910f11458c81bc483a300a0, type: 3}
-  pointsForKilling: 15
+  pointsForKilling: 25
   health: 1
   collisionStrength: 1
   onHitSound: {fileID: 11400000, guid: 2df4f620e5a5a81479e350a64d1de0ca, type: 2}
